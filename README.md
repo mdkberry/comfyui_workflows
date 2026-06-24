@@ -27,9 +27,9 @@ As of June 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 G
 
 - **By April 2025 model choices and ability were becoming exponentially more complex**. Research became a full-time job. New models - with no manual - dropped almost daily until the end of the 2025. And the more we could do, the longer it took to do it. I'd already knocked out 7 music videos, but **the next video took me 80 days to finish; a ten minute narrated noir called** ["Footprints In Eternity"](https://www.youtube.com/watch?v=mIDSYRsuSFM&list=PLVCJTJhkunkQSY_QZBMFclmB9-LXOi8WY&index=6).
 
-- **Lipsync appeared for the first time around June 2025 with Chatterbox, InfiniteTalk and FantasyPortrait for WAN, and then VibeVoice (August 2025)**. I spent the rest of the year researching WAN based models and got so consumed by the research that I didnt make any content.
+- **Lipsync appeared for the first time around June 2025 with Chatterbox, InfiniteTalk and FantasyPortrait for WAN, and then VibeVoice (August 2025)**. I spent the rest of the year researching WAN based models and got so consumed by the research that I didnt make any content.
 
-- **In Jan 2026 I forced myself back to making content to get out of the eternal research loop, switching full-time to LTX 2** when it was released as Open Source (sticking with HuMO and WAN models for occasional polishing and detailing). Thankfully around then the pace of model releases slowed enough for me to stay focused on actually making videos again.
+- **In Jan 2026 I forced myself back to making content to get out of the eternal research loop, switching full-time to LTX 2** when it was released as Open Source (sticking with HuMO and WAN models for occasional polishing and detailing). Thankfully around then the pace of model releases slowed enough for me to stay focused on actually making videos again.
 
 - **It's now June 2026, and I am currently testing Bernini (WAN based)** which I really like.
 
@@ -41,7 +41,7 @@ All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlis
 
 ### `\monthly_sets`
 
-**regularly updated monthly zip files of my video and image pipelines**. These are the "best of's" so if you only pick one download make it these.
+**regularly updated monthly zip files of my current video and image pipelines**. These are the "best of's" that I'd be using a lot at that moment in time, so if you only pick one download make it these.
 
 ### `\workflows_by_model` 
 
@@ -62,21 +62,21 @@ All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlis
 
 *(All links below are to YT versions of videos, some are wip while I wait for AI to get better. If there are uncensored versions they will be found on Vimeo or Rumble)*
 
-- [Cafe - music video](https://youtu.be/x70IGT41QpY?si=lcoTusolMfj7kPaY) - 17th Jan 2025
+- [Cafe - (music video)](https://youtu.be/x70IGT41QpY?si=lcoTusolMfj7kPaY) - 17th Jan 2025
 
-- [Kali - music video](https://youtu.be/59U-kfgLQYM?si=BFS1vZIuBQEhMaH0) - 22nd Jan 2025
+- [Kali - (music video)](https://youtu.be/59U-kfgLQYM?si=BFS1vZIuBQEhMaH0) - 22nd Jan 2025
 
-- [Baes With Guns - music video](https://youtu.be/qaWW0JvD7Cg?si=-pjMDQ9G8Qfyw2xr) - 27th Jan 2025
+- [Baes With Guns - (music video)](https://youtu.be/qaWW0JvD7Cg?si=-pjMDQ9G8Qfyw2xr) - 27th Jan 2025
 
-- [I'm Still Alive (In The Naked Disco Of My Mind) - music video](https://youtu.be/MIirUmH1Oew?si=Opi-A_oldt0xYk0z) - 31st Jan 2025
+- [I'm Still Alive (In The Naked Disco Of My Mind) - (music video)](https://youtu.be/MIirUmH1Oew?si=Opi-A_oldt0xYk0z) - 31st Jan 2025
 
-- [Ive Got All That You Need - music video](https://youtu.be/k_MXljzCD3Q?si=7yw8DAPUzNohysHn) - 8th Feb 2025
+- [Ive Got All That You Need - (music video)](https://youtu.be/k_MXljzCD3Q?si=7yw8DAPUzNohysHn) - 8th Feb 2025
 
-- [The Name Of The Game Is Power - music video](https://youtu.be/B_xeXRn-hc8?si=jGDKv5GQjoaKjxPj) - 15th March 2025
+- [The Name Of The Game Is Power - (music video)](https://youtu.be/B_xeXRn-hc8?si=jGDKv5GQjoaKjxPj) - 15th March 2025
 
-- [Sirena - music video](https://youtu.be/r8V7WD2POIM?si=JCXxGEJCfb3ZB1NK) - 6th April 2025
+- [Sirena - (music video)](https://youtu.be/r8V7WD2POIM?si=JCXxGEJCfb3ZB1NK) - 6th April 2025
 
-- [Footprints In Eternity - narrated noir](https://youtu.be/mIDSYRsuSFM?si=GltMMvfOMsJ7s_1U) - 28th June 2025
+- [Footprints In Eternity - (narrated noir)](https://youtu.be/mIDSYRsuSFM?si=GltMMvfOMsJ7s_1U) - 28th June 2025
 
 - [Great Southern Land (drama)](https://youtu.be/wo_ZSEMUZlk?si=rqDVYewzolaV47TA) - 21st March 2026
 
@@ -84,7 +84,7 @@ All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlis
 
 - [Sapphires (Hammeresque Vamp)](https://youtu.be/Esr4ISRSirs?si=0bDvkfOihvrMxxZh) - 23rd March 2026
 
-- [Devil In The Wind - music video](https://youtu.be/H4LKV0qNPpQ?si=yynuRKl562FOhqbt) - 17th April 2026
+- [Devil In The Wind - (music video)](https://youtu.be/H4LKV0qNPpQ?si=yynuRKl562FOhqbt) - 17th April 2026
 
 - [Been Down (Part 1 of Black Magic Musical)](https://youtu.be/WnKSSzWt-N4?si=WLe8WD2keauNYiwc) - 8th May 2026
 
