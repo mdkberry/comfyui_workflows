@@ -1,0 +1,1151 @@
+{
+  "id": "88ac5dad-efd7-40bb-84fe-fbaefdee1fa9",
+  "revision": 0,
+  "last_node_id": 88,
+  "last_link_id": 153,
+  "nodes": [
+    {
+      "id": 48,
+      "type": "MarkdownNote",
+      "pos": [
+        -1085.65898626672,
+        -161.916409531591
+      ],
+      "size": [
+        610,
+        820
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "About ACE Step and Multi-language Input",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "[Tutorial](https://docs.comfy.org/tutorials/audio/ace-step/ace-step-v1) \n\n### Model Download\n\nDownload the following model and save it to the **ComfyUI/models/checkpoints** folder.\n[ace_step_v1_3.5b.safetensors](https://huggingface.co/Comfy-Org/ACE-Step_ComfyUI_repackaged/blob/main/all_in_one/ace_step_v1_3.5b.safetensors)\n\n\n### Multilingual Support\n\nCurrently, the implementation of multi-language support for ACE-Step V1 is achieved by uniformly converting different languages into English characters. At present, in ComfyUI, we haven't implemented the step of converting multi-languages into English. This is because if we need to implement the corresponding conversion, we have to add additional core dependencies of ComfyUI, which may lead to uncertain dependency conflicts.\n\nSo, currently, if you need to input multi-language text, you have to manually convert it into English characters to complete this process. Then, at the beginning of the corresponding `lyrics`, input the abbreviation of the corresponding language code.\n\nFor example, for Chinese, use `[zh]`, for Japanese use `[ja]`, for Korean use `[ko]`, and so on. For specific language input, please check the examples in the instructions. \n\nFor example, Chinese `[zh]`, Japanese `[ja]`, Korean `[ko]`, etc.\n\nExample:\n\n```\n[verse]\n\n[zh]wo3zou3guo4shen1ye4de5jie1dao4\n[zh]leng3feng1chui1luan4si1nian4de5piao4liang4wai4tao4\n[zh]ni3de5wei1xiao4xiang4xing1guang1hen3xuan4yao4\n[zh]zhao4liang4le5wo3gu1du2de5mei3fen1mei3miao3\n\n[chorus]\n\n[verse]​\n[ko]hamkke si-kkeuleo-un sesang-ui sodong-eul pihae​\n[ko]honja ogsang-eseo dalbich-ui eolyeompus-ileul balaboda​\n[ko]niga salang-eun lideum-i ganghan eum-ag gatdago malhaess-eo​\n[ko]han ta han tamada ma-eum-ui ondoga eolmana heojeonhanji ijge hae\n\n[bridge]\n[es]cantar mi anhelo por ti sin ocultar\n[es]como poesía y pintura, lleno de anhelo indescifrable\n[es]tu sombra es tan terca como el viento, inborrable\n[es]persiguiéndote en vuelo, brilla como cruzar una mar de nubes\n\n[chorus]\n[fr]que tu sois le vent qui souffle sur ma main\n[fr]un contact chaud comme la douce pluie printanière\n[fr]que tu sois le vent qui s'entoure de mon corps\n[fr]un amour profond qui ne s'éloignera jamais\n\n```\n\n---\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 64,
+      "type": "LoadAudio",
+      "pos": [
+        180,
+        340
+      ],
+      "size": [
+        370,
+        140
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "LoadAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "audio_ace_step_1_m2m_editing_input_audio.mp3",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 76,
+      "type": "UNETLoader",
+      "pos": [
+        -280.5514886413145,
+        -113.86556465168066
+      ],
+      "size": [
+        380,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            141
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.1",
+        "Node name for S&R": "UNETLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        },
+        "models": [
+          {
+            "name": "acestep_v1.5_turbo.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_turbo.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "acestep_v1.5_turbo.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        1295.61762339901,
+        329.26929932295064
+      ],
+      "size": [
+        164.2499984741211,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 122
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 143
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            126
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.32",
+        "Node name for S&R": "VAEDecodeAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 79,
+      "type": "DualCLIPLoaderMultiGPU",
+      "pos": [
+        -262.1763465233913,
+        19.860268619471537
+      ],
+      "size": [
+        350.3264546248265,
+        130
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            145
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-multigpu",
+        "ver": "2.5.11",
+        "Node name for S&R": "DualCLIPLoaderMultiGPU",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "ACE\\qwen_0.6b_ace15.safetensors",
+        "ACE\\qwen_4b_ace15.safetensors",
+        "ace",
+        "cuda:0"
+      ]
+    },
+    {
+      "id": 44,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        685.4295417827354,
+        67.75185416361222
+      ],
+      "size": [
+        204.0999984741211,
+        26
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            120
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.32",
+        "Node name for S&R": "ConditioningZeroOut",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 80,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        1196.3731402935932,
+        -388.20336007943945
+      ],
+      "size": [
+        329.39477481889753,
+        60
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 146
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            147
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.1",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 82,
+      "type": "easy showAnything",
+      "pos": [
+        -35.50882556696855,
+        888.5040369165685
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.6",
+        "Node name for S&R": "easy showAnything",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "120.0"
+      ]
+    },
+    {
+      "id": 83,
+      "type": "easy showAnything",
+      "pos": [
+        275.29218251807475,
+        1165.5760367222613
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 150
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.6",
+        "Node name for S&R": "easy showAnything",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "105.46874999999999"
+      ]
+    },
+    {
+      "id": 75,
+      "type": "VAELoader",
+      "pos": [
+        -275.5514886413145,
+        206.1344353483197
+      ],
+      "size": [
+        380,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            143,
+            152
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.1",
+        "Node name for S&R": "VAELoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        },
+        "models": [
+          {
+            "name": "ace_1.5_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "ace_1.5_vae.safetensors"
+      ]
+    },
+    {
+      "id": 81,
+      "type": "VAEEncodeAudio",
+      "pos": [
+        229.67454668948662,
+        802.8755779488724
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 148
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 152
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            153
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.12.2",
+        "Node name for S&R": "VAEEncodeAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 84,
+      "type": "FL_Audio_BPM_Analyzer",
+      "pos": [
+        -51.77453059402979,
+        1056.039962233862
+      ],
+      "size": [
+        270,
+        166
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 151
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "bpm",
+          "type": "FLOAT",
+          "links": [
+            150
+          ]
+        },
+        {
+          "name": "beat_positions",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "visualization",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_fill-nodes",
+        "ver": "2.2.6",
+        "Node name for S&R": "FL_Audio_BPM_Analyzer",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "beat_intervals",
+        false,
+        0
+      ],
+      "color": "#16727c",
+      "bgcolor": "#4F0074"
+    },
+    {
+      "id": 85,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        -539.5928848474097,
+        794.1066312841813
+      ],
+      "size": [
+        407.2381281055767,
+        207.72555825677892
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            148,
+            151
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": [
+            149
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.7",
+        "Node name for S&R": "VHS_LoadAudioUpload",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "audio": "TheHeartTrain_G_14_2024-09-09.mp3",
+        "start_time": 0,
+        "duration": 120,
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 120,
+            "filename": "TheHeartTrain_G_14_2024-09-09.mp3",
+            "type": "input"
+          }
+        }
+      }
+    },
+    {
+      "id": 51,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        590,
+        -40
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            113
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "ModelSamplingSD3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        5.000000000000001
+      ]
+    },
+    {
+      "id": 50,
+      "type": "LatentOperationTonemapReinhard",
+      "pos": [
+        590,
+        -160
+      ],
+      "size": [
+        330,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT_OPERATION",
+          "type": "LATENT_OPERATION",
+          "links": [
+            114
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "LatentOperationTonemapReinhard",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1.0000000000000002
+      ]
+    },
+    {
+      "id": 49,
+      "type": "LatentApplyOperationCFG",
+      "pos": [
+        988.3351354823371,
+        -189.2258958730411
+      ],
+      "size": [
+        290,
+        50
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 113
+        },
+        {
+          "name": "operation",
+          "type": "LATENT_OPERATION",
+          "link": 114
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            146
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "LatentApplyOperationCFG",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 52,
+      "type": "KSampler",
+      "pos": [
+        1202.1031479886815,
+        -47.878729272068085
+      ],
+      "size": [
+        290,
+        262
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 147
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 117
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 120
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 153
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            122
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "KSampler",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        200382044705917,
+        "fixed",
+        8,
+        1,
+        "euler",
+        "simple",
+        0.3
+      ]
+    },
+    {
+      "id": 59,
+      "type": "SaveAudioMP3",
+      "pos": [
+        1669.1191387726665,
+        39.649117478111776
+      ],
+      "size": [
+        610,
+        136
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 126
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "SaveAudioMP3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "audio/ACEStp_Cover_",
+        "V0"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "TextEncodeAceStepAudio",
+      "pos": [
+        590,
+        120
+      ],
+      "size": [
+        598.0313057773614,
+        1035.6765581987247
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 145
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            108,
+            117
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.32",
+        "Node name for S&R": "TextEncodeAceStepAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "cover, rock, ballad, emotional, nostalgic, male vocal, piano, drums, clarinet, oboe,  ",
+        "[intro]\n\n\n[Verse]\nThere's people that have put us down\npeople that have given us crowns\nand people that have passed in the night\nsongs I could have sung to you\nfeelings they began with you\nand its no lie that you make things right\nI could make love to you all night\nI could make love to you til light\nDancing our way to the morning\nI need you, and you need me\nand that's the way it seems to be\ntouching on eternity\n\n[Chorus] \nMy love takes over the train\nlooking out to you again\nSee you, feel you\nwe've seen alice through the looking glass\ngive you names and make you laugh\nJoin me, on the heart train.\n\n\n[Verse]\nI take a glance through our history\nfriends we've had, friends we've been\nsometimes I wonder but I think it's been alright.\nwe met at schoool, I played the fool\nyou the princess, broke no rules\nbut I've seen you in a different light\ntimes around us change\ninnocence may turn to blame\nits so hard to keep our dreams alive\nbut someday we will understand\nwhy we met in this strange land\nstruggling, fighting to survive\n\n[Chorus]\nMy love takes over the train\nlooking out to you again\nfeel you, see you\nwe've seen alice through the looking glass\nyou give me names and make me laugh\njoin me, on the heart train.\n\n[drop]\n\n[Verse]\nThis is our time, this is our time\nthis is what I give to you\nwe're heading for a moment\nthe end of our lives\nI know it and it makes me want to cry\nI dont want to die, I dont want to say goodbye\nI know there's another road to try\nIt's what I'm trying to say to you\ndon't let our enemies take us too\nhelp me find the way to defeat their lies.\n\n[Chorus]\nMy love takes over the train\nlooking out to you again\nfeel you, need you\nwe've seen alice through the looking glass\ngive you names and make you laugh\nfeel you, to be with you.\n\n[Chorus]\nMy love takes over the train\nlooking out to you again\nSee you, feel you.\nwe've seen smokey rooms and whisky days\nliving in such strange ways\njoin me, on the heart train.\n",
+        0.9900000000000002
+      ]
+    }
+  ],
+  "links": [
+    [
+      108,
+      14,
+      0,
+      44,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      113,
+      51,
+      0,
+      49,
+      0,
+      "MODEL"
+    ],
+    [
+      114,
+      50,
+      0,
+      49,
+      1,
+      "LATENT_OPERATION"
+    ],
+    [
+      117,
+      14,
+      0,
+      52,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      120,
+      44,
+      0,
+      52,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      122,
+      52,
+      0,
+      18,
+      0,
+      "LATENT"
+    ],
+    [
+      126,
+      18,
+      0,
+      59,
+      0,
+      "AUDIO"
+    ],
+    [
+      141,
+      76,
+      0,
+      51,
+      0,
+      "MODEL"
+    ],
+    [
+      143,
+      75,
+      0,
+      18,
+      1,
+      "VAE"
+    ],
+    [
+      145,
+      79,
+      0,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      146,
+      49,
+      0,
+      80,
+      0,
+      "MODEL"
+    ],
+    [
+      147,
+      80,
+      0,
+      52,
+      0,
+      "MODEL"
+    ],
+    [
+      148,
+      85,
+      0,
+      81,
+      0,
+      "AUDIO"
+    ],
+    [
+      149,
+      85,
+      1,
+      82,
+      0,
+      "FLOAT"
+    ],
+    [
+      150,
+      84,
+      1,
+      83,
+      0,
+      "FLOAT"
+    ],
+    [
+      151,
+      85,
+      0,
+      84,
+      0,
+      "AUDIO"
+    ],
+    [
+      152,
+      75,
+      0,
+      81,
+      1,
+      "VAE"
+    ],
+    [
+      153,
+      81,
+      0,
+      52,
+      3,
+      "LATENT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Load model here",
+      "bounding": [
+        170,
+        -230,
+        390,
+        180
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Latent",
+      "bounding": [
+        170,
+        -30,
+        390,
+        280
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Adjust the vocal volume",
+      "bounding": [
+        580,
+        -230,
+        350,
+        140
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "For repainting",
+      "bounding": [
+        170,
+        270,
+        390,
+        223.60000610351562
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "Step 1 - Load Models",
+      "bounding": [
+        -290.5514886413145,
+        -183.86556465168064,
+        405,
+        461.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "Base on Audio",
+      "bounding": [
+        -565.858455017334,
+        677.6425809520086,
+        1069.5957769749475,
+        582.1015777963171
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7352247951312922,
+      "offset": [
+        413.4252456525852,
+        239.07661105967975
+      ]
+    },
+    "frontendVersion": "1.38.14",
+    "node_versions": {
+      "comfy-core": "0.3.34",
+      "ace-step": "06f751d65491c9077fa2bc9b06d2c6f2a90e4c56"
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": []
+  },
+  "version": 0.4
+}

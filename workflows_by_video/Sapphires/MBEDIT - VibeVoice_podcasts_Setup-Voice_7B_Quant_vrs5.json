@@ -1,0 +1,1377 @@
+{
+  "id": "c6ef8963-032c-45f6-954f-b5f6b354343b",
+  "revision": 0,
+  "last_node_id": 72,
+  "last_link_id": 85,
+  "nodes": [
+    {
+      "id": 22,
+      "type": "Note",
+      "pos": [
+        -1016.138783066406,
+        32.19424260498047
+      ],
+      "size": [
+        408.66363525390625,
+        236.39089965820312
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "1) Download Models",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "You have to manually download the models you would like to use and put them into: ComfyUI/models/vibevoice/\n\nMake a directory for each model and put all the files inside them.\n\nVibeVoice-1.5B model (~ 5.4 GB):\nhttps://huggingface.co/microsoft/VibeVoice-1.5B/tree/main\n\nVibeVoice-Large model (~ 18.7 GB):\nhttps://huggingface.co/aoi-ot/VibeVoice-Large/tree/main\n\nVibeVoice-Large-Q-8bit model (~ 11.6 GB):\nhttps://huggingface.co/FabioSarracino/VibeVoice-Large-Q8/tree/main\n\nVibeVoice-Large-Q-4bit model (~ 6.6 GB):\nhttps://huggingface.co/DevParker/VibeVoice7b-low-vram/tree/main/4bit"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 42,
+      "type": "Note",
+      "pos": [
+        -1015.839466660156,
+        331.93414891601566
+      ],
+      "size": [
+        407.2561950683594,
+        155.19009399414062
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "2) Download Tokenizer",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "You have to manually download the Qwen2.5 Tokenizer files and put them into: ComfyUI/models/vibevoice/tokenizer/\n\nhttps://huggingface.co/Qwen/Qwen2.5-1.5B/tree/main\n\nRequired files: tokenizer_config.json, vocab.json, merges.txt, tokenizer.json (~11MB)\n\nPut the files directly inside tokenizer directory without make another directory inside."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 28,
+      "type": "LoadTextFromFileNode",
+      "pos": [
+        -507.9169060302732,
+        347.6057882421872
+      ],
+      "size": [
+        289.5152282714844,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "VibeVoice-ComfyUI",
+        "ver": "5a24489a7b0bf0c406d291dd51e82a085d338d44",
+        "Node name for S&R": "LoadTextFromFileNode",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "file": true
+          },
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "No text files found in any directory"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 58,
+      "type": "Note",
+      "pos": [
+        1379.8062613756022,
+        -370.9901312675851
+      ],
+      "size": [
+        334.8100000000002,
+        88
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "MelbandRoformer is great for stripping out background noise from a vocal. I installed it from Kijai version."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 52,
+      "type": "MelBandRoFormerSampler",
+      "pos": [
+        1161.9168398879983,
+        -184.8720320940316
+      ],
+      "size": [
+        231.26666870117188,
+        46
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MELROFORMERMODEL",
+          "link": 64
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "name": "vocals",
+          "type": "AUDIO",
+          "links": [
+            66
+          ]
+        },
+        {
+          "name": "instruments",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-melbandroformer",
+        "ver": "1.0.2",
+        "Node name for S&R": "MelBandRoFormerSampler",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 51,
+      "type": "MelBandRoFormerModelLoader",
+      "pos": [
+        991.3068398879979,
+        -362.7420320940314
+      ],
+      "size": [
+        328.18334045410154,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MELROFORMERMODEL",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-melbandroformer",
+        "ver": "1.0.2",
+        "Node name for S&R": "MelBandRoFormerModelLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "MelBand\\MelBandRoformer_fp32.safetensors"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "Note",
+      "pos": [
+        -1019.4143924103985,
+        -384.48334378058513
+      ],
+      "size": [
+        340.86,
+        144.7
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "MARKDKBERRY.com\n\nThis version of VibeVoice is from Enemy-X Net on github\nIts the best version I found so far. \n\nhttps://github.com/Enemyx-net/VibeVoice-ComfyUI/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 44,
+      "type": "VibeVoiceSingleSpeakerNode",
+      "pos": [
+        116.87087779006343,
+        363.68819067922
+      ],
+      "size": [
+        407.70001220703125,
+        491.5
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "voice_to_clone",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 73
+        },
+        {
+          "name": "lora",
+          "shape": 7,
+          "type": "LORA_CONFIG",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "VibeVoice-ComfyUI",
+        "ver": "76785d478f0e35d089b3ce59a27f6a5ec78e7aa3",
+        "Node name for S&R": "VibeVoiceSingleSpeakerNode",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true,
+            "model": true,
+            "attention_type": true,
+            "quantize_llm": true,
+            "free_memory_after_generate": true,
+            "diffusion_steps": true,
+            "seed": true,
+            "cfg_scale": true,
+            "use_sampling": true,
+            "temperature": true,
+            "top_p": true,
+            "max_words_per_chunk": true,
+            "voice_speed_factor": true
+          },
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "First download the application from the website. They come as packed files and you can unpack them to a folder of your choosing. The software runs as a standalone application in either Windows or Linux. Mac OS versions will be released at a later date.\n\n ",
+        "VibeVoice7b-low-vram",
+        "sage",
+        "full precision",
+        false,
+        20,
+        0,
+        "fixed",
+        1.3,
+        false,
+        0.95,
+        0.95,
+        250,
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 46,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        -510.3596546874999,
+        544.29521109375
+      ],
+      "size": [
+        283.4166564941406,
+        238.10000610351562
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            72
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "8e4d79471bf1952154768e8435a9300077b534fa",
+        "Node name for S&R": "VHS_LoadAudioUpload",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "audio": true,
+            "start_time": true,
+            "duration": true
+          },
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "audio": "markdkberry-ai-sample-vrs2-1min.mp3",
+        "start_time": 0,
+        "duration": 60,
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 60,
+            "filename": "markdkberry-ai-sample-vrs2-1min.mp3",
+            "type": "input"
+          }
+        }
+      }
+    },
+    {
+      "id": 60,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        -527.1106146874996,
+        -433.8346289062497
+      ],
+      "size": [
+        319.7166564941407,
+        228.42000610351562
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            74
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "8e4d79471bf1952154768e8435a9300077b534fa",
+        "Node name for S&R": "VHS_LoadAudioUpload",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "audio": true,
+            "start_time": true,
+            "duration": true
+          },
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "audio": "markdkberry-ai-sample-vrs2-2channels_1min.mp3",
+        "start_time": 0,
+        "duration": 60,
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 60,
+            "filename": "markdkberry-ai-sample-vrs2-2channels_1min.mp3",
+            "type": "input"
+          }
+        }
+      }
+    },
+    {
+      "id": 62,
+      "type": "NormalizeAudioLoudness",
+      "pos": [
+        -152.7155900143952,
+        -359.5727142458959
+      ],
+      "size": [
+        277.46666564941404,
+        58
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            75
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-WanVideoWrapper",
+        "ver": "3d7b49e2df66bbbe379cd54748baf9decfe678a2",
+        "Node name for S&R": "NormalizeAudioLoudness",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        -23
+      ]
+    },
+    {
+      "id": 59,
+      "type": "VibeVoiceMultipleSpeakersNode",
+      "pos": [
+        178.79138438148766,
+        -424.72605223287667
+      ],
+      "size": [
+        479.8599999999999,
+        619.35
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "speaker1_voice",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 75
+        },
+        {
+          "name": "speaker2_voice",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 77
+        },
+        {
+          "name": "speaker3_voice",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "speaker4_voice",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "lora",
+          "shape": 7,
+          "type": "LORA_CONFIG",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "vibevoice-comfyui",
+        "ver": "1.8.1",
+        "Node name for S&R": "VibeVoiceMultipleSpeakersNode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "[1]: Hi, can I help you?\n[2]: Are you the English mustard thief?\n[1]: I did not steal that mustard. What did that guy tell you?\n[2]: He said to tell you that you left your bag in the restaurant car.\n[1]: Oh, right. well, thanks for letting me know.",
+        "VibeVoice7b-low-vram",
+        "sage",
+        "full precision",
+        false,
+        20,
+        42,
+        "fixed",
+        1.3,
+        false,
+        0.95,
+        0.95,
+        1
+      ]
+    },
+    {
+      "id": 56,
+      "type": "Note",
+      "pos": [
+        1299.066722977998,
+        -67.98724539403113
+      ],
+      "size": [
+        507.84000000000015,
+        154.38
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "SEPERATING VOCALS FROM MUSIC:\n\n<--- Enable the audio node, and load your favourite song\nplug it into the audio slot of MelBandRoFormer node.\n\nthen bypass the vibevoice nodes \n\nit works quickly and does an amazing job. This is great for analysing tracks or splitting them to instrumental versions to narrate over (test only, obviously respect copyright when publishing)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 53,
+      "type": "SaveAudio",
+      "pos": [
+        1495.8768398879988,
+        -236.90203209403154
+      ],
+      "size": [
+        318.31529999999975,
+        119.32050000000004
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 66
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.10.0",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "audio/Vocal_"
+      ]
+    },
+    {
+      "id": 63,
+      "type": "NormalizeAudioLoudness",
+      "pos": [
+        -162.49816001439532,
+        -181.3043442458962
+      ],
+      "size": [
+        277.46666564941404,
+        58
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-WanVideoWrapper",
+        "ver": "3d7b49e2df66bbbe379cd54748baf9decfe678a2",
+        "Node name for S&R": "NormalizeAudioLoudness",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        -23
+      ]
+    },
+    {
+      "id": 64,
+      "type": "NormalizeAudioLoudness",
+      "pos": [
+        -186.77169001439526,
+        548.4396757541036
+      ],
+      "size": [
+        277.46666564941404,
+        58
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            73
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-WanVideoWrapper",
+        "ver": "3d7b49e2df66bbbe379cd54748baf9decfe678a2",
+        "Node name for S&R": "NormalizeAudioLoudness",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        -23
+      ]
+    },
+    {
+      "id": 67,
+      "type": "SaveAudio",
+      "pos": [
+        1581.1763558686055,
+        282.3361879091043
+      ],
+      "size": [
+        270,
+        112
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 80
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "audio/Bass_"
+      ]
+    },
+    {
+      "id": 68,
+      "type": "SaveAudio",
+      "pos": [
+        1580.2603558686064,
+        434.01918790910423
+      ],
+      "size": [
+        270,
+        112
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 81
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "audio/Drums_"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "SaveAudio",
+      "pos": [
+        1750.9873558686054,
+        590.392187909104
+      ],
+      "size": [
+        270,
+        112
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 82
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "audio/Other_"
+      ]
+    },
+    {
+      "id": 70,
+      "type": "SaveAudio",
+      "pos": [
+        1620.7783558686049,
+        741.852187909104
+      ],
+      "size": [
+        303.27499999999986,
+        112
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 83
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "audio/Vox_"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": [
+        -202.39918675765705,
+        992.5936867414066
+      ],
+      "size": [
+        415,
+        88
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Load Text From File",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Use Load Text From File if you want to use a .txt file instead of text-area. You can load .txt files from ComfyUI/input, ComfyUI/output or ComfyUI/temp directories."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        264.8547104357025,
+        987.0144782390618
+      ],
+      "size": [
+        415,
+        88
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Voice Speed Factor",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "The voice speed factor influences the original source audio to attempt to achieve a slower or faster final speech. 1.0 is the normal speed. It is recommended not to exceed values ​​between 0.95 and 1.05. The effect is best when you provide a sample audio of at least 20 seconds."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 45,
+      "type": "Note",
+      "pos": [
+        78.15711159703167,
+        1224.0515268238266
+      ],
+      "size": [
+        448.8800048828125,
+        235.6199951171875
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Pause System",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.2.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "[pause]: add 1 second of silence.\n[pause:{number}] add {number}ms of pause\nWARNING: the pause tag forces the text to be split into chunks. This may worsen the model’s ability to understand the context. The model’s context is represented ONLY by its own chunk."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 65,
+      "type": "FL_Audio_Separation",
+      "pos": [
+        1262.1452788686047,
+        464.6705496091046
+      ],
+      "size": [
+        270,
+        166
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 85
+        }
+      ],
+      "outputs": [
+        {
+          "name": "bass",
+          "type": "AUDIO",
+          "links": [
+            80
+          ]
+        },
+        {
+          "name": "drums",
+          "type": "AUDIO",
+          "links": [
+            81
+          ]
+        },
+        {
+          "name": "other",
+          "type": "AUDIO",
+          "links": [
+            82
+          ]
+        },
+        {
+          "name": "vocals",
+          "type": "AUDIO",
+          "links": [
+            83
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_fill-nodes",
+        "ver": "2.2.6",
+        "Node name for S&R": "FL_Audio_Separation",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        10,
+        0.1,
+        "linear"
+      ],
+      "color": "#16727c",
+      "bgcolor": "#4F0074"
+    },
+    {
+      "id": 66,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        973.3899658686051,
+        581.5258277091046
+      ],
+      "size": [
+        252,
+        204
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            85
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_LoadAudioUpload",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": {
+        "audio": "To_War_Then.mp3",
+        "start_time": 0,
+        "duration": 0,
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 0,
+            "filename": "To_War_Then.mp3",
+            "type": "input"
+          }
+        }
+      }
+    },
+    {
+      "id": 72,
+      "type": "LoadAudio",
+      "pos": [
+        968.2128684849065,
+        295.3452511024039
+      ],
+      "size": [
+        282.83333587646484,
+        136
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "Node name for S&R": "LoadAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "0001-0081.mp4",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 61,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        -519.8506146874998,
+        -95.0346289062499
+      ],
+      "size": [
+        317.2966564941406,
+        242.94000610351554
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            76
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "8e4d79471bf1952154768e8435a9300077b534fa",
+        "Node name for S&R": "VHS_LoadAudioUpload",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "audio": true,
+            "start_time": true,
+            "duration": true
+          },
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "audio": "Are-you-the-mustard-thief.wav",
+        "start_time": 60,
+        "duration": 60,
+        "audiopreview": {
+          "params": {
+            "start_time": 60,
+            "duration": 60,
+            "filename": "Are-you-the-mustard-thief.wav",
+            "type": "input"
+          }
+        }
+      }
+    }
+  ],
+  "links": [
+    [
+      64,
+      51,
+      0,
+      52,
+      0,
+      "MELROFORMERMODEL"
+    ],
+    [
+      66,
+      52,
+      0,
+      53,
+      0,
+      "AUDIO"
+    ],
+    [
+      71,
+      59,
+      0,
+      52,
+      1,
+      "AUDIO"
+    ],
+    [
+      72,
+      46,
+      0,
+      64,
+      0,
+      "AUDIO"
+    ],
+    [
+      73,
+      64,
+      0,
+      44,
+      0,
+      "AUDIO"
+    ],
+    [
+      74,
+      60,
+      0,
+      62,
+      0,
+      "AUDIO"
+    ],
+    [
+      75,
+      62,
+      0,
+      59,
+      0,
+      "AUDIO"
+    ],
+    [
+      76,
+      61,
+      0,
+      63,
+      0,
+      "AUDIO"
+    ],
+    [
+      77,
+      63,
+      0,
+      59,
+      1,
+      "AUDIO"
+    ],
+    [
+      80,
+      65,
+      0,
+      67,
+      0,
+      "AUDIO"
+    ],
+    [
+      81,
+      65,
+      1,
+      68,
+      0,
+      "AUDIO"
+    ],
+    [
+      82,
+      65,
+      2,
+      69,
+      0,
+      "AUDIO"
+    ],
+    [
+      83,
+      65,
+      3,
+      70,
+      0,
+      "AUDIO"
+    ],
+    [
+      85,
+      66,
+      0,
+      65,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Instructions before use:",
+      "bounding": [
+        -1039.040821640625,
+        -65.34435450195313,
+        453.3775939941406,
+        595.2697143554688
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Audio Outbound",
+      "bounding": [
+        930.4868398879979,
+        -455.7020320940313,
+        1125.9719801400001,
+        557.9022346899993
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Single Voice",
+      "bounding": [
+        -520.3596546875,
+        270.76207067922,
+        1109.6878846845948,
+        626.6363200000001
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Multiple Voices",
+      "bounding": [
+        -537.1106146874996,
+        -507.4346289062497,
+        1228.3091390689874,
+        747.4897966733727
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "Audio Seperation Tools",
+      "bounding": [
+        944.6741782179982,
+        208.7361879091043,
+        1086.313177650607,
+        655.1159999999998
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8264462809917364,
+      "offset": [
+        1004.7910369501825,
+        621.6307662179254
+      ]
+    },
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.38.14",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}

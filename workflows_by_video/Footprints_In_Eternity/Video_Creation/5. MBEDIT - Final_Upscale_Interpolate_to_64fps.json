@@ -1,0 +1,669 @@
+{
+  "id": "ae540980-7c5c-4ec8-b4bf-44f4115174de",
+  "revision": 0,
+  "last_node_id": 43,
+  "last_link_id": 73,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "GIMMVFI_interpolate",
+      "pos": [
+        1035.2352294921875,
+        215.66200256347656
+      ],
+      "size": [
+        418.1999816894531,
+        174
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "gimmvfi_model",
+          "type": "GIMMVIF_MODEL",
+          "link": 3
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "flow_tensors",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GIMM-VFI",
+        "ver": "72ecb480147abcc20c55a1987049d94ffa182da4",
+        "Node name for S&R": "GIMMVFI_interpolate",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        1,
+        2,
+        10,
+        "fixed",
+        false
+      ]
+    },
+    {
+      "id": 6,
+      "type": "DownloadAndLoadGIMMVFIModel",
+      "pos": [
+        598.0287475585938,
+        178.74903869628906
+      ],
+      "size": [
+        342.5999755859375,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "gimmvfi_model",
+          "type": "GIMMVIF_MODEL",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GIMM-VFI",
+        "ver": "72ecb480147abcc20c55a1987049d94ffa182da4",
+        "Node name for S&R": "DownloadAndLoadGIMMVFIModel",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "gimmvfi_r_arb_lpips_fp32.safetensors",
+        "fp32",
+        false
+      ]
+    },
+    {
+      "id": 7,
+      "type": "GetImageSizeAndCount",
+      "pos": [
+        649.9381713867188,
+        373.0750427246094
+      ],
+      "size": [
+        277.20001220703125,
+        86
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "label": "1024 width",
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "576 height",
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "81 count",
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.0.8",
+        "Node name for S&R": "GetImageSizeAndCount",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "Video_Upscale_With_Model",
+      "pos": [
+        1258.3033447265625,
+        657.2194213867188
+      ],
+      "size": [
+        311.79998779296875,
+        141
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "ShmuelRonen/ComfyUI-VideoUpscale_WithModel",
+        "ver": "1f437040cfd1582e3a04cea144aaccfbf7baf7b6",
+        "Node name for S&R": "Video_Upscale_With_Model",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "RealESRGAN_x2.pth",
+        "nearest-exact",
+        2.3000000000000003,
+        "auto"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2353.921630859375,
+        620.69921875
+      ],
+      "size": [
+        438.8586730957031,
+        334
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 71
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "0a3b1eb433a95d33e71bca634b8307a238d7e425",
+        "Node name for S&R": "VHS_VideoCombine",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {
+        "frame_rate": 64,
+        "loop_count": 0,
+        "filename_prefix": "FIE_VideoClips_T03/GIMMx2_RIFEx2_64fps",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "GIMMx2_RIFEx2_64fps_00001.mp4",
+            "subfolder": "FIE_VideoClips_T03",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 64,
+            "workflow": "GIMMx2_RIFEx2_64fps_00001.png",
+            "fullpath": "M:\\ComfyUI\\ComfyUI_windows_portable\\ComfyUI\\output\\FIE_VideoClips_T03\\GIMMx2_RIFEx2_64fps_00001.mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": "RIFE VFI",
+      "pos": [
+        657.0570068359375,
+        658.5310668945312
+      ],
+      "size": [
+        478.8000183105469,
+        198
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "name": "optional_interpolation_states",
+          "shape": 7,
+          "type": "INTERPOLATION_STATES",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18,
+            19,
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-frame-interpolation",
+        "ver": "1.0.6",
+        "Node name for S&R": "RIFE VFI",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "rife47.pth",
+        10,
+        2,
+        true,
+        true,
+        1
+      ]
+    },
+    {
+      "id": 25,
+      "type": "Video_Upscale_With_Model",
+      "pos": [
+        1264.6351318359375,
+        864.775390625
+      ],
+      "size": [
+        311.98699951171875,
+        155.35499572753906
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "ShmuelRonen/ComfyUI-VideoUpscale_WithModel",
+        "ver": "1f437040cfd1582e3a04cea144aaccfbf7baf7b6",
+        "Node name for S&R": "Video_Upscale_With_Model",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "1x_NMKD-h264Texturize_500k.pth",
+        "nearest-exact",
+        8,
+        "auto"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "ImageScale",
+      "pos": [
+        1236.2266845703125,
+        455.59210205078125
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.29",
+        "Node name for S&R": "ImageScale",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1920,
+        1080,
+        "disabled"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -228.14398193359375,
+        555.8878784179688
+      ],
+      "size": [
+        247.4499969482422,
+        452.2537536621094
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            73
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "a7ce59e381934733bfae03b1be029756d6ce936d",
+        "Node name for S&R": "VHS_LoadVideo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {
+        "video": "V2V__00009.mp4",
+        "force_rate": 16,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "Wan",
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "V2V__00009.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "force_rate": 16,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 19,
+      "type": "Note",
+      "pos": [
+        1625.4425048828125,
+        405.0489501953125
+      ],
+      "size": [
+        413.38018798828125,
+        634.3553466796875
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "I generally just use \"Upscale Image\" as it is fast and simple.\n\nI mix GIMM and RIFE for interpolation just because.\n\nInbound video is 16fps, GIMM takes it to 32 fps, RIFE takes that to 64fps. \n\nI aim for 1920 x 1080 and 64fps which is final cut for Davinci Resolve (actually 60fps in the free version)\n\n\n---\n\nthe other upscalers have their place, but will add 15 mins compared to the Upscale Image which is the baseline version.\n\nrealESRGAN x2 (original model) - its very good and super crisp on blurry stuff but maybe too crisp on only slightly blurry.\n\n1x NMDKh264texture - tries to add texture back in to compressed video blur, not tested much but hasnt yet been better than ESRGAN x2.\n\n1xSkinContrast-High-SuperUltraCompact - for skin trying to remove plastic look but wasnt overly impressed.\n\n(Beware of x4 taking 1 hour with video, check the command prompt when running)\n\nsee more on the site https://openmodeldb.info/?t=video-frame\n\nbest upscalers are probably NMKD and try more from his site - https://icedrive.net/s/43GNBihZyi\n\n---\n\nto upscale 1024 x 576 to 1920 x 1080 multiply by roughly 1.9\n\nto upscale 832 x 480 to 1920 x 1080 multiply by roughly 2.3 (its a little under)\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 30,
+      "type": "ImageResizeKJv2",
+      "pos": [
+        249.11474609375,
+        508.5417175292969
+      ],
+      "size": [
+        270,
+        266
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 73
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            51
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "07b804cb3ff3b3eb8d2c5fdadd62d0822bebe4e8",
+        "Node name for S&R": "ImageResizeKJv2",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        1024,
+        576,
+        "nearest-exact",
+        "stretch",
+        "0, 0, 0",
+        "center",
+        2,
+        "cpu"
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      6,
+      0,
+      4,
+      0,
+      "GIMMVIF_MODEL"
+    ],
+    [
+      5,
+      7,
+      0,
+      4,
+      1,
+      "IMAGE"
+    ],
+    [
+      8,
+      4,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      9,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      9,
+      0,
+      25,
+      0,
+      "IMAGE"
+    ],
+    [
+      51,
+      30,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      71,
+      10,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      73,
+      11,
+      0,
+      30,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6830134553650705,
+      "offset": [
+        521.8841449706665,
+        10.127222806388223
+      ]
+    },
+    "frontendVersion": "1.21.7",
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

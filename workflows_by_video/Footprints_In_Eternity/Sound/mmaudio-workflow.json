@@ -1,0 +1,645 @@
+{
+  "id": "e1e4c72f-4e34-4520-90a6-48782b36dbcf",
+  "revision": 0,
+  "last_node_id": 115,
+  "last_link_id": 184,
+  "nodes": [
+    {
+      "id": 85,
+      "type": "MMAudioModelLoader",
+      "pos": [
+        1642.6138916015625,
+        -228.39370727539062
+      ],
+      "size": [
+        438.219970703125,
+        83.87998962402344
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "mmaudio_model",
+          "type": "MMAUDIO_MODEL",
+          "slot_index": 0,
+          "links": [
+            152
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "a49a1b8f382687c7dc9d7266a054dc3c6f992ccd",
+        "Node name for S&R": "MMAudioModelLoader",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "N_mmaudio\\mmaudio_large_44k_v2_fp16.safetensors",
+        "fp16"
+      ]
+    },
+    {
+      "id": 102,
+      "type": "MMAudioFeatureUtilsLoader",
+      "pos": [
+        1577.2188720703125,
+        -68.85494232177734
+      ],
+      "size": [
+        535.63330078125,
+        162.8000030517578
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bigvgan_vocoder_model",
+          "shape": 7,
+          "type": "VOCODER_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mmaudio_featureutils",
+          "type": "MMAUDIO_FEATUREUTILS",
+          "links": [
+            166
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "a49a1b8f382687c7dc9d7266a054dc3c6f992ccd",
+        "Node name for S&R": "MMAudioFeatureUtilsLoader",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "N_mmaudio\\mmaudio_vae_44k_fp16.safetensors",
+        "N_mmaudio\\mmaudio_synchformer_fp16.safetensors",
+        "N_mmaudio\\apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors",
+        "44k",
+        "fp16"
+      ]
+    },
+    {
+      "id": 105,
+      "type": "VHS_VideoInfo",
+      "pos": [
+        2033.629150390625,
+        373.2455749511719
+      ],
+      "size": [
+        262,
+        206
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "link": 172
+        }
+      ],
+      "outputs": [
+        {
+          "name": "source_fps🟨",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "source_frame_count🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "source_duration🟨",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "source_width🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "source_height🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "loaded_fps🟦",
+          "type": "FLOAT",
+          "slot_index": 5,
+          "links": [
+            176
+          ]
+        },
+        {
+          "name": "loaded_frame_count🟦",
+          "type": "INT",
+          "slot_index": 6,
+          "links": null
+        },
+        {
+          "name": "loaded_duration🟦",
+          "type": "FLOAT",
+          "slot_index": 7,
+          "links": [
+            175
+          ]
+        },
+        {
+          "name": "loaded_width🟦",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "loaded_height🟦",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "a7ce59e381934733bfae03b1be029756d6ce936d",
+        "Node name for S&R": "VHS_VideoInfo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 107,
+      "type": "SaveAudioMP3",
+      "pos": [
+        2931.6767578125,
+        -331.4241638183594
+      ],
+      "size": [
+        407.0929870605469,
+        143.98599243164062
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 177
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 182
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.40",
+        "Node name for S&R": "SaveAudioMP3",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "FIE_VideoClips_T03\\Audio\\%Load Video.video%",
+        "320k"
+      ]
+    },
+    {
+      "id": 91,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        1482.71435546875,
+        339.74627685546875
+      ],
+      "size": [
+        417.6617736816406,
+        548.0911865234375
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            161,
+            170
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "slot_index": 3,
+          "links": [
+            172
+          ]
+        }
+      ],
+      "title": "Load Video",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "a7ce59e381934733bfae03b1be029756d6ce936d",
+        "Node name for S&R": "VHS_LoadVideo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {
+        "video": "NN_02A_01A_citycrowd_1_FINAL_64fps.mp4",
+        "force_rate": 24,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "Wan",
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 24,
+            "filename": "NN_02A_01A_citycrowd_1_FINAL_64fps.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 92,
+      "type": "MMAudioSampler",
+      "pos": [
+        2322.641845703125,
+        -222.64015197753906
+      ],
+      "size": [
+        411.29339599609375,
+        354
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mmaudio_model",
+          "type": "MMAUDIO_MODEL",
+          "link": 152
+        },
+        {
+          "name": "feature_utils",
+          "type": "MMAUDIO_FEATUREUTILS",
+          "link": 166
+        },
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 170
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": 175
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "slot_index": 0,
+          "links": [
+            171,
+            177
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "a49a1b8f382687c7dc9d7266a054dc3c6f992ccd",
+        "Node name for S&R": "MMAudioSampler",
+        "widget_ue_connectable": {
+          "duration": true
+        }
+      },
+      "widgets_values": [
+        3,
+        25,
+        4.5,
+        604584225126332,
+        "randomize",
+        "",
+        "music",
+        false,
+        true
+      ]
+    },
+    {
+      "id": 97,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2884.52099609375,
+        -46.331119537353516
+      ],
+      "size": [
+        648.7454223632812,
+        334
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 161
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 171
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 176
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 184
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "a7ce59e381934733bfae03b1be029756d6ce936d",
+        "Node name for S&R": "VHS_VideoCombine",
+        "widget_ue_connectable": {
+          "frame_rate": true
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "FIE_VideoClips_T03\\Audio\\Audio_Fix_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "NN_01A_01D_traindoors_1_00003-audio.mp4",
+            "subfolder": "FIE_VideoClips_T03\\Audio",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "NN_01A_01D_traindoors_1_00003.png",
+            "fullpath": "M:\\ComfyUI\\ComfyUI_windows_portable\\ComfyUI\\temp\\FIE_VideoClips_T03\\Audio\\NN_01A_01D_traindoors_1_00003-audio.mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 111,
+      "type": "String",
+      "pos": [
+        2372.098388671875,
+        524.12109375
+      ],
+      "size": [
+        397.5799865722656,
+        93.5199966430664
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            182,
+            184
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyliterals",
+        "ver": "bdddb08ca82d90d75d97b1d437a652e0284a32ac",
+        "Node name for S&R": "String",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "FIE_VideoClips_T03\\Audio\\NN_02A_01A_citycrowd_1"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 115,
+      "type": "Note",
+      "pos": [
+        2003.0966796875,
+        702.3781127929688
+      ],
+      "size": [
+        370.8000183105469,
+        321.4000244140625
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "I tried this, then tried AudioX and then came back to this.\n\nI found it works best with prompts but does not keep time or follow the visual very well in most cases. Easy things like trains work great.\n\nI also found no punching or fight worked well\n\nI did use it to build the ambience in the video Footprints In Eternity and ran it using python to batch process 120 clips with captions to drive it, but only some of them worked. I then manually fed it as I went through each one in Reaper DAW where I added reverb, eq, dynamics and stretched the times where needed.\n\nI only saved the audio out, because I lined it up in Reaper after, but you can save the video with audio included just switch the \"Save output\" option on in the video out.\n\nmore about the process can be found on MarkDKBerry.com "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      152,
+      85,
+      0,
+      92,
+      0,
+      "MMAUDIO_MODEL"
+    ],
+    [
+      161,
+      91,
+      0,
+      97,
+      0,
+      "IMAGE"
+    ],
+    [
+      166,
+      102,
+      0,
+      92,
+      1,
+      "MMAUDIO_FEATUREUTILS"
+    ],
+    [
+      170,
+      91,
+      0,
+      92,
+      2,
+      "IMAGE"
+    ],
+    [
+      171,
+      92,
+      0,
+      97,
+      1,
+      "AUDIO"
+    ],
+    [
+      172,
+      91,
+      3,
+      105,
+      0,
+      "VHS_VIDEOINFO"
+    ],
+    [
+      175,
+      105,
+      7,
+      92,
+      3,
+      "FLOAT"
+    ],
+    [
+      176,
+      105,
+      5,
+      97,
+      4,
+      "FLOAT"
+    ],
+    [
+      177,
+      92,
+      0,
+      107,
+      0,
+      "AUDIO"
+    ],
+    [
+      182,
+      111,
+      0,
+      107,
+      1,
+      "STRING"
+    ],
+    [
+      184,
+      111,
+      0,
+      97,
+      5,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        -1485.7215509104076,
+        -175.93712133834944
+      ]
+    },
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.21.7",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

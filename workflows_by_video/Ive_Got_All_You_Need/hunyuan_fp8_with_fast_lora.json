@@ -1,0 +1,1343 @@
+{
+  "last_node_id": 105,
+  "last_link_id": 281,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": [
+        -133.4210968017578,
+        455.3508605957031
+      ],
+      "size": [
+        350,
+        60
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            206,
+            211
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "hunyuan_video_vae_bf16.safetensors"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1234.170166015625,
+        30.66751480102539
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 181
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 206
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 74,
+      "type": "Note",
+      "pos": [
+        1227.2703857421875,
+        382.0771484375
+      ],
+      "size": [
+        210,
+        170
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Use the tiled decode node by default because most people will need it.\n\nLower the tile_size and overlap if you run out of memory."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 11,
+      "type": "DualCLIPLoader",
+      "pos": [
+        -103.54391479492188,
+        256.3157958984375
+      ],
+      "size": [
+        350,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            205
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "ViT-L-14-GmP-SAE-FULL-model.safetensors",
+        "llava_llama3_fp8_scaled.safetensors",
+        "hunyuan_video",
+        "default"
+      ]
+    },
+    {
+      "id": 96,
+      "type": "UNETLoader",
+      "pos": [
+        -248.43670654296875,
+        97.0857162475586
+      ],
+      "size": [
+        500.6492004394531,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            262,
+            275
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 77,
+      "type": "Note",
+      "pos": [
+        -12.85952377319336,
+        -116.47797393798828
+      ],
+      "size": [
+        374.1451416015625,
+        152.05926513671875
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "This workflow originated here - https://www.youtube.com/watch?v=i0AhvXihF74\n\ntips for settings also here - https://civitai.com/articles/9584/tips-hunyuan-the-bomb-you-are-sleeping-on-rn\n\nSelect a fp8 weight_dtype if you are running out of  memory."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 80,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        -560.7294311523438,
+        -72.45706176757812
+      ],
+      "size": [
+        504.412353515625,
+        69.28948211669922
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "hunyuan-video-t2v-720p-Q5_K_M.gguf"
+      ]
+    },
+    {
+      "id": 91,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        221.7170867919922,
+        563.5230712890625
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        3.4
+      ]
+    },
+    {
+      "id": 26,
+      "type": "FluxGuidance",
+      "pos": [
+        524.0547485351562,
+        114.71541595458984
+      ],
+      "size": [
+        317.4000244140625,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 175
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            129
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        8.5
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 101,
+      "type": "HyVideoCFG",
+      "pos": [
+        312.43145751953125,
+        1017.2745361328125
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hyvid_cfg",
+          "type": "HYVID_CFG",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HyVideoCFG"
+      },
+      "widgets_values": [
+        "blur, blurred face, distortion, overexposed, low quality, deformation, a poor composition, bad hands, bad teeth, bad eyes, bad limbs, distortion",
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 73,
+      "type": "VAEDecodeTiled",
+      "pos": [
+        1310.0604248046875,
+        143.42718505859375
+      ],
+      "size": [
+        210,
+        150
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 265
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 211
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            229
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeTiled"
+      },
+      "widgets_values": [
+        128,
+        32,
+        64,
+        8
+      ]
+    },
+    {
+      "id": 25,
+      "type": "RandomNoise",
+      "pos": [
+        1134.14208984375,
+        966.9583740234375
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            37,
+            267
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        418271178318731,
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 45,
+      "type": "EmptyHunyuanLatentVideo",
+      "pos": [
+        500.6349792480469,
+        550.1669921875
+      ],
+      "size": [
+        210,
+        130
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            180,
+            270
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyHunyuanLatentVideo"
+      },
+      "widgets_values": [
+        240,
+        512,
+        85,
+        1
+      ]
+    },
+    {
+      "id": 13,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        910.4615478515625,
+        240.365234375
+      ],
+      "size": [
+        272.3617858886719,
+        326
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 37,
+          "slot_index": 0
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 246,
+          "slot_index": 1
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 19,
+          "slot_index": 2
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": null,
+          "slot_index": 3
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 180,
+          "slot_index": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            181
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 94,
+      "type": "Note",
+      "pos": [
+        1281.291259765625,
+        689.1934204101562
+      ],
+      "size": [
+        216.981689453125,
+        140.40615844726562
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "If using Fastvideo loraloader hunyuan you can set v low steps here like 8"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 102,
+      "type": "TeaCacheHunyuanVideoSampler",
+      "pos": [
+        819.549560546875,
+        693.1689453125
+      ],
+      "size": [
+        415.8000183105469,
+        186
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 267
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 266
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 268
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 276
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 270
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            265
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TeaCacheHunyuanVideoSampler"
+      },
+      "widgets_values": [
+        "Fast (1.6x)",
+        false,
+        1
+      ]
+    },
+    {
+      "id": 44,
+      "type": "CLIPTextEncode",
+      "pos": [
+        408.3281555175781,
+        243.26943969726562
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 205
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            175
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "(kreuk:1.5) swinging around a single pole on a stage. she is wearing black lingerie. (correct anatomy, natural body proportions:1.5). background: seedy strip club. style: cinematic and photorealistic. camera: medium shot from audience position facing the stage. lighting: blue and red spot lights on kreuk. atmosphere: lap dance, strip club. (pay extra attention to high quality face, skin, clarity and detail:1.5)"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 98,
+      "type": "BetaSamplingScheduler",
+      "pos": [
+        893.9434814453125,
+        1268.4522705078125
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BetaSamplingScheduler"
+      },
+      "widgets_values": [
+        15,
+        0.6,
+        0.6
+      ]
+    },
+    {
+      "id": 78,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1537.1883544921875,
+        197.67037963867188
+      ],
+      "size": [
+        376.1499938964844,
+        1083.78662109375
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 229
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 32,
+        "loop_count": 0,
+        "filename_prefix": "Hunyuan/videos",
+        "format": "video/h265-mp4",
+        "pix_fmt": "yuv420p10le",
+        "crf": 22,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "videos_00043.mp4",
+            "subfolder": "Hunyuan",
+            "type": "output",
+            "format": "video/h265-mp4",
+            "frame_rate": 32,
+            "workflow": "videos_00043.png",
+            "fullpath": "M:\\ComfyUI\\ComfyUI_windows_portable\\ComfyUI\\output\\Hunyuan\\videos_00043.mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 22,
+      "type": "BasicGuider",
+      "pos": [
+        778.1912231445312,
+        -52.036197662353516
+      ],
+      "size": [
+        222.3482666015625,
+        46
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 279,
+          "slot_index": 0
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 129,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            246,
+            266
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 103,
+      "type": "HunyuanVideoLoraLoader",
+      "pos": [
+        392.69366455078125,
+        -469.55145263671875
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 278
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanVideoLoraLoader"
+      },
+      "widgets_values": [
+        "hyvideo_FastVideo_LoRA-fp8.safetensors",
+        1,
+        "double_blocks"
+      ]
+    },
+    {
+      "id": 104,
+      "type": "HunyuanVideoLoraLoader",
+      "pos": [
+        1070.313232421875,
+        -468.7989196777344
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 280
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            279
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanVideoLoraLoader"
+      },
+      "widgets_values": [
+        "hunyuan\\kreukEpoch50.safetensors",
+        1,
+        "double_blocks"
+      ]
+    },
+    {
+      "id": 95,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        969.837158203125,
+        -289.27972412109375
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 255
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "hunyuan\\kreukEpoch50.safetensors",
+        1
+      ]
+    },
+    {
+      "id": 67,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        411.427001953125,
+        -9.774772644042969
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 262
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            278,
+            281
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        13
+      ]
+    },
+    {
+      "id": 92,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        474.1219177246094,
+        -299.3022155761719
+      ],
+      "size": [
+        391.4195251464844,
+        82
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 281
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            255,
+            280
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "hyvideo_FastVideo_LoRA-fp8.safetensors",
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "KSamplerSelect",
+      "pos": [
+        285.4978332519531,
+        785.7449340820312
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            19,
+            268
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ]
+    },
+    {
+      "id": 105,
+      "type": "Note",
+      "pos": [
+        156.9283905029297,
+        -488.19158935546875
+      ],
+      "size": [
+        210,
+        126.23160552978516
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "this lora loader node set to \"double blocks\" is supposed to stop blur caused by layering loras.\n\nbut this slowed down the fastvideo lora using this node. so only used it on the others. not sure of effect. switch all back to LoraLoaderModelOnly if issues."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 17,
+      "type": "BasicScheduler",
+      "pos": [
+        890.5946044921875,
+        1111.7537841796875
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 275,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            276
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "beta",
+        8,
+        0.9
+      ]
+    },
+    {
+      "id": 99,
+      "type": "Note",
+      "pos": [
+        -230.14996337890625,
+        689.748779296875
+      ],
+      "size": [
+        495.54803466796875,
+        524.5248413085938
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Dont use faster hunyuan checkpoint model, use the fp8 or GGUF, but with Loraloader faster for hunyuan is best. then you can reduce steps to 8 and increase model3d shift (flowshift) to 13 or more.\n\nTHINGS I NOTED:\n\n- using Tea Cache sampler isnt much faster than the other Sampler but maybe gets a bit quicker when pushing to 15 steps when needing more light or clarity.\n\n- switching between BasicScheduler from BetaSamplingScheduler hard to know which is best. Denoise set between 0.8 and 1 (will fix blur but sometimes at a cost to realism. 0.75 was noise. test it. also test between \"simple\" and \"beta\".)\n\n- blur may be caused by multiple loras loading which can be combatted with this - \"A custom LoRA-loading node designed to prevent issues such as blurriness and other artifacts when loading multiple LoRAs in HunYuan Video.\" - https://github.com/facok/ComfyUI-HunyuanVideoMultiLora\n\n- apparently: (HUN latent dream said this was before the faster model came out so its changed) \"lower flowshift and higher steps SHOULD be the best choice if you are aiming for quality\". but I have been seeing fast (often blurry) results with 13 shift and 8 steps, but going to test this for improvement. \n\nTHINGS TO TRY:\n\n- reduce denoise to reduce blur apparently. tbc.\n\n-add fast lora at negative value: it can be that for your particular setting the model show all muscles and prove to be glitchy as being a fast model. Adding FAST LORA at negative value of -0,3 / -0.5 fixed my issue multiple times.\n\n-change guidance scale: In mutiple occasions i noticed that lowering guidance to 4 or simply changing the value at a different even higher value fix the glitchy result.\n\n-raise flowshift: change value to something above 9. (I found 13 working okay mostly with fp8 model)\njust to say, in some occasions i had to raise it to 30 to avoid flashy artefacts..\n\n-add cfg node, (cfg value2, start 0, end 0.1 or 1)\n(this seems to remove the artefacts completly but raise the gen times a little) You can easily transition from a blurry, detail-lacking result to a very detailed one.\nTry it to believe it!\n\n-Longer prompts are better, same as with Flux. However, you can always reduce Guidance to 7 or 8. Making sure to use \"realistic\" and \"natural lighting\" helps a lot too. Precise prompting helps and reduce artefacts.\n\n-Try switch smaplers. Someone found BetaSamplingScheduler better than BasicScheduler\n\n-The vanilla model will always perform better, but slower. If you do not have patience to master the fast model and really struggle getting decent results you can always switch back to vanilla and add the Fast lora to lower the steps amount.. Its kind of a middle way between quality/time\n\n-Enhance-A-Video is now supported through Kijai nodes, it significantly improve the video quality and has a very slight hit on inference speed and zero hit on memory use.\nIt's absolutely worth using.\n\nTHINGS TO TRY INSTALLING TO SPEED UP:\n\nblock swap?\n\nsageattention?"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      19,
+      16,
+      0,
+      13,
+      2,
+      "SAMPLER"
+    ],
+    [
+      37,
+      25,
+      0,
+      13,
+      0,
+      "NOISE"
+    ],
+    [
+      129,
+      26,
+      0,
+      22,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      175,
+      44,
+      0,
+      26,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      180,
+      45,
+      0,
+      13,
+      4,
+      "LATENT"
+    ],
+    [
+      181,
+      13,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      205,
+      11,
+      0,
+      44,
+      0,
+      "CLIP"
+    ],
+    [
+      206,
+      10,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      211,
+      10,
+      0,
+      73,
+      1,
+      "VAE"
+    ],
+    [
+      229,
+      73,
+      0,
+      78,
+      0,
+      "IMAGE"
+    ],
+    [
+      246,
+      22,
+      0,
+      13,
+      1,
+      "GUIDER"
+    ],
+    [
+      255,
+      92,
+      0,
+      95,
+      0,
+      "MODEL"
+    ],
+    [
+      262,
+      96,
+      0,
+      67,
+      0,
+      "MODEL"
+    ],
+    [
+      265,
+      102,
+      0,
+      73,
+      0,
+      "LATENT"
+    ],
+    [
+      266,
+      22,
+      0,
+      102,
+      1,
+      "GUIDER"
+    ],
+    [
+      267,
+      25,
+      0,
+      102,
+      0,
+      "NOISE"
+    ],
+    [
+      268,
+      16,
+      0,
+      102,
+      2,
+      "SAMPLER"
+    ],
+    [
+      270,
+      45,
+      0,
+      102,
+      4,
+      "LATENT"
+    ],
+    [
+      275,
+      96,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      276,
+      17,
+      0,
+      102,
+      3,
+      "SIGMAS"
+    ],
+    [
+      278,
+      67,
+      0,
+      103,
+      0,
+      "MODEL"
+    ],
+    [
+      279,
+      104,
+      0,
+      22,
+      0,
+      "MODEL"
+    ],
+    [
+      280,
+      92,
+      0,
+      104,
+      0,
+      "MODEL"
+    ],
+    [
+      281,
+      67,
+      0,
+      92,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7247295000000029,
+      "offset": [
+        468.380262740275,
+        -261.6084150760613
+      ]
+    },
+    "groupNodes": {},
+    "ue_links": [],
+    "node_versions": {
+      "comfy-core": "0.3.12",
+      "ComfyUI-GGUF": "5875c52f59baca3a9372d68c43a3775e21846fe0",
+      "comfyui-hunyuanvideowrapper": "88823b79b7e41377e4dccf0790719578e139bbf3",
+      "comfyui_ttp_toolset": "6dd3f3566ce0925b71e9cdb54243119685ccbc10",
+      "ComfyUI-VideoHelperSuite": "f24f4e10f448913eb8c0d8ce5ff6190a8be84454",
+      "ComfyUI-HunyuanVideoMultiLora": "7e3e3444d4e34557a24b3e0c502c94fe556237e4"
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0
+  },
+  "version": 0.4
+}
