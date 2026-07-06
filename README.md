@@ -8,11 +8,11 @@
 
 **Follow me on [Patreon](https://www.patreon.com/c/AIMakingMovies) to be kept up to date** with new videos, tutorials, info, workflow releases, and changes.
 
-**There's also still a ton of workflows and info about everything on my [website](https://markdkberry.com/)** but I don't update it now as I post to YT or Patreon (and here now).
+**There's also still a ton of workflows and info about their uses on my [website](https://markdkberry.com/)** but I don't update it now as I post to YT or Patreon (and here).
 
 Like me, you probably have hundreds of workflows and dozens of versions of each that constantly evolve. I'm going to start storing mine here to make that more managable, as well as more easily accessible to others who want them. 
 
-**NOTE:** *I  am not very tidy in my workflow development and I don't like subgraphs. If you are a beginner you may want to seek out more user friendly starter workflows. I will try to organise and tidy my workflows as they become finalised, but they evolve so fast that it isnt my first priority.*
+**NOTE:** *I  am not very tidy in my workflow development and I don't like subgraphs. If you are a beginner you may want to seek out more user friendly starter workflows (RuneXX is probably the best for this). I will try to organise and tidy my workflows as they become finalised, but they evolve so fast that it isnt my first priority.*
 
 ## HARDWARE
 
@@ -33,7 +33,7 @@ As of June 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 G
 
 - **It's now June 2026, and I am currently testing Bernini (WAN based)** which I really like.
 
-All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlist](https://www.youtube.com/playlist?list=PLVCJTJhkunkSEvrhV5Me3JnHLSSZcyTnQ). Much of it is still relevant today, but I had an annoying habit of using loud background music and VibeVoice for the Voice-Over in the videos. I changed to more sensible presentation when I realised people were actually following my YT channel and finding it useful, and so got rid of the voice-over and loud background music from Jan 2026.
+**All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlist](https://www.youtube.com/playlist?list=PLVCJTJhkunkSEvrhV5Me3JnHLSSZcyTnQ). And all the workflows from 2025 are downloadable from the 2025 workflow section of my website** (I'll transfer them to here when I get time). Much of it is still relevant today, but I had an annoying habit of using loud background music and VibeVoice for the Voice-Over in the videos. I changed to more sensible presentation when I realised people were actually following my YT channel and finding it useful, and so got rid of the voice-over and loud background music from Jan 2026.
 
 ## WORKFLOW STORE
 
