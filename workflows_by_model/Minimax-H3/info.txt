@@ -1,0 +1,7 @@
+while waiting on improved upscaler from Minimax try the LTX single sampler upscaler (3b. MBEDIT-v2v_LTX23_Upscaler-w-SingleSampler_vrs2.json) and pass H3 result through it for upscaling to 1920 x 1080 with light detailing. 
+
+The 3b. MBEDIT-v2v_LTX23_Upscaler-w-SingleSampler_vrs2.json has a lot of stuff in it but you just need to add the video, FF and LF (or remove LF) then add a basic prompt to text encoder for it to know what it is. Then run it. The settings should not need changing other than the ref image inbound.
+
+CAVEAT: I have not involved audio in this setup at this time but you could, its all there if you wanted to.
+
+- Mark, 7th August 2026 (AEST).
