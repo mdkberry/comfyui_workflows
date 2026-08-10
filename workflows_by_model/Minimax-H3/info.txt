@@ -1,7 +1,8 @@
-while waiting on improved upscaler from Minimax try the LTX single sampler upscaler (3b. MBEDIT-v2v_LTX23_Upscaler-w-SingleSampler_vrs2.json) and pass H3 result through it for upscaling to 1920 x 1080 with light detailing. 
+I was suggesting LTX as an upscaler before, but as of 10th August (AEST) 2026 I am suggesting trying to get to 2mp in Minimax H3 instead even with LowVRAM it can be done with short i2v videos. Then you keep the benefit of the power the model has to maintain accuracy of your ref image characters. 
 
-The 3b. MBEDIT-v2v_LTX23_Upscaler-w-SingleSampler_vrs2.json has a lot of stuff in it but you just need to add the video, FF and LF (or remove LF) then add a basic prompt to text encoder for it to know what it is. Then run it. The settings should not need changing other than the ref image inbound.
+See the video here https://www.youtube.com/watch?v=Os3yFgYHJ1Q for why I am now suggesting it and more info on the current workflow: `MBEDIT-MMH33_r2v_TurboLora_v12.json`
+There are more methods in the pipeline I will share them as I know them and update this and the Patreon and YT channels with the information as soon as I know more. 
 
-CAVEAT: I have not involved audio in this setup at this time but you could, its all there if you wanted to.
+- Mark 10th August (AEST) 2026.
 
-- Mark, 7th August 2026 (AEST).
+ 
