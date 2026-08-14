@@ -1,5 +1,8 @@
 ## LTX 2.3 workflow info
 
+Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
+
 **13th August 2026 (AEST)**
 
 LTX.25 is now out so this will soon become historical folder

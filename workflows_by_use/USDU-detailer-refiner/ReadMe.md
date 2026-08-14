@@ -1,5 +1,8 @@
 # USDU Ultimate SD Upscaler 
 
+Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
+
 **13th August 2026 (AEST)**
 
 **USDU HuMO**

@@ -1,5 +1,8 @@
 # SCAIL 2
 
+Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
+
 first tests - July 2026
 
 this is an amazing model. Wan based but useable in LTX too.

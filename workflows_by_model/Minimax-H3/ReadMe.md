@@ -1,6 +1,14 @@
 ## Minimax H3 workflow update info
 
-**13th August 2026 (AEST)**
+Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
+
+### 15th August 2026 (AEST)
+
+renamed workflow for clarity `MBEDIT - MH3_r2v_TurboLora_v26` (was MBEDIT-MMH33_r2v_TurboLora_v26.json)
+
+
+### 13th August 2026 (AEST)
 
 `MBEDIT-MMH33_r2v_TurboLora_v26.json`
 
@@ -11,7 +19,7 @@ I am now using `comfyui kitchen attention` *(sage attention is disabled but node
 
 ---
 
-**10th August (AEST) 2026**
+### 10th August (AEST) 2026
 
 I was suggesting LTX as an upscaler before, but as of 10th August (AEST) 2026 I am suggesting trying to get to 2mp in Minimax H3 instead even with LowVRAM it can be done with short i2v videos. Then you keep the benefit of the power the model has to maintain accuracy of your ref image characters. 
 

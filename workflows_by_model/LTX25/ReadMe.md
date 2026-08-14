@@ -1,5 +1,8 @@
 # LTX 2.5 Model
 
+Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
+
 ## **14th August 2026 (AEST)**
 
 **upscaler/detailer v2v workflow**

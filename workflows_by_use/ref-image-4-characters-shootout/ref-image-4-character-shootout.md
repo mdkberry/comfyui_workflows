@@ -1,6 +1,7 @@
 Date: 6th July 2026.
 
-Follow me on Patreon for more https://www.patreon.com/c/AIMakingMovies
+Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 workflows:
 
