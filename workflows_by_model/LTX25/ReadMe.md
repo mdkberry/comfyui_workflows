@@ -10,11 +10,14 @@
 
 [Original Minimax H3 video of ballerina](examples/upscale-refiner/MiniMax_H3_int8-best-2mp.mp4)
 
-<video src="examples/upscale-refiner/MiniMax_H3_int8-best-2mp.mp4" controls width="100%"></video>
+[![Original Minimax H3 video of ballerina](thumbnail.png)](examples/upscale-refiner/MiniMax_H3_int8-best-2mp.mp4)
 
 [Upscaled using the workflow in LTX25](examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4)
 
-<video src="examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4" controls width="100%"></video>
+[![Upscaled using the workflow in LTX25](thumbnail.png)](examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4)
+
+
+
 
 *note: this workflow is a big mess because I was only testing settings and didnt plan to keep it. but those settings are informative which is why I share it here.*
 
