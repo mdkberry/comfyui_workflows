@@ -4,7 +4,7 @@
 
 `MBEDIT-MMH33_r2v_TurboLora_v26.json`
 
-video on this is here https://www.youtube.com/@markdkberry
+video on this is here https://www.youtube.com/watch?v=cTVXNlHqfAI
 
 I am now using `comfyui kitchen attention` *(sage attention is disabled but nodes are in workflow as some find it faster, some not)*. If you can do it go for 2mp with Minimax H3 i2v. If you cant (I only get 5 seconds, any more ooms) then you may find faces at distance difficult to fix in r2v runs of Minimax. The video above also discusses the other methods I use (USDU and LTX) to fix face at distance issues when needed. It's still a wip.  
 
