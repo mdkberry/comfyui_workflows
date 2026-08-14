@@ -6,11 +6,11 @@
 
 *workflow: MBEDIT-v2v_LTX25_ResizeRefiner-w-SingleSampler_vXX.json*
 
-**Examples** *(right click to download, < 5mb file size each)*:
+**Example Videos** *(right click to download, < 5mb file size each)*:
 
 [Original Minimax H3 video of ballerina](examples/upscale-refiner/MiniMax_H3_int8-best-2mp.mp4)
 
-[Upscaled using the workflow in LTX25](examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4)
+[Upscaled ballerine H3 v2v using the workflow in LTX25](examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4)
 
 
 *(NOTE: this workflow is a big mess because I was only testing settings and didnt plan to keep it. but those settings are informative which is why I share it here.)*
@@ -25,6 +25,6 @@ Notice there is no spatial upscaler in this (its bypassed), I was resizing video
 
 **RESULTS OF 2.5 as V2v upscaler/detailers**:
 
-> Good consistency attempt, but not perfect. motion is still not great if fast, even with x2 temporal upscale which is enabled in the wf. there is a weird slight "oil painting filter" effect on everything, but I think it is because of using only one sampler, 4 steps, and low sigma start point. you could fiddle further with it, I wont because I am now going to wait for Minimax H3 to release their refiner/upscaler.
+> Good consistency attempt, but not perfect. Motion cohesion is still not great if fast movement, even with x2 temporal upscale. There is a weird slight "oil painting filter" effect on everything, but I think it is because of using only one sampler, 4 steps, and low sigma start point. You could fiddle further with it to improve results, I wont because I am now going to wait for Minimax H3 to release their refiner/upscaler.
 
 One good bit of news is Lightworks have promised a future release of ref image character control which is where Minimax H3 (and Bernini) lead the pack at this time.
