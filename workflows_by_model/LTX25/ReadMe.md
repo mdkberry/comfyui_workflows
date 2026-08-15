@@ -4,6 +4,7 @@ Any updates get announced via my YT channel - https://www.youtube.com/@markdkber
 
 and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
+---
 
 ### 15th August 2026 (AEST)
 
@@ -11,7 +12,7 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 *Workflow: `MBEDIT-v2v_LTX25_ResizeRefiner-w-SingleSampler_vrs6.json`*
 
-**Summary**: *Improved end result in vrs6 by switching "resize" node for "upscaler" node on way in*
+- **Summary**: *Improved end result in vrs6 by switching "resize" node for "upscaler" node on way in*
 
 **Example videos** *(right click to download, < 6.5 mb file size each)*:
 
