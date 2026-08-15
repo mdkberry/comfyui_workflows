@@ -1,13 +1,44 @@
 # LTX 2.5 Model
 
 Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+
 and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
-## **14th August 2026 (AEST)**
 
-**upscaler/detailer v2v workflow**
+### 15th August 2026 (AEST)
 
-*workflow: MBEDIT-v2v_LTX25_ResizeRefiner-w-SingleSampler_vXX.json*
+#### Updated LTX2.5 Upscaler/Detailer workflow to vrs6
+
+*Workflow: `MBEDIT-v2v_LTX25_ResizeRefiner-w-SingleSampler_vrs6.json`*
+
+**Summary**: *Improved end result in vrs6 by switching "resize" node for "upscaler" node on way in*
+
+**Example videos** *(right click to download, < 6.5 mb file size each)*:
+
+[H3 example that was used to test this workflow - mp4](examples/upscale-refiner/25mins-loras-MMx-H3__00005-audio.mp4)
+
+[Result after it passed through this workflow - mp4](examples/upscale-refiner/RTX-Upscaled-2304_not-resized_LTX25-Upscl__00003-audio.mp4)
+
+> I ran an 8 second video from H3 through this vrs6 workflow, and it completed at 3mp in 18 minutes on my 3060 RTX. *(Compared to 45 mins using H3 dual-sampler upscaler (about to be released today too))*. Inbound video was 1824 x 736 x 8 seconds from H3. The result through this LTX upscaler workflow can be seen in the 2nd video linked above.
+
+**Changes in vrs6 of this workflow**:
+
+- I updated the upscaler to use RTX NVidia instead of using resize. I realised resize at 3 mp was causing small pixel tiling to be observed as it was such a big leap from inbound video size. So use an upscaler not a resize node for this workflow. It works better. See the example.
+
+- I also tidied it up from previous version and removed unneeded nodes. It is now strictly a 3mp *(or try 4K if you can do it)* upscaler for v2v. It is actually pretty good.
+
+- LTX let down is the motion, else it would maybe be my upscaler of choice due to speed, but having just tested H3 dual-sampler for upscaling I will probably use that for finals despite lenght it takes to complete. But this LTX workflow is very fast, so it has that going for it!
+
+
+
+
+---
+
+### **14th August 2026 (AEST)**
+
+#### Released LTX2.5 Upscaler/detailer v2v workflow (vrs5)
+
+*workflow: MBEDIT-v2v_LTX25_ResizeRefiner-w-SingleSampler_vrs5.json*
 
 **Example Videos** *(right click to download, < 5mb file size each)*:
 

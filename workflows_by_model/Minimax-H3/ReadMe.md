@@ -1,12 +1,30 @@
 ## Minimax H3 workflow update info
 
 Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+
 and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
+
+---
 
 ### 15th August 2026 (AEST)
 
-renamed workflow for clarity `MBEDIT - MH3_r2v_TurboLora_v26` (was MBEDIT-MMH33_r2v_TurboLora_v26.json)
+- renamed a previous workflow for clarity `MBEDIT - MH3_r2v_TurboLora_v26` *(was MBEDIT-MMH33_r2v_TurboLora_v26.json)*
 
+#### **H3 Dual-Sampler Upscaler (best yet)**
+
+*added workflow `MBEDIT - MH3_r2v_DualSampler_v12.json`*
+
+**Example Videos** *(right click to download, < 6mb file size each)*:
+
+[int8-1120x448-8secs-45mins mp4](example_videos/upscaler/int8-45mins-1120x448-8secs-45mins_MH3x2Smpl__00008-audio.mp4)
+
+[w4a8-1280x512-8secs-55mins mp4](example_videos/upscaler/w4a8-55mins-1280x512-8secs-MH3x2Smpl__00009-audio.mp4)
+
+*Both the above were sent in at those sizes then upscaled x1.5 between samplers in pixel space and run through the final sampler to produce 1920 x ? on the long edge. x4 ref images for characters and x1 for environment was used.* 
+
+> This works using 2 samplers and the same H3 model for both. In between the samplers it comes out to pixel space, upscales x 1.5 using RTX NVDIA (or use your preferred upscaler, dont just resize it) and then passes it through the 2nd upscaler at low denoise. This is the best results I have seen so far, but it ooms very easily and takes 40 minutes or more to finish *(on my 3060 RTX 12 GB VRAM with 32 gb system ram)*. More info in the notes of the workflow. Use the w4a8 model to reduce ooms and get higher resolutions *(I can go in at 1280 x 512 x 8 seconds without oom takes 55 mins)*, or use int8 model for lower resolution but slightly better quality *(I use 1120 x 448 x 8 seconds takes 45 mins)*. I havent been able to decide which looks better, more tests needed. At this time it is the best I have achieved. One bonus is if you oom you can run the preview saved video through just the 2nd sampler using the same seed and it works fine, but for long-term solutions that is not ideal.
+
+---
 
 ### 13th August 2026 (AEST)
 
