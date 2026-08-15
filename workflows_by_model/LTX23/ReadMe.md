@@ -1,9 +1,22 @@
 ## LTX 2.3 workflow info
 
 Any updates get announced via my YT channel - https://www.youtube.com/@markdkberry
+
 and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
-**13th August 2026 (AEST)**
+---
+
+### 16th August 2026 (AEST)
+
+*workflow `MBEDIT-v2v_LTX23_Upscaler-w-DualSampler_vrs42.json`*
+
+**Summary**: 
+
+> final workflow of LTX 2.3 before 2.5 got released and Minimax H3 came along. I didnt get time to release it with a video so putting it up here but will now adapt it to LTX 2.5 anyway *(though this may be of use if LTX 2.5 ooms too much which I am finding in some circumstances)*. Its a messy workflow I need to tidy up, but it's here for use if anyone wants it. This was my main workhorse LTX 2.3 workflow, using v2v resized to 480p and upscaling to 1920 via to samplers.
+
+---
+
+### **13th August 2026 (AEST)**
 
 LTX.25 is now out so this will soon become historical folder
 
