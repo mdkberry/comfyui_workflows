@@ -6,6 +6,24 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 ---
 
+### 17th August 2026 (AEST)
+
+#### **H3 as a v2v detailer is giving astoundingly better results**
+
+*new workflow: `MBEDIT - MH3_r2v_SingleSampler_Detailer_v11.json` added*
+
+**Example video** *(right click to download, < 6mb file size)*:
+
+[Bernini-clip_into-Minimax-0.4denoise-3steps_25mins](example_videos/detailer/Bernini-Minimax-0.4denoise_25mins_MH3x2Smpl__00004.mp4)
+
+*I havent shared the original Bernini clip only the result after detailing. The original clip was 832 x 480. I used good prompting and three ref images: x1 the first frame in high resolution, x2 ref character images.*
+
+> With this workflow, I've ripped out the 1st sampler from the dual sampler workflow and just left the 2nd detailer sampler in. I am now using video clips created elsewhere (Bernini, LTX, Minimax, whatever...) and passing them through Minimax H3 as a v2v detailer. The results are amazing. This is by far the best detailer workflow I have tried. Notes in the workflow itself should give you enough to go on. I dont know why I didnt think of this before. Its also a lot faster as I can do less steps which also means more VRAM free to push slightly higher resolution. 
+
+
+
+---
+
 ### 15th August 2026 (AEST)
 
 - renamed a previous workflow for clarity `MBEDIT - MH3_r2v_TurboLora_v26` *(was MBEDIT-MMH33_r2v_TurboLora_v26.json)*

@@ -8,7 +8,11 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 ### 16th August 2026 (AEST)
 
-*workflow `MBEDIT-v2v_LTX23_Upscaler-w-DualSampler_vrs42.json`*
+- *renamed `MBEDIT-i2v_kj_LTX23_prompt_relay_vrs24.json` to `MBEDIT-i2v-LTX23_vrs24.json` for clarity of name.*
+
+---
+
+*added workflow: `MBEDIT-v2v_LTX23_Upscaler-w-DualSampler_vrs42.json`*
 
 **Summary**: 
 
