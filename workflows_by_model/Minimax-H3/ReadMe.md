@@ -21,9 +21,12 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 **Example video** *(right click to download, < 6mb file size)*:
 
-[Bernini-clip_into-Minimax-0.4denoise-3steps_25mins](example_videos/detailer/Bernini-Minimax-0.4denoise_25mins_MH3x2Smpl__00004.mp4)
+**Bernini-clip_into-Minimax-0.4denoise-3steps_25mins**:
 
-*I havent shared the original Bernini clip only the result after detailing. The original clip was 832 x 480. I used good prompting and three ref images: x1 the first frame in high resolution, x2 ref character images.*
+https://github.com/user-attachments/assets/d7802b22-7db8-4156-b36f-ddfc1aed74c7
+
+
+*I havent shared the original Bernini clip only the result after detailing. The original clip was 832 x 480 and low res. I used good prompting and three ref images: x1 the first frame in high resolution, x2 ref character images.*
 
 > With this workflow, I've ripped out the 1st sampler from the dual sampler workflow and just left the 2nd detailer sampler in. I am now using video clips created elsewhere (Bernini, LTX, Minimax, whatever...) and passing them through Minimax H3 as a v2v detailer. The results are amazing. This is by far the best detailer workflow I have tried. Notes in the workflow itself should give you enough to go on. I dont know why I didnt think of this before. Its also a lot faster as I can do less steps which also means more VRAM free to push slightly higher resolution. 
 
@@ -41,9 +44,18 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 **Example Videos** *(right click to download, < 6mb file size each)*:
 
-[int8-1120x448-8secs-45mins mp4](example_videos/upscaler/int8-45mins-1120x448-8secs-45mins_MH3x2Smpl__00008-audio.mp4)
+**int8-1120x448-8secs-45mins**:
 
-[w4a8-1280x512-8secs-55mins mp4](example_videos/upscaler/w4a8-55mins-1280x512-8secs-MH3x2Smpl__00009-audio.mp4)
+https://github.com/user-attachments/assets/5637e696-9b9d-4194-a6bf-9243409b860d
+
+
+**w4a8-1280x512-8secs-55mins**:
+
+
+
+https://github.com/user-attachments/assets/5f88c687-840f-43ec-91ec-31952cc772e4
+
+
 
 *Both the above were from ref images into the H3 model 1st sampler set at those sizes then upscaled x1.5 between samplers in pixel space and run through the final sampler to produce final result. x4 ref images for characters and x1 for environment was used.* 
 
