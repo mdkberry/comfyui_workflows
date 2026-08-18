@@ -16,13 +16,12 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 **Example videos** *(right click to download, < 6.5 mb file size each)*:
 
-[H3 example that was used to test this workflow - mp4](examples/upscale-refiner/25mins-loras-MMx-H3__00005-audio.mp4)
+**H3 example that was used to test this workflow**:
 
 https://github.com/user-attachments/assets/bed83e17-8bff-41c4-84e1-58d50dd25828
 
 
-
-[Result after it passed through this workflow - mp4](examples/upscale-refiner/RTX-Upscaled-2304_not-resized_LTX25-Upscl__00003-audio.mp4)
+**Result after it passed through this workflow**:
 
 
 https://github.com/user-attachments/assets/bdccebc7-4713-418c-a082-6face02b2960
