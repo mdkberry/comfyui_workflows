@@ -50,12 +50,12 @@ https://github.com/user-attachments/assets/bdccebc7-4713-418c-a082-6face02b2960
 
 **Example Videos** *(right click to download, < 5mb file size each)*:
 
-[Original Minimax H3 video of ballerina](examples/upscale-refiner/MiniMax_H3_int8-best-2mp.mp4)
+**Original Minimax H3 video of ballerina**:
 
 
 https://github.com/user-attachments/assets/0725e8ec-3b2a-4a8e-a793-473e738e4ca2
 
-[Upscaled ballerine H3 v2v using the workflow in LTX25](examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4)
+**Upscaled ballerina v2v using the workflow in LTX25**:
 
 
 https://github.com/user-attachments/assets/b4093e0e-4c74-4662-8202-5920f76b8346
