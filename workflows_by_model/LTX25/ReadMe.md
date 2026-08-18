@@ -18,7 +18,15 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 [H3 example that was used to test this workflow - mp4](examples/upscale-refiner/25mins-loras-MMx-H3__00005-audio.mp4)
 
+https://github.com/user-attachments/assets/bed83e17-8bff-41c4-84e1-58d50dd25828
+
+
+
 [Result after it passed through this workflow - mp4](examples/upscale-refiner/RTX-Upscaled-2304_not-resized_LTX25-Upscl__00003-audio.mp4)
+
+
+https://github.com/user-attachments/assets/bdccebc7-4713-418c-a082-6face02b2960
+
 
 > I ran an 8 second video from H3 through this vrs6 workflow, and it completed at 3mp in 18 minutes on my 3060 RTX. *(Compared to 45 mins using H3 dual-sampler upscaler (about to be released today too))*. Inbound video was 1824 x 736 x 8 seconds from H3. The result through this LTX upscaler workflow can be seen in the 2nd video linked above.
 
@@ -45,7 +53,13 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 [Original Minimax H3 video of ballerina](examples/upscale-refiner/MiniMax_H3_int8-best-2mp.mp4)
 
+
+https://github.com/user-attachments/assets/0725e8ec-3b2a-4a8e-a793-473e738e4ca2
+
 [Upscaled ballerine H3 v2v using the workflow in LTX25](examples/upscale-refiner/LTX25-Upscl__00010-audio.mp4)
+
+
+https://github.com/user-attachments/assets/b4093e0e-4c74-4662-8202-5920f76b8346
 
 
 *(NOTE: this workflow is a big mess because I was only testing settings and didnt plan to keep it. but those settings are informative which is why I share it here.)*
