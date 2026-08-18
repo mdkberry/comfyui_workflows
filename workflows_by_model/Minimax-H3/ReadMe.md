@@ -6,6 +6,13 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 ---
 
+### 18th August 2026 (AEST)
+
+- updated workflow `MBEDIT - MH3_r2v_TurboLora_v27` *(v26 had Sampler to vae decode nodes unplugged that made it fail to run and wasnt obvious why)* 
+
+
+---
+
 ### 17th August 2026 (AEST)
 
 #### **H3 as a v2v detailer is giving astoundingly better results**
