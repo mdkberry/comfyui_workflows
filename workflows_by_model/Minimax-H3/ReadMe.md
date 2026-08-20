@@ -6,6 +6,31 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 ---
 
+### 20th August 2026 (AEST)
+
+*Video explanation about the v2v refiner workflow described in the video*
+
+**YT 15 min explainer video - "Minimax H3 - v2v Fixing Faces At Distance"** can be viewed here -  https://youtu.be/d1h5-E7NpuY
+
+*Updated workflow: `MBEDIT - MH3_r2v_SingleSampler_Detailer_v16.json`* 
+
+> The results of this workflow have been amazing, and I am using it to fix up all my previous clips using character refs. Best of all it's fast because 3 steps are enough (with Lightx2v lora), completing in 20 mins (on my 3060 RTX) for 5 secs, 8 secs, or even 10 seconds. I have to reduce the resolution to avoid oom as the clip length increases, making the final time the same in each case. My results come out between 1mp to 2mp depending on length, and have excellent face structure at those sizes. See the video explanation above for details. An example video clip is shared below on 17th August 2026 of the ballerina leaving a stage and kissing the woman on the cheek as she does so. This is by far the best refiner/detailer I have used to date. 
+
+> Note: This workflow does not use latent upscaling, and tbh I probably wont bother testing that now since this works to the quality I need, while latent upscaling will probably need full steps run on it, making this workflow faster. I also mention in the above video about a stuttering problem discovered when "double sampler" is used with Minimax in the same workflow run. For some reason it works better if you save out to pixel space first (as a video clip), then run the entire thing again through a fresh start workflow.
+
+**My video creation pipeline from this point on will be**:
+
+1. Create a 480p video using any model (LTX, H3, Bernini, or other) - *takes 10 mins on average (3060 RTX)*.
+2. Run the result through the above workflow upscaling to 1mp or 2mp depending onclip length - *takes 20 mins on average*.
+
+The result from this are good enough as final clips. This makes it the fastest and highest qualty approach I have found to date, and all with ref image based character consistency.
+
+(*Still to research and videos will be done on inpainting/masking to swap things, extending videos, and dialogue. All with Minimax H3 model*.)
+
+
+
+---
+
 ### 18th August 2026 (AEST)
 
 - updated workflow `MBEDIT - MH3_r2v_TurboLora_v27` *(v26 had Sampler to vae decode nodes unplugged that made it fail to run and wasnt obvious why)* 
