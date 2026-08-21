@@ -8,7 +8,7 @@
 
 **Follow me on [Patreon](https://www.patreon.com/c/AIMakingMovies) to be kept up to date** with new videos, tutorials, info, workflow releases, and changes.
 
-**There's also still a ton of workflows and info about their uses on my [website](https://markdkberry.com/)** but I don't update it now as I post to YT or Patreon (and here).
+**There's also still a ton of workflows and info about their uses on my [website](https://markdkberry.com/)** *(in process of transfering over here)* but I don't update it now as I post to YT or Patreon (and here).
 
 Like me, you probably have hundreds of workflows and dozens of versions of each that constantly evolve. I'm going to start storing mine here to make that more managable, as well as more easily accessible to others who want them. 
 

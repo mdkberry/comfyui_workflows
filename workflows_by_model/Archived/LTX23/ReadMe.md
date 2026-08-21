@@ -6,6 +6,12 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 ---
 
+## 21st August 2026 (AEST)
+
+*I'll be migrating 2.3 workflows to 2.5 from this date onward. LTX 2.3 workflows are being archived at this point and I probably won't come back to them.*
+
+---
+
 ### 16th August 2026 (AEST)
 
 - *renamed `MBEDIT-i2v_kj_LTX23_prompt_relay_vrs24.json` to `MBEDIT-i2v-LTX23_vrs24.json` for clarity of name.*
