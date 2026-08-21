@@ -6,6 +6,17 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 
 ---
 
+### 21st August 2026 (AEST)
+
+**workflow update (info):** `MBEDIT - MH3_r2v_SingleSampler_Detailer_v17.json`
+
+**Useage**: a refiner/detailer using v2v with low steps and low denoise to fix "faces at distance" using ref images for consistency, *(see notes from 20th August 2026 for more details on it).*
+	
+- **NOTE**: <span style="color: red;">***This workflow is great for visual shots but isnt working very well for dialogue shots, and will likely remove the mouth movements somewhat. So, I wont be using it for those at this time. If I find a solution I will update. Most dialogue shots I do close up anyway, so will have to find a solution that runs in the same workflow as they are created. This means I will likely now have to test a Latent Upscaler for dialogue shots, but will still use this workflow for non-dialogue video clips as it works well for fixing "faces at distance".***</span>
+
+
+---
+
 ### 20th August 2026 (AEST)
 
 *Video explanation about the v2v refiner workflow described in the video*
@@ -21,9 +32,9 @@ and Patreon (free) - https://www.patreon.com/c/AIMakingMovies
 **My video creation pipeline from this point on will be**:
 
 1. Create a 480p video using any model (LTX, H3, Bernini, or other) - *takes 10 mins on average (3060 RTX)*.
-2. Run the result through the above workflow upscaling to 1mp or 2mp depending onclip length - *takes 20 mins on average*.
+2. Run the result through the above workflow upscaling to 1mp or 2mp depending on clip length - *takes 20 mins on average*.
 
-The result from this are good enough as final clips. This makes it the fastest and highest qualty approach I have found to date, and all with ref image based character consistency.
+The result from this are easily good enough as final clips. This makes it the fastest and highest qualty approach I have found to date, and all with ref image based character consistency.
 
 (*Still to research and videos will be done on inpainting/masking to swap things, extending videos, and dialogue. All with Minimax H3 model*.)
 
