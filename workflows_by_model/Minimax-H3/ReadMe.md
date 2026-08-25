@@ -13,26 +13,26 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 **Today**: *Upscaler workflows in pixels space and Latent Space. If you want the best, see #3.*
 
 
-**1. FIXED DIALOGUE ISSUE IN V2V "PIXEL SPACE" UPSCALER WORKFLOW**:
+#### **1. FIXED DIALOGUE ISSUE IN V2V "PIXEL SPACE" UPSCALER WORKFLOW**:
 
 *Takes around 25 mins for 8 sec dialogue scene, x5 ref images, output 1mp on a 3060 RTX (12GB VRAM)*
 
 - *workflow renamed and updated to:* `MBEDIT - MH3_rv2v_PixelSpace_Upscaler_v18.json`
 
-*(Note that this workflow was previously called "MBEDIT - MH3_r2v_SingleSampler_Detailer_v17.json" and can be found in "\superceded" folder)*
+*(Note that this workflow was previously called "MBEDIT - MH3_r2v_SingleSampler_Detailer_v17.json" and the old version can be found in "\superceded" folder)*
 
-**Changes in this update:** *It works for dialogue scenes now, but it isnt my preferred choice for upscaling dialogue scenes. It is best for fixing "faces at distance" where no mouth movement lipsync is required. The Latent Space upscaler (see #2) is stronger for dialogue scenes & lipsync upscaling.* 
+**Changes in this update:** *It works for dialogue scenes now, but it isnt my preferred choice for upscaling dialogue scenes. It is best for fixing "faces at distance" where no mouth movement lipsync is required. The Latent Space upscaler (see #2) is stronger for dialogue scenes & lipsync upscaling. And #3 below is probably the best.* 
 
 ***FIXED: issue with dialogue lipsync mouth movement degrading when upscaling, is now resolved.***
 
 
 *Notes on changes*:
 
-> **Error found in the audio latent connection order** up to and including v17, `MBEDIT - MH3_r2v_SingleSampler_Detailer_v17.json`. It was pulling the audio latent from the H3 reference to video node (using the prompt) instead of the inbound video (video audio). This is now fixed and tested working with dialogue scenes, but needs 0.75 denoise to avoid weakening of mouth movements and audio.
+> **Error found in the audio latent connection order** up to and including v17, `MBEDIT - MH3_r2v_SingleSampler_Detailer_v17.json`. It was pulling the audio latent from the H3 reference to video node (using the prompt) instead of the inbound video (video audio). This is now fixed and tested working with dialogue scenes. Adjust denoise to taste.
 
-> **NOTE: if you have silent video inbound then you will need to provide audio of some kind for this worklow to function and not error**. I have added in an audio loader node. Just use any mp3 of music or sound. If you prompt N/A in sound description it will use it, but if you prompt music it will likely use the prompt not the inbound audio.
+> **NOTE: if you have silent video inbound then you will need to provide audio of some kind for this worklow to function without error**. I have added in an audio loader node. Just use any mp3 of music or sound. If you prompt N/A in sound description it will use it, but if you prompt for some music it will likely use the prompt not the inbound audio.
 
-**2. LATENT SPACE UPSCALER FOR DIALOGUE SCENES - DUAL PASS**:
+#### **2. LATENT SPACE UPSCALER FOR DIALOGUE SCENES - DUAL PASS**:
 
 *Takes around 30 mins for 8 seconds dialogue scene, , x5 ref images, output 1.4mp on a 3060 RTX (12GB VRAM).*
 
@@ -42,21 +42,21 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 *Notes on use*:
 
-> This workflow adaptation was created to address dialogue issues in the "pixel space" upscaler/detailer *(which works now but has caveats for lowVRAM GPUs)*. This is a Latent Space upscaler. It requires character ref images and good prompting as a start point. This workflow runs through 2 samplers and does the upscaling before the second pass. Details on use are in the workflow. This workflow is better for dialogue scenes, as the results are stronger in early tests and I can get to 1.4mp for 8 second video clips on my 3060 RTX where I cannot get above 1mp on the pixel space upscaler for 8 sec long video clips with dialogue (and x4 character ref images).
+> This workflow adaptation was created to address dialogue issues in the "pixel space" upscaler/detailer *(which works now but has caveats for lowVRAM GPUs)*. This is a Latent Space upscaler. It requires character ref images and good prompting as a start point. This workflow runs through 2 samplers and does the upscaling before the second pass. Details on use are in the workflow. This workflow is better for dialogue scenes, as the results are stronger in early tests and I can get to 1.4mp for 8 second video clips on my 3060 RTX where I cannot get above 1mp on the pixel space upscaler for 8 sec long video clips with dialogue (with x4 character ref images).
 
-**3. CKINPDX "PIXEL SPACE" UPSCALER WITH CONTEXT WINDOWS**: 
+#### **3. CKINPDX "PIXEL SPACE" UPSCALER WITH CONTEXT WINDOWS**: 
 
 ***Best Upscaler-Refiner I tested so far and fastest - I was able to upscale an existing 8 second dialogue video clip to 2mp in 26 minutes on a 3060 RTX.***
 
 *This offers "context windows" plus an upscaling step, so splits longer videos in to multiple runs, thus reducing VRAM. This means higher resolution is possible with existing clips.* 
 
-- **New workflow**: `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v1.json`
+- **New workflow**: `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v1.json`
 
-- **Custom node required:** uses some of the nodes from https://github.com/ckinpdx/ComfyUI-MMH3Tools
+- **Custom node required:** I used only some of the nodes from https://github.com/ckinpdx/ComfyUI-MMH3Tools but if you have a good GPU I recommend using their workflows for optimum results.
 
 *(NOTE: if you have a decent GPU then maybe try ckinpdx example workflows instead of mine, they use 5090 GPU in development. I have adapted from it taking only the parts I needed for it to work on my 3060 RTX 12GB VRAM)*.
 
-> This was tested with 1824 x 736 video inbound and so only needed a refining pass. Being able to get to 2mp was the magic. I wasnt expecting it to be as fast as it was since it split the 192 frame run into 2 "chunks" or context windows and ran them both through the VRAM seperately. I havent tested longer than 8 second videos with it.
+> This was tested with 1824 x 736 video inbound and so only needed a refining pass. Being able to get to 2mp was the magic. I wasnt expecting it to be as fast as it was since it split the 192 frame run into 2 "chunks" or context windows and ran them both through the VRAM seperately. I havent tested longer than 8 second videos with it, but it should be good for it even to 2mp.
 
 
 ---
