@@ -1,0 +1,3691 @@
+{
+  "id": "00d98d9b-971c-446b-878b-52764a5389a4",
+  "revision": 0,
+  "last_node_id": 113,
+  "last_link_id": 138,
+  "nodes": [
+    {
+      "id": 45,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2875.9398770598755,
+        -2271.99274146259
+      ],
+      "size": [
+        340.35723941037304,
+        96.51816051325113
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            54
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "cnr_id": "comfy-core",
+        "ver": "0.9.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\ltx-2-19b-lora-camera-control-static.safetensors",
+        0.5
+      ],
+      "widgets_values_named": {
+        "lora_name": "LTX-2\\ltx-2-19b-lora-camera-control-static.safetensors",
+        "strength_model": 0.5
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 46,
+      "type": "SetNode",
+      "pos": [
+        -2369.9787230543398,
+        -1699.5138342562523
+      ],
+      "size": [
+        210,
+        34
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 27,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "label": "*",
+          "name": "*",
+          "type": "*"
+        }
+      ],
+      "title": "Set_audio_vae",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "",
+        "ue_properties": {
+          "version": "7.6.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "audio_vae"
+      ],
+      "widgets_values_named": {
+        "Constant": "audio_vae"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 47,
+      "type": "SetNode",
+      "pos": [
+        -2343.983213389808,
+        -1887.2651209757441
+      ],
+      "size": [
+        210,
+        34
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 26,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "label": "*",
+          "name": "*",
+          "type": "*"
+        }
+      ],
+      "title": "Set_vae",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "",
+        "ue_properties": {
+          "version": "7.6.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "vae"
+      ],
+      "widgets_values_named": {
+        "Constant": "vae"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 48,
+      "type": "MarkdownNote",
+      "pos": [
+        -4393.38727334184,
+        -2411.227711250635
+      ],
+      "size": [
+        571.0342085107175,
+        945.0923572694774
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# BREAKING CHANGES - FEB 2026\n\n## **NOTE: RECENT CHANGES IN COMFYUI WILL SOON BREAK THE WAY MODELS ARE LOADED IN LTX.**\n\nThis is the patch they added back in that temporarily resolves it\n\n[https://github.com/Comfy-Org/ComfyUI/pull/12605](https://github.com/Comfy-Org/ComfyUI/pull/12605 ) \n\n but they plan to remove it at some point in the future. This is why I have changed the layout here to accommodate that when it comes.\n\n1. **I (hopefully mistakenly) took the change to imply that GGUFs will no longer work** (after the patch is removed). Kijai has suggested this is wrong and the only impact will be nodes not the models themselves. But because there was some concern that [\"missing weights\" in GGUFs will mean GGUFs break](https://www.reddit.com/r/comfyui/comments/1rdvuil/comment/o78gpul/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) I am erring on the side of caution and downloaded a working non-GGUF model. The FP4 from Kijais hugging face repo. (See below section)\n\n## THE NEW NODE LAYOUT\n\nIt was confusing to figure out. Even though some seemed to find it easy.\n\n### Step 1: \n\n**You need to update KJ nodes to after 25th Feb 2026**\n\n- **make sure the \"extra_model_name\" in GGUFLoaderKJ can find the embeddings connector.** It looks for \"connector\" in file names of the \"text_encoders\" folder which is where it likely is currently in your setup. This will also pick up in the \"Diffusion Model Selector\" node.\n</br>\n- **put the FP4 model or whatever non-GGUF model you want to use in the \"diffusion_models\" folder** and you can then add it to diffusion model loader. \n\n### Step 2:\n\n- **understanding why we dont do anything with current embeddings connector** - the weird thing is that even though we now have to add the embeddings connector in to the GGUF loader and the Diffusion Model Selector moving forward (when they remove the temp patch), we still currently need the old embeddings DualClip Loader node left in place and plugged in. For now. I have the below info quoted from discussion on with with Kijai:\n\n> \"if you get errors make sure you are STILL ALSO using the dual clip loader for gemma and embeddings. because you do need to as there's the text projector layer in the file too...yeah that's extra annoying. it won't use memory though, it just loads that one layer... just don't change anything else besides the model loader, keep the dualclip like it used to be\"\n\n***NOTE: I am guessing the above will change at some point too, but for now its how it is - Mark, 26th Feb 2026.***\n\n\n\n## THE FP4 MODEL\n\n[https://huggingface.co/Kijai/LTXV2_comfy/tree/main/diffusion_models](https://huggingface.co/Kijai/LTXV2_comfy/tree/main/diffusion_models)\n\nI understand this needs pytorch 2.10 and CUDA 13.0 to work but it is running on my pytorch 2.7 with CUDA 12.8 just it needs tweaks in the lora settings. (I'll put those in their own box.) \n\nIts also a bit faster than the GGUF Q4 model and runs without issue on my 3060 RTX (12GB VRAM) with 32 GB system ram. \n\n\n\n \n"
+      ],
+      "widgets_values_named": {
+        "text": "# BREAKING CHANGES - FEB 2026\n\n## **NOTE: RECENT CHANGES IN COMFYUI WILL SOON BREAK THE WAY MODELS ARE LOADED IN LTX.**\n\nThis is the patch they added back in that temporarily resolves it\n\n[https://github.com/Comfy-Org/ComfyUI/pull/12605](https://github.com/Comfy-Org/ComfyUI/pull/12605 ) \n\n but they plan to remove it at some point in the future. This is why I have changed the layout here to accommodate that when it comes.\n\n1. **I (hopefully mistakenly) took the change to imply that GGUFs will no longer work** (after the patch is removed). Kijai has suggested this is wrong and the only impact will be nodes not the models themselves. But because there was some concern that [\"missing weights\" in GGUFs will mean GGUFs break](https://www.reddit.com/r/comfyui/comments/1rdvuil/comment/o78gpul/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) I am erring on the side of caution and downloaded a working non-GGUF model. The FP4 from Kijais hugging face repo. (See below section)\n\n## THE NEW NODE LAYOUT\n\nIt was confusing to figure out. Even though some seemed to find it easy.\n\n### Step 1: \n\n**You need to update KJ nodes to after 25th Feb 2026**\n\n- **make sure the \"extra_model_name\" in GGUFLoaderKJ can find the embeddings connector.** It looks for \"connector\" in file names of the \"text_encoders\" folder which is where it likely is currently in your setup. This will also pick up in the \"Diffusion Model Selector\" node.\n</br>\n- **put the FP4 model or whatever non-GGUF model you want to use in the \"diffusion_models\" folder** and you can then add it to diffusion model loader. \n\n### Step 2:\n\n- **understanding why we dont do anything with current embeddings connector** - the weird thing is that even though we now have to add the embeddings connector in to the GGUF loader and the Diffusion Model Selector moving forward (when they remove the temp patch), we still currently need the old embeddings DualClip Loader node left in place and plugged in. For now. I have the below info quoted from discussion on with with Kijai:\n\n> \"if you get errors make sure you are STILL ALSO using the dual clip loader for gemma and embeddings. because you do need to as there's the text projector layer in the file too...yeah that's extra annoying. it won't use memory though, it just loads that one layer... just don't change anything else besides the model loader, keep the dualclip like it used to be\"\n\n***NOTE: I am guessing the above will change at some point too, but for now its how it is - Mark, 26th Feb 2026.***\n\n\n\n## THE FP4 MODEL\n\n[https://huggingface.co/Kijai/LTXV2_comfy/tree/main/diffusion_models](https://huggingface.co/Kijai/LTXV2_comfy/tree/main/diffusion_models)\n\nI understand this needs pytorch 2.10 and CUDA 13.0 to work but it is running on my pytorch 2.7 with CUDA 12.8 just it needs tweaks in the lora settings. (I'll put those in their own box.) \n\nIts also a bit faster than the GGUF Q4 model and runs without issue on my 3060 RTX (12GB VRAM) with 32 GB system ram. \n\n\n\n \n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 49,
+      "type": "SetNode",
+      "pos": [
+        -2346.4216140750245,
+        -1626.1472627972435
+      ],
+      "size": [
+        210,
+        34
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_clip",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "clip"
+      ],
+      "widgets_values_named": {
+        "Constant": "clip"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 50,
+      "type": "DualCLIPLoaderMultiGPU",
+      "pos": [
+        -2925.5508147265623,
+        -1593.578641122951
+      ],
+      "size": [
+        370.72723685181654,
+        130
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            49
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoaderMultiGPU",
+        "cnr_id": "comfyui-multigpu",
+        "ver": "2.5.11",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\gemma_3_12B_it_fp8_e4m3fn.safetensors",
+        "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+        "ltxv",
+        "cuda:0"
+      ],
+      "widgets_values_named": {
+        "clip_name1": "LTX-2\\gemma_3_12B_it_fp8_e4m3fn.safetensors",
+        "clip_name2": "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+        "type": "ltxv",
+        "device": "cuda:0"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 51,
+      "type": "DualCLIPLoader",
+      "pos": [
+        -2505.5522358332814,
+        -1546.3922266096424
+      ],
+      "size": [
+        221.0260871198352,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "clip_name1",
+          "name": "clip_name1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name1"
+          },
+          "link": null
+        },
+        {
+          "label": "clip_name2",
+          "name": "clip_name2",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name2"
+          },
+          "link": null
+        },
+        {
+          "label": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "label": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "ue_properties": {
+          "version": "7.6.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\gemma_3_12B_it_fp8_e4m3fn.safetensors",
+        "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+        "ltxv",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name1": "LTX-2\\gemma_3_12B_it_fp8_e4m3fn.safetensors",
+        "clip_name2": "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+        "type": "ltxv",
+        "device": "default"
+      }
+    },
+    {
+      "id": 54,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2906.8044496725756,
+        -2469.1084753424825
+      ],
+      "size": [
+        365.5020593946597,
+        82
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            46
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "cnr_id": "comfy-core",
+        "ver": "0.9.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\ltx-2-19b-ic-lora-detailer.safetensors",
+        0.5
+      ],
+      "widgets_values_named": {
+        "lora_name": "LTX-2\\ltx-2-19b-ic-lora-detailer.safetensors",
+        "strength_model": 0.5
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 55,
+      "type": "DiffusionModelSelector",
+      "pos": [
+        -3731.3571112053555,
+        -1972.9575907068067
+      ],
+      "size": [
+        549.1108519652992,
+        66.60694257161686
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DiffusionModelSelector",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "50a0837f9aea602b184bbf6dbabf66ed2c7a1d22",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "model_name": "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 57,
+      "type": "DiffusionModelLoaderKJ",
+      "pos": [
+        -3662.74822101525,
+        -1820.7468852358188
+      ],
+      "size": [
+        514.9445976946752,
+        193.09009411906936
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "extra_state_dict",
+          "shape": 7,
+          "type": "STRING",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DiffusionModelLoaderKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "50a0837f9aea602b184bbf6dbabf66ed2c7a1d22",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\ltx-2-19b-dev_fp4_transformer_only.safetensors",
+        "default",
+        "default",
+        false,
+        "disabled",
+        false
+      ],
+      "widgets_values_named": {
+        "model_name": "LTX-2\\ltx-2-19b-dev_fp4_transformer_only.safetensors",
+        "weight_dtype": "default",
+        "compute_dtype": "default",
+        "patch_cublaslinear": false,
+        "sage_attention": "disabled",
+        "enable_fp16_accumulation": false
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 58,
+      "type": "GGUFLoaderKJ",
+      "pos": [
+        -3755.57779346916,
+        -2343.6836385315773
+      ],
+      "size": [
+        579.1277980144489,
+        202
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GGUFLoaderKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "50a0837f9aea602b184bbf6dbabf66ed2c7a1d22",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\LTX-2-dev-Q5_K_M.gguf",
+        "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+        "default",
+        "default",
+        false,
+        false,
+        "none"
+      ],
+      "widgets_values_named": {
+        "model_name": "LTX-2\\LTX-2-dev-Q5_K_M.gguf",
+        "extra_model_name": "LTX-2\\ltx-2-19b-embeddings_connector_dev_bf16.safetensors",
+        "dequant_dtype": "default",
+        "patch_dtype": "default",
+        "patch_on_device": false,
+        "enable_fp16_accumulation": false,
+        "attention_override": "none"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 60,
+      "type": "VAELoader",
+      "pos": [
+        -2854.801518369872,
+        -1876.6446599159171
+      ],
+      "size": [
+        363.9649658203125,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "ue_properties": {
+          "version": "7.6.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\LTX2_video_vae_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "LTX-2\\LTX2_video_vae_bf16.safetensors"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 61,
+      "type": "VAELoaderKJ",
+      "pos": [
+        -2887.3923274602575,
+        -1754.7665630638276
+      ],
+      "size": [
+        413.95599365234375,
+        106
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        },
+        {
+          "label": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "label": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            47
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoaderKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "50a0837f9aea602b184bbf6dbabf66ed2c7a1d22",
+        "ue_properties": {
+          "version": "7.6.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\LTX2_audio_vae_bf16.safetensors",
+        "main_device",
+        "bf16"
+      ],
+      "widgets_values_named": {
+        "vae_name": "LTX-2\\LTX2_audio_vae_bf16.safetensors",
+        "device": "main_device",
+        "weight_dtype": "bf16"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 62,
+      "type": "Note",
+      "pos": [
+        -2508.559044687729,
+        -2562.069631163627
+      ],
+      "size": [
+        275.6049783225685,
+        453.2489391660256
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "\nI have now downloaded and will use the dev Q5KM model from Quantstack HF. It surpasses the other models (note: this is dev model, not distilled model, but we keep the distilled lora in, just change the settings).\n\nI share the settings for the distilled lora for each below. - Mark 27th Feb 2026.\n\n---\n\nfor the Dev Q5_KM I am setting distilled lora to 0.6 (Thanks to \"Torny\" for that advice both lora and using the dev model).\n\nif using the fp4 set distilled lora to 0.6 up to 0.9 (I preferred 0.9) (I get distilled misty weirdness below 0.6. I tried 1.0, but had some deformed people might have been a bad run didnt test further).\n\nIf using the distilled GGUFs set distilled lora to -0.3 (I get dappling in result otherwise)\n\nand I keep detailer lora at 0.5 in all cases.\n\nI also disable the camera control as this is v2v workflow and already has the motion set. \n"
+      ],
+      "widgets_values_named": {
+        "text": "\nI have now downloaded and will use the dev Q5KM model from Quantstack HF. It surpasses the other models (note: this is dev model, not distilled model, but we keep the distilled lora in, just change the settings).\n\nI share the settings for the distilled lora for each below. - Mark 27th Feb 2026.\n\n---\n\nfor the Dev Q5_KM I am setting distilled lora to 0.6 (Thanks to \"Torny\" for that advice both lora and using the dev model).\n\nif using the fp4 set distilled lora to 0.6 up to 0.9 (I preferred 0.9) (I get distilled misty weirdness below 0.6. I tried 1.0, but had some deformed people might have been a bad run didnt test further).\n\nIf using the distilled GGUFs set distilled lora to -0.3 (I get dappling in result otherwise)\n\nand I keep detailer lora at 0.5 in all cases.\n\nI also disable the camera control as this is v2v workflow and already has the motion set. \n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 64,
+      "type": "LTXVChunkFeedForward",
+      "pos": [
+        -1634.9179338981976,
+        -2039.7417277294423
+      ],
+      "size": [
+        272.35703125,
+        82
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            58
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVChunkFeedForward",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "47ca2b2c26358615974162059061e9dc78be6715",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "chunks": true,
+            "dim_threshold": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        4,
+        4096
+      ],
+      "widgets_values_named": {
+        "chunks": 4,
+        "dim_threshold": 4096
+      }
+    },
+    {
+      "id": 65,
+      "type": "LTX2AttentionTunerPatch",
+      "pos": [
+        -1671.564189287934,
+        -1871.9426212891744
+      ],
+      "size": [
+        283.841796875,
+        178
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            59
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTX2AttentionTunerPatch",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "6e92a541d8afca77c52aa3cf4ee0743b7bfac633",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "blocks": true,
+            "video_scale": true,
+            "audio_scale": true,
+            "audio_to_video_scale": true,
+            "video_to_audio_scale": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        1,
+        1,
+        1,
+        1,
+        true
+      ],
+      "widgets_values_named": {
+        "blocks": "",
+        "video_scale": 1,
+        "audio_scale": 1,
+        "audio_to_video_scale": 1,
+        "video_to_audio_scale": 1,
+        "triton_kernels": true
+      }
+    },
+    {
+      "id": 68,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1819.1867863355055,
+        -1641.922071555915
+      ],
+      "size": [
+        319.8595912322818,
+        127.6872792161339
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "subtitles, text, blurry, low quality, still frame, frames, watermark, overlay, titles, scene change,\n"
+      ],
+      "widgets_values_named": {
+        "text": "subtitles, text, blurry, low quality, still frame, frames, watermark, overlay, titles, scene change,\n"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 69,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1778.7561727343432,
+        -1458.3461994245108
+      ],
+      "size": [
+        325.3973511229051,
+        88
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "high pitched voice"
+      ],
+      "widgets_values_named": {
+        "text": "high pitched voice"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 70,
+      "type": "PathchSageAttentionKJ",
+      "pos": [
+        -2061.22048184049,
+        -1799.9518543624333
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            57
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PathchSageAttentionKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "204f6d5aae73b10c0fe2fb26e61405fd6337bb77",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "sage_attention": true,
+            "allow_compile": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "auto",
+        false
+      ],
+      "widgets_values_named": {
+        "sage_attention": "auto",
+        "allow_compile": false
+      }
+    },
+    {
+      "id": 71,
+      "type": "GetNode",
+      "pos": [
+        -2051.3488229866894,
+        -1546.4504255704805
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            62,
+            63
+          ]
+        }
+      ],
+      "title": "Get_clip",
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "clip"
+      ],
+      "widgets_values_named": {
+        "Constant": "clip"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 59,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2953.4925966857986,
+        -2053.5110176858752
+      ],
+      "size": [
+        618.5742097251293,
+        129.37285954008087
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "cnr_id": "comfy-core",
+        "ver": "0.8.0",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "lora_name": true,
+            "strength_model": true
+          },
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "LTX-2\\ltx-2-19b-distilled-lora_resized_dynamic_fro09_avg_rank_175_fp8.safetensors",
+        0.6
+      ],
+      "widgets_values_named": {
+        "lora_name": "LTX-2\\ltx-2-19b-distilled-lora_resized_dynamic_fro09_avg_rank_175_fp8.safetensors",
+        "strength_model": 0.6
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 67,
+      "type": "LTX2_NAG",
+      "pos": [
+        -1400.390649106666,
+        -1576.0309432905024
+      ],
+      "size": [
+        270,
+        170
+      ],
+      "flags": {},
+      "order": 56,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 59
+        },
+        {
+          "name": "nag_cond_video",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 60
+        },
+        {
+          "name": "nag_cond_audio",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTX2_NAG",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "93a4fba44c1635a716dc262f157a7ded7d716f3a",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "nag_scale": true,
+            "nag_alpha": true,
+            "nag_tau": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        11,
+        0.25,
+        2.5,
+        true
+      ],
+      "widgets_values_named": {
+        "nag_scale": 11,
+        "nag_alpha": 0.25,
+        "nag_tau": 2.5,
+        "inplace": true
+      }
+    },
+    {
+      "id": 75,
+      "type": "GetNode",
+      "pos": [
+        -1049.0197896652116,
+        -1519.5218665098737
+      ],
+      "size": [
+        210,
+        34
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            70
+          ]
+        }
+      ],
+      "title": "Get_clip",
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "clip"
+      ],
+      "widgets_values_named": {
+        "Constant": "clip"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 3,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        -2513.536984467486,
+        -775.5291765432679
+      ],
+      "size": [
+        204.134765625,
+        26
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.52",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 66,
+      "type": "ModelMemoryUsageFactorOverride",
+      "pos": [
+        -2051.6853998841098,
+        -2065.195890588018
+      ],
+      "size": [
+        353.43125,
+        58
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            56
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelMemoryUsageFactorOverride",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "a3ac6cf47a745ce1b7bfb3dffc02e1c77a1dc12b",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "memory_usage_factor": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        0.04
+      ],
+      "widgets_values_named": {
+        "memory_usage_factor": 0.04
+      }
+    },
+    {
+      "id": 63,
+      "type": "LTX2MemoryEfficientSageAttentionPatch",
+      "pos": [
+        -2020.5663153630849,
+        -1924.282697024729
+      ],
+      "size": [
+        275.18334045410154,
+        58
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTX2MemoryEfficientSageAttentionPatch",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "a5e66ce5510c9b3bf984c43a22014cefae4bd044",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        true
+      ],
+      "widgets_values_named": {
+        "triton_kernels": true
+      }
+    },
+    {
+      "id": 76,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        -878.1177192925202,
+        -1394.669250902441
+      ],
+      "size": [
+        204.134765625,
+        26
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 36,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut",
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 86,
+      "type": "Reroute",
+      "pos": [
+        -1573.7040645013471,
+        -1059.243643238488
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 83,
+      "type": "Reroute",
+      "pos": [
+        -1567.3240645013466,
+        -1114.8706432384904
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 73,
+      "type": "Reroute",
+      "pos": [
+        -1555.1623056652097,
+        -1175.1073972730976
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 77,
+      "type": "GetNode",
+      "pos": [
+        -1615.9322896652088,
+        -962.3706312730995
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": []
+        }
+      ],
+      "title": "Get_vae",
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "vae"
+      ],
+      "widgets_values_named": {
+        "Constant": "vae"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 74,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -853.4587405981583,
+        -1724.3704170730982
+      ],
+      "size": [
+        387.54796103141575,
+        262.6301202331051
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 70
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            71,
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "ue_properties": {
+          "version": "7.6.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "enableTabs": false,
+        "secondTabOffset": 80,
+        "tabWidth": 65,
+        "secondTabWidth": 65,
+        "tabXOffset": 10
+      },
+      "widgets_values": [
+        "a captain dressed in white suit with gold strip shoulder lapels and hat, enters via the door and then sits down at the table opposite a white haired soldier"
+      ],
+      "widgets_values_named": {
+        "text": "a captain dressed in white suit with gold strip shoulder lapels and hat, enters via the door and then sits down at the table opposite a white haired soldier"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 72,
+      "type": "Reroute",
+      "pos": [
+        -1584.1687886652098,
+        -918.5611402730983
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 116
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 79,
+      "type": "Reroute",
+      "pos": [
+        -1590.7647075728592,
+        -876.6434139305675
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": [
+            105
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 80,
+      "type": "Reroute",
+      "pos": [
+        -1593.692907572858,
+        -821.0076139305677
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": [
+            106
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 78,
+      "type": "Reroute",
+      "pos": [
+        -1593.664989665209,
+        -770.4536312730999
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            107
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 101,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2703.0168701046005,
+        -953.1445553717728
+      ],
+      "size": [
+        703.9060000000004,
+        82
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 115
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            116
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Fusion_X_ingredients\\lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+        1
+      ],
+      "widgets_values_named": {
+        "lora_name": "Fusion_X_ingredients\\lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors",
+        "strength_model": 1
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 98,
+      "type": "CLIPLoaderGGUFMultiGPU",
+      "pos": [
+        -4138.622891104596,
+        -297.5070353717729
+      ],
+      "size": [
+        375.9500030517578,
+        106
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            126
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoaderGGUFMultiGPU"
+      },
+      "widgets_values": [
+        "umt5-xxl-encoder-Q6_K.gguf",
+        "wan",
+        "cuda:0"
+      ],
+      "widgets_values_named": {
+        "clip_name": "umt5-xxl-encoder-Q6_K.gguf",
+        "type": "wan",
+        "device": "cuda:0"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 91,
+      "type": "CLIPLoader",
+      "pos": [
+        -4003.4024115138413,
+        -1066.6222291560434
+      ],
+      "size": [
+        400.67999999999984,
+        106
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "wan",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "type": "wan",
+        "device": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 43,
+      "type": "GGUFLoaderKJ",
+      "pos": [
+        -4665.200238360013,
+        -296.4703116900451
+      ],
+      "size": [
+        481.4666656494137,
+        203.10000000000002
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GGUFLoaderKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "5a8233a5f4955a2dd95de6fffacd0d671d1027f1",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "Wan2.1\\Phantom_Wan_1.3B-Q8_0.gguf",
+        "none",
+        "default",
+        "default",
+        false,
+        false,
+        "none"
+      ],
+      "widgets_values_named": {
+        "model_name": "Wan2.1\\Phantom_Wan_1.3B-Q8_0.gguf",
+        "extra_model_name": "none",
+        "dequant_dtype": "default",
+        "patch_dtype": "default",
+        "patch_on_device": false,
+        "enable_fp16_accumulation": false,
+        "attention_override": "none"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 42,
+      "type": "Note",
+      "pos": [
+        -4548.17764817639,
+        -1066.7955321083175
+      ],
+      "size": [
+        454.56230000000005,
+        517.0216999999999
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "WAN t2v models are best no question. but take a long time. LTX was faster but didnt give better results than the LTX detailer elsewhere. This workflow should be reserved for faces at a distance that absolutely need to be improved and will work for 241 frames but will take over 1 hour to complete at current speeds.- Mark Feb 2026.\n\n# WAN 14B MODEL\n\nprobably needs VAE wan 2.1 (if changing to WAN 5B you might need the 2.2 VAE) \n\nI was using this with Wan22-t2v-A14B-LOW_fp8_e5m2_scaled model. I plan to test. This model is fantastic but on my 3060 it takes a long time.\n\n## WAN 2.1 Q4KM GGUF Model\n\ntesting it for speed and quality comparison against the Wan22-t2v.\n\n# WAN 5B MODEL\n\nWan2.2-Ti2v-5B-Turbo in testing (disabled the loras) \n\n- got error on the USDU node \"RuntimeError: The size of tensor a (16) must match the size of tensor b (48) at non-singleton dimension 1\" wasnt the text encoder it needed VAE to be Wan 2.2 version then it ran.\n\n(also got the error with WAN 1.3B but if WAN 5B works I wont need to test it).\n\nResults for 5B were not at all as good as 14B and barely as good as LTX.\n\n# PHANTOM 1.3B MODEL + LORA\n\nPhantom 1.3B detailer (Q8) (t2v)\n\nhttps://huggingface.co/QuantStack/Phantom_Wan_1.3B-GGUF\n\nhttps://huggingface.co/Kijai/WanVideo_comfy/blob/main/Wan21_CausVid_bidirect2_T2V_1_3B_lora_rank32.safetensors\n\nneeds: umt5-xxl-encoder, Wan2_1_VAE_bf16\n\n\n# VACE DMD Self-forcing Wan 1.3b\n\nhttps://huggingface.co/lym00/Wan2.1_T2V_1.3B_SelfForcing_VACE/tree/main\n\nuse the LCM sampler recommended\nneeds: umt5-xxl-encoder, Wan2_1_VAE_bf16\n\ntry it with lower shift some said 5\n"
+      ],
+      "widgets_values_named": {
+        "text": "WAN t2v models are best no question. but take a long time. LTX was faster but didnt give better results than the LTX detailer elsewhere. This workflow should be reserved for faces at a distance that absolutely need to be improved and will work for 241 frames but will take over 1 hour to complete at current speeds.- Mark Feb 2026.\n\n# WAN 14B MODEL\n\nprobably needs VAE wan 2.1 (if changing to WAN 5B you might need the 2.2 VAE) \n\nI was using this with Wan22-t2v-A14B-LOW_fp8_e5m2_scaled model. I plan to test. This model is fantastic but on my 3060 it takes a long time.\n\n## WAN 2.1 Q4KM GGUF Model\n\ntesting it for speed and quality comparison against the Wan22-t2v.\n\n# WAN 5B MODEL\n\nWan2.2-Ti2v-5B-Turbo in testing (disabled the loras) \n\n- got error on the USDU node \"RuntimeError: The size of tensor a (16) must match the size of tensor b (48) at non-singleton dimension 1\" wasnt the text encoder it needed VAE to be Wan 2.2 version then it ran.\n\n(also got the error with WAN 1.3B but if WAN 5B works I wont need to test it).\n\nResults for 5B were not at all as good as 14B and barely as good as LTX.\n\n# PHANTOM 1.3B MODEL + LORA\n\nPhantom 1.3B detailer (Q8) (t2v)\n\nhttps://huggingface.co/QuantStack/Phantom_Wan_1.3B-GGUF\n\nhttps://huggingface.co/Kijai/WanVideo_comfy/blob/main/Wan21_CausVid_bidirect2_T2V_1_3B_lora_rank32.safetensors\n\nneeds: umt5-xxl-encoder, Wan2_1_VAE_bf16\n\n\n# VACE DMD Self-forcing Wan 1.3b\n\nhttps://huggingface.co/lym00/Wan2.1_T2V_1.3B_SelfForcing_VACE/tree/main\n\nuse the LCM sampler recommended\nneeds: umt5-xxl-encoder, Wan2_1_VAE_bf16\n\ntry it with lower shift some said 5\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "VAELoader",
+      "pos": [
+        -2537.812837086235,
+        -688.78988332647
+      ],
+      "size": [
+        335.3999938964844,
+        82.20000152587897
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            75
+          ]
+        }
+      ],
+      "title": "VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Wan2_1_VAE_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "Wan2_1_VAE_bf16.safetensors"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 82,
+      "type": "Note",
+      "pos": [
+        -1615.8701409627631,
+        -459.9779054177301
+      ],
+      "size": [
+        379.67733276415447,
+        1051.5308106003686
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# TESTS DONE WITH VARIOUS MODELS FOR COMPARISONS\n\nBest tiled to fit the window ratio e.g. 1920 x 1080 works with 3:2 for me i.e. 640 x 544 is closest without ooms for 16:9 or x 384 for 2.39:1\n\nset steps to 1 or 2 for low denoise works\n\n\n## LTX:\n\n- 640 x 544 was done in 13 mins.\n\n- 256 x 256 (81 frame LTX 1080p in 20 mins for 40 tiles (said 15 but wasnt)). Quality wasnt better either.\n\n\n## WAN 2.2 (14B):\n\nThis is by far the best result but time consuming. \n\n640 x 544 finished around 30 mins for 233 frames. with Q4 WAN GGUF and speed loras.\n\n## WAN 5B\n\nquality didnt beat LTX.\n\n512 x 512 81 frames took 500 seconds but it wasnt the best results.\n\n960 x 960 wasnt an improvement and took same amount of time.\n\n## PHANTOM 1.3B \n\ntesting 1 step with causvid lora that usually needs 4 for now.\n\nset to 0.4 denoise as phantom should honor consistency.\n\nRESULT: I thought it would be faster but took around 16 mins for a 1920x768, 241 frame, 24fps result. \n\nset to 0.6 denoise and ran again but it created tiled mess unintelligeble.\n\nset to 0.5 reduced tile size to correct 640 x 384 for the split for 2.39:1 1920 x 768 ran again. RESULT: 10 mins much quicker. also good. \n\nso pushing for the max limit now, testing 0.54 breaks.\n0.52 also failed so 0.5 is the limit max for phantom 1.3b model. \n\n\n## VACE DMD SELF-FORCING 1.3B\n\ntesting 1 step, 0.4 denoise, no loras, on a 1920 x 768, 24 fps, 241 frame input video. tiling set to best fit 640, 384\n\n12 minutes first run, 11 minutes second (no lora needed as speed is baked in to model see model notes for exact one). Was good result. This is easily comparible to Phantom 1.3b and a contender. If I can get higher quality this will be the winner and it feels like it might.\n\n(0.6, 0.52 is brown tiles. I expect 0.5 will be the threshold again same as Phantom 1.3b).\n\n## HuMO 1.7B \n\nThis also gives good results. set to desnoise 0.5 same as other ones of this calibre, I havent tried higher I presume it would blow out. (could try disabling the causvid lora and raise the steps).\n\neuler_ancestral / normal was best for eyes fix. (so I tried with causvid disabled and steps 2 bit it was misty mess) \n\nlcm / normal was next best sampler/scheduler\n\nbongtangent might work with the right sampler it was a bit washy with res_2s, but if that could be fixed would be great. higher steps blew it out. (1 step, 1 cfg was the limit).\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# TESTS DONE WITH VARIOUS MODELS FOR COMPARISONS\n\nBest tiled to fit the window ratio e.g. 1920 x 1080 works with 3:2 for me i.e. 640 x 544 is closest without ooms for 16:9 or x 384 for 2.39:1\n\nset steps to 1 or 2 for low denoise works\n\n\n## LTX:\n\n- 640 x 544 was done in 13 mins.\n\n- 256 x 256 (81 frame LTX 1080p in 20 mins for 40 tiles (said 15 but wasnt)). Quality wasnt better either.\n\n\n## WAN 2.2 (14B):\n\nThis is by far the best result but time consuming. \n\n640 x 544 finished around 30 mins for 233 frames. with Q4 WAN GGUF and speed loras.\n\n## WAN 5B\n\nquality didnt beat LTX.\n\n512 x 512 81 frames took 500 seconds but it wasnt the best results.\n\n960 x 960 wasnt an improvement and took same amount of time.\n\n## PHANTOM 1.3B \n\ntesting 1 step with causvid lora that usually needs 4 for now.\n\nset to 0.4 denoise as phantom should honor consistency.\n\nRESULT: I thought it would be faster but took around 16 mins for a 1920x768, 241 frame, 24fps result. \n\nset to 0.6 denoise and ran again but it created tiled mess unintelligeble.\n\nset to 0.5 reduced tile size to correct 640 x 384 for the split for 2.39:1 1920 x 768 ran again. RESULT: 10 mins much quicker. also good. \n\nso pushing for the max limit now, testing 0.54 breaks.\n0.52 also failed so 0.5 is the limit max for phantom 1.3b model. \n\n\n## VACE DMD SELF-FORCING 1.3B\n\ntesting 1 step, 0.4 denoise, no loras, on a 1920 x 768, 24 fps, 241 frame input video. tiling set to best fit 640, 384\n\n12 minutes first run, 11 minutes second (no lora needed as speed is baked in to model see model notes for exact one). Was good result. This is easily comparible to Phantom 1.3b and a contender. If I can get higher quality this will be the winner and it feels like it might.\n\n(0.6, 0.52 is brown tiles. I expect 0.5 will be the threshold again same as Phantom 1.3b).\n\n## HuMO 1.7B \n\nThis also gives good results. set to desnoise 0.5 same as other ones of this calibre, I havent tried higher I presume it would blow out. (could try disabling the causvid lora and raise the steps).\n\neuler_ancestral / normal was best for eyes fix. (so I tried with causvid disabled and steps 2 bit it was misty mess) \n\nlcm / normal was next best sampler/scheduler\n\nbongtangent might work with the right sampler it was a bit washy with res_2s, but if that could be fixed would be great. higher steps blew it out. (1 step, 1 cfg was the limit).\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 10,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -2720.3896748596735,
+        -1262.1051229940485
+      ],
+      "size": [
+        419.9570617675781,
+        214.1175994873047
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 127
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            1,
+            76
+          ]
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "photorealistic, cinematic lighting, 8k resolution, ultra-detailed facial features, hyperrealistic skin texture, visible pores, sharp focused eyes, detailed iris reflection, subsurface scattering on skin, natural lip texture, professional studio lighting, detailed hair strands, masterpiece, award winning photography"
+      ],
+      "widgets_values_named": {
+        "text": "photorealistic, cinematic lighting, 8k resolution, ultra-detailed facial features, hyperrealistic skin texture, visible pores, sharp focused eyes, detailed iris reflection, subsurface scattering on skin, natural lip texture, professional studio lighting, detailed hair strands, masterpiece, award winning photography"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 108,
+      "type": "Note",
+      "pos": [
+        -3563.7951866869234,
+        -1258.400562108376
+      ],
+      "size": [
+        601.1914999999999,
+        88
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Loras are experimental and I dont guarantee they work but this set come from David Snow who is something of an upscaler afficionado, so I poached his choices and his settings. - Mark, April 2026"
+      ],
+      "widgets_values_named": {
+        "text": "Loras are experimental and I dont guarantee they work but this set come from David Snow who is something of an upscaler afficionado, so I poached his choices and his settings. - Mark, April 2026"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 5,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -687.53173828125,
+        -901.2406616210938
+      ],
+      "size": [
+        325.9166625976561,
+        467.8173595174153
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 129
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine",
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.0.1"
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "USDU-HuMo-14B_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "USDU-HuMo-14B__00002-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "USDU-HuMo-14B__00002.png",
+            "fullpath": "S:\\ComfyUI_windows_portable\\ComfyUI\\output\\USDU-HuMo-14B__00002-audio.mp4"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "USDU-HuMo-14B_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "USDU-HuMo-14B__00002-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "USDU-HuMo-14B__00002.png",
+            "fullpath": "S:\\ComfyUI_windows_portable\\ComfyUI\\output\\USDU-HuMo-14B__00002-audio.mp4"
+          }
+        }
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 9,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        -3498.042964269051,
+        -1011.4925460010822
+      ],
+      "size": [
+        639.0911865234375,
+        214
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 128
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 126
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            125
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": [
+            127
+          ]
+        }
+      ],
+      "properties": {
+        "Show Strengths": "Single Strength",
+        "Match": "",
+        "cnr_id": "rgthree-comfy",
+        "ver": "dbc5fa5e89b6a8b6a1a1dda787505b690f18026c",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": true,
+          "lora": "Fusion_X_ingredients\\lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "Wan1.3B_Only\\dg_wan2_1_v1_3b_lora_extra_noise_detail_motion.safetensors",
+          "strength": 0.4,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "Wan1.3B_Only\\Wan21_CausVid_bidirect2_T2V_1_3B_lora_rank32.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": false,
+          "lora": "Wan1.3B_Only\\Wan2.1-1.3B-lora-highresfix-v1.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {},
+        ""
+      ],
+      "widgets_values_named": {
+        "divider": {},
+        "PowerLoraLoaderHeaderWidget": {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        "lora_1": {
+          "on": true,
+          "lora": "Fusion_X_ingredients\\lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        "lora_2": {
+          "on": false,
+          "lora": "Wan1.3B_Only\\dg_wan2_1_v1_3b_lora_extra_noise_detail_motion.safetensors",
+          "strength": 0.4,
+          "strengthTwo": null
+        },
+        "lora_3": {
+          "on": false,
+          "lora": "Wan1.3B_Only\\Wan21_CausVid_bidirect2_T2V_1_3B_lora_rank32.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        "lora_4": {
+          "on": false,
+          "lora": "Wan1.3B_Only\\Wan2.1-1.3B-lora-highresfix-v1.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        "➕ Add Lora": ""
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 111,
+      "type": "WanChunkFeedForward",
+      "pos": [
+        -3203.675114240922,
+        -516.7558550271979
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 137
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            130
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WanChunkFeedForward"
+      },
+      "widgets_values": [
+        2,
+        4096
+      ],
+      "widgets_values_named": {
+        "chunks": 2,
+        "dim_threshold": 4096
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 6,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        -2803.0430814565493,
+        -764.9760079151426
+      ],
+      "size": [
+        265,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 135
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            115
+          ]
+        }
+      ],
+      "title": "Shift",
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        12
+      ],
+      "widgets_values_named": {
+        "shift": 12
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 102,
+      "type": "DiffusionModelLoaderKJ",
+      "pos": [
+        -4060.202646744939,
+        -894.4716912660311
+      ],
+      "size": [
+        500.88484746759605,
+        189.90909090909088
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "extra_state_dict",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            128
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DiffusionModelLoaderKJ"
+      },
+      "widgets_values": [
+        "HuMO\\Wan2_1-HuMo-14B_int8_convrot.safetensors",
+        "default",
+        "default",
+        false,
+        "disabled",
+        false
+      ],
+      "widgets_values_named": {
+        "model_name": "HuMO\\Wan2_1-HuMo-14B_int8_convrot.safetensors",
+        "weight_dtype": "default",
+        "compute_dtype": "default",
+        "patch_cublaslinear": false,
+        "sage_attention": "disabled",
+        "enable_fp16_accumulation": false
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 23,
+      "type": "PathchSageAttentionKJ",
+      "pos": [
+        -3550.179184972174,
+        -683.0282222706112
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 125
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            133
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PathchSageAttentionKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "36f6fdd7d4c393675ac622bd300ef667ee65d8b8",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "sage_attention": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "auto",
+        false
+      ],
+      "widgets_values_named": {
+        "sage_attention": "auto",
+        "allow_compile": false
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 7,
+      "type": "ModelPatchTorchSettings",
+      "pos": [
+        -3260.658462315923,
+        -739.2309468799866
+      ],
+      "size": [
+        252.095703125,
+        58
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 133
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            136
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelPatchTorchSettings",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "ba9153cb06fc77bfd86c36835f1817482e8328a0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        true
+      ],
+      "widgets_values_named": {
+        "enable_fp16_accumulation": true
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 112,
+      "type": "WanVideoMemoryEfficientSageAttentionPatch",
+      "pos": [
+        -2856.475108137406,
+        -482.65585502719796
+      ],
+      "size": [
+        308.1999877929687,
+        26
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 130
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            135
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WanVideoMemoryEfficientSageAttentionPatch"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 14,
+      "type": "UltimateSDUpscaleNoUpscale",
+      "pos": [
+        -1180.3052978515625,
+        -885.2201538085938
+      ],
+      "size": [
+        314.6304626464844,
+        806
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscaled_image",
+          "type": "IMAGE",
+          "link": 138
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 104
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 105
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 106
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 107
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscaleNoUpscale",
+        "cnr_id": "comfyui_ultimatesdupscale",
+        "ver": "1.3.3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        1,
+        1,
+        "euler_ancestral",
+        "normal",
+        0.5,
+        "Linear",
+        640,
+        384,
+        12,
+        32,
+        "None",
+        0.45,
+        64,
+        8,
+        16,
+        true,
+        false,
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 42,
+        "control_after_generate": "fixed",
+        "steps": 1,
+        "cfg": 1,
+        "sampler_name": "euler_ancestral",
+        "scheduler": "normal",
+        "denoise": 0.5,
+        "mode_type": "Linear",
+        "tile_width": 640,
+        "tile_height": 384,
+        "mask_blur": 12,
+        "tile_padding": 32,
+        "seam_fix_mode": "None",
+        "seam_fix_denoise": 0.45,
+        "seam_fix_width": 64,
+        "seam_fix_mask_blur": 8,
+        "seam_fix_padding": 16,
+        "force_uniform_tiles": true,
+        "tiled_decode": false,
+        "batch_size": 1
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 93,
+      "type": "MarkdownNote",
+      "pos": [
+        -3569.5858526264824,
+        -293.58796284561447
+      ],
+      "size": [
+        451.80330578512394,
+        814.2925619834708
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# MARKDKBERRY.COM\n\nYT: https://www.youtube.com/@markdkberry\n\nPatreon: https://www.patreon.com/c/AIMakingMovies \n\nUSDU download from https://github.com/ssitu/ComfyUI_UltimateSDUpscale\n\nHuMO int8 model - https://huggingface.co/drozbay/Wan2.1-HuMo-14B-int8-convrot\n\n---\n\nWAN is the ideal model to use in this, but it takes a long time. LTX gets quirky but its faster.\n\n## When to use this workflow\n\nv2v detailer/upscaler.\n\nFinal polish. final fixes. Detailer upscaler of mostly decent v2v. It fixes stuff where SeedVR or FlashVR just upscale stuff.\n\nThis is good for a 15 minute run with LTX or a lot longer but better with WAN. (241 frames @ 24fps on my 3060 RTX 12 GB VRAM). \n\nIt will help fix distant faces or can be used for detailing a lipsync video by using Low Denoise. The LTX-Detailer-Upscaler I offer does massive changes, this is more for polishing or minor fixing into the final result at 1080p.\n\nThis workflow is amazing and frustrating in equal measure and is a WIP. \n\nCAVEAT: there will be colorisation issues if you go too strong on the denoise.\n\n## MORE INFO\n\nYou can use LTX or WAN model. WAN is preferred but the time to complete at 1080p is painful on LowVRAM.\n\nLTX is much faster but results are more prone to issues. I have left it set for LTX use at the best settings I found. Like I said... WIP.\n\nI tried it with WAN 2.2 5B it wasnt better. I tried it with WAN 2.1 Q2 it wasnt better, but was faster, it created dappled issues and I went back to 14B Q4.\n\nThe Ultimate SD (USDU) is an amazing tool and there are other versions you can customise your upscaler, and add detailer daemon in or whatever. I am only after quick fix with speed so this is why I made this wf. But it could do a lot more anbd be customised with better hardware. Adapt it for use with HuMO for keeping ref image driven character consistency would also make a lot of sense.\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MARKDKBERRY.COM\n\nYT: https://www.youtube.com/@markdkberry\n\nPatreon: https://www.patreon.com/c/AIMakingMovies \n\nUSDU download from https://github.com/ssitu/ComfyUI_UltimateSDUpscale\n\nHuMO int8 model - https://huggingface.co/drozbay/Wan2.1-HuMo-14B-int8-convrot\n\n---\n\nWAN is the ideal model to use in this, but it takes a long time. LTX gets quirky but its faster.\n\n## When to use this workflow\n\nv2v detailer/upscaler.\n\nFinal polish. final fixes. Detailer upscaler of mostly decent v2v. It fixes stuff where SeedVR or FlashVR just upscale stuff.\n\nThis is good for a 15 minute run with LTX or a lot longer but better with WAN. (241 frames @ 24fps on my 3060 RTX 12 GB VRAM). \n\nIt will help fix distant faces or can be used for detailing a lipsync video by using Low Denoise. The LTX-Detailer-Upscaler I offer does massive changes, this is more for polishing or minor fixing into the final result at 1080p.\n\nThis workflow is amazing and frustrating in equal measure and is a WIP. \n\nCAVEAT: there will be colorisation issues if you go too strong on the denoise.\n\n## MORE INFO\n\nYou can use LTX or WAN model. WAN is preferred but the time to complete at 1080p is painful on LowVRAM.\n\nLTX is much faster but results are more prone to issues. I have left it set for LTX use at the best settings I found. Like I said... WIP.\n\nI tried it with WAN 2.2 5B it wasnt better. I tried it with WAN 2.1 Q2 it wasnt better, but was faster, it created dappled issues and I went back to 14B Q4.\n\nThe Ultimate SD (USDU) is an amazing tool and there are other versions you can customise your upscaler, and add detailer daemon in or whatever. I am only after quick fix with speed so this is why I made this wf. But it could do a lot more anbd be customised with better hardware. Adapt it for use with HuMO for keeping ref image driven character consistency would also make a lot of sense.\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 13,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -2953.750583004877,
+        -322.40970375871916
+      ],
+      "size": [
+        456.0590515136719,
+        494.02302467276195
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            37
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            129
+          ]
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo",
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "8e4d79471bf1952154768e8435a9300077b534fa",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "video": "MH3-CntxWnd-Upscl__00001-audio.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "None",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MH3-CntxWnd-Upscl__00001-audio.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "widgets_values_named": {
+        "video": "MH3-CntxWnd-Upscl__00001-audio.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "None",
+        "choose video to upload": null,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MH3-CntxWnd-Upscl__00001-audio.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 27,
+      "type": "easy showAnything",
+      "pos": [
+        -2427.2369422656247,
+        125.67248429199216
+      ],
+      "size": [
+        210,
+        288
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything",
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "{\n    \"source_fps\": 24.0,\n    \"source_frame_count\": 192,\n    \"source_duration\": 8.0,\n    \"source_width\": 2256,\n    \"source_height\": 880,\n    \"loaded_fps\": 24.0,\n    \"loaded_frame_count\": 192,\n    \"loaded_duration\": 8.0,\n    \"loaded_width\": 2256,\n    \"loaded_height\": 880\n}"
+      ],
+      "widgets_values_named": {
+        "text": "{\n    \"source_fps\": 24.0,\n    \"source_frame_count\": 192,\n    \"source_duration\": 8.0,\n    \"source_width\": 2256,\n    \"source_height\": 880,\n    \"loaded_fps\": 24.0,\n    \"loaded_frame_count\": 192,\n    \"loaded_duration\": 8.0,\n    \"loaded_width\": 2256,\n    \"loaded_height\": 880\n}"
+      }
+    },
+    {
+      "id": 25,
+      "type": "Note",
+      "pos": [
+        -1945.5428382812504,
+        -381.7748794189452
+      ],
+      "size": [
+        311.81817626953125,
+        480.4109118652344
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "use an already relatively finalised video not a poor quality one else too much needs doing. This is polishing and fixing blemishes. Its also a WIP.\n\n---\n\nbetween 1 and 0.35 depending on model. LTX needs higher (try 0.25 to 0.3 denoise with 2 steps for bigger fixes, the warping might be tiling when it happens and you have to reduce denoise) but at 0.35 LTX starts adding weird things in tiled areas, WAN works well lower and can work with 1 step but still will be slower than LTX.\n\n(The other issue with WAN model is every 81 frames it will likely cause discoloration on higher denoise values, same for LTX because of the higher denoise value it needs. This is just where we are at in Feb 2026. I dont have more time to spend resolving that side of it)\n\n---\n\nwithout the below changes max was 65 frames in 30+ mins.\n\n1. reduce steps from 4 to 2 halved the time. (David Snow has a 1 step wf, I've been testing at 1 step and it works okay.)\n\n2. reduce blocks: \n- tiling in UDSU (4 blocks) was set to 960 x 544 but I got ooms. 640 x 544 was okay for me. (3:2 ratio)\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "use an already relatively finalised video not a poor quality one else too much needs doing. This is polishing and fixing blemishes. Its also a WIP.\n\n---\n\nbetween 1 and 0.35 depending on model. LTX needs higher (try 0.25 to 0.3 denoise with 2 steps for bigger fixes, the warping might be tiling when it happens and you have to reduce denoise) but at 0.35 LTX starts adding weird things in tiled areas, WAN works well lower and can work with 1 step but still will be slower than LTX.\n\n(The other issue with WAN model is every 81 frames it will likely cause discoloration on higher denoise values, same for LTX because of the higher denoise value it needs. This is just where we are at in Feb 2026. I dont have more time to spend resolving that side of it)\n\n---\n\nwithout the below changes max was 65 frames in 30+ mins.\n\n1. reduce steps from 4 to 2 halved the time. (David Snow has a 1 step wf, I've been testing at 1 step and it works okay.)\n\n2. reduce blocks: \n- tiling in UDSU (4 blocks) was set to 960 x 544 but I got ooms. 640 x 544 was okay for me. (3:2 ratio)\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 113,
+      "type": "ModelAttentionBackend",
+      "pos": [
+        -3679.6662356051565,
+        -501.57135385666726
+      ],
+      "size": [
+        351.22010943760097,
+        58
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 136
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            137
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelAttentionBackend"
+      },
+      "widgets_values": [
+        "comfy kitchen attention"
+      ],
+      "widgets_values_named": {
+        "attention": "comfy kitchen attention"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 24,
+      "type": "Note",
+      "pos": [
+        -1207.8104980468756,
+        40.85860801003177
+      ],
+      "size": [
+        602.9720458984375,
+        710.6673583984375
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# INSTRUCTIONS FROM WF ORIGINAL SOURCE MURI MURI (2025 DURING WAN ERA)\n\nhttps://www.reddit.com/r/StableDiffusion/comments/1nctdy8/comment/ndcixpf/?context=1\n\n---\n\nJust a very simple and clean WF. (I like to keep my WF clean and compact so I can see it entirely.)\n\nThe Workflow is optimized for 1920x1080. The Tiles size of 960x544 will divide the 1080p image in 4 blocks.\n\nIt's taking around 7:00 minutes for 65 Frames at 1920x1080p on my system and it can be faster on later runs. I only tried with this video lenght.\n\nWhat you need to do:\n\n- FIRST OF ALL : Upload your video with 4xUltraSharp BEFORE, because this process takes a lot of time, and if you don't like the results with SD Upscaler you can do it again saving a lot of time.\n\nI tested this upscaling my 1280x720p (around 65 Frames) generated videos to 1920x1080 with 4xUltraSharp.\n\n- THEN : Change the Model, Clip, VAE and Lora so it matches the one you want to use. (I'm Using T2V Q4, but it works with Q5_K_M and I recommend it) Keep in mind that the T2V is WAY better for that than the I2V.\n\n- ALSO : Play with Denoise Levels, Wan 2.2 T2V can do amazing stuff if you give it more Denoise, but it will change your video, of course. I found 0.08 a nice balance between keeping the same but improving it with some creativity and 0.35 gave amazing results but changed it too much.\n\nFor those with slower 12/16GB Cards like the 3060 or 4060 Ti, you could experiment using only 2 Steps. The quality don't change THAT much and will be a lot faster. Also good for testing.\n\nLast thing: I had to fix the colors of some of the outputs using the inputs as references with the Color Match Node from KJNodes.\n\nPS: If you're having trouble with seams between the blocks, you can try playing with the Tiles sizes or \"Seam_fix_mode\" on the SD Upscaler Node. You can find more infos about the options in the node here: https://github.com/Coyote-A/ultimate-upscale-for-automatic1111/wiki/FAQ#parameters-descriptions\n\n---\n\nSAMPLER RECOMMENDS FROM AROUND THE INTERNET\n\nguaranteed to work is lcm with normal so go back to that if you get issues, while others often crap out I have tried experimenting and it will depend on steps, denoise, and model used.\n\nFor Ultimate SD Upscale in video workflows, DPM++ 2M Karras or DPM++ SDE Karras are recommended for high-quality, sharp details with manageable step counts. For faster, smoother results, Euler a is also effective. A denoising strength of ~0.55 is recommended to maintain consistency\n\n\n\"For realistic people, usually dpmpp_2m_sde_gpu for sampler and karras for scheduler\"\n "
+      ],
+      "widgets_values_named": {
+        "text": "# INSTRUCTIONS FROM WF ORIGINAL SOURCE MURI MURI (2025 DURING WAN ERA)\n\nhttps://www.reddit.com/r/StableDiffusion/comments/1nctdy8/comment/ndcixpf/?context=1\n\n---\n\nJust a very simple and clean WF. (I like to keep my WF clean and compact so I can see it entirely.)\n\nThe Workflow is optimized for 1920x1080. The Tiles size of 960x544 will divide the 1080p image in 4 blocks.\n\nIt's taking around 7:00 minutes for 65 Frames at 1920x1080p on my system and it can be faster on later runs. I only tried with this video lenght.\n\nWhat you need to do:\n\n- FIRST OF ALL : Upload your video with 4xUltraSharp BEFORE, because this process takes a lot of time, and if you don't like the results with SD Upscaler you can do it again saving a lot of time.\n\nI tested this upscaling my 1280x720p (around 65 Frames) generated videos to 1920x1080 with 4xUltraSharp.\n\n- THEN : Change the Model, Clip, VAE and Lora so it matches the one you want to use. (I'm Using T2V Q4, but it works with Q5_K_M and I recommend it) Keep in mind that the T2V is WAY better for that than the I2V.\n\n- ALSO : Play with Denoise Levels, Wan 2.2 T2V can do amazing stuff if you give it more Denoise, but it will change your video, of course. I found 0.08 a nice balance between keeping the same but improving it with some creativity and 0.35 gave amazing results but changed it too much.\n\nFor those with slower 12/16GB Cards like the 3060 or 4060 Ti, you could experiment using only 2 Steps. The quality don't change THAT much and will be a lot faster. Also good for testing.\n\nLast thing: I had to fix the colors of some of the outputs using the inputs as references with the Color Match Node from KJNodes.\n\nPS: If you're having trouble with seams between the blocks, you can try playing with the Tiles sizes or \"Seam_fix_mode\" on the SD Upscaler Node. You can find more infos about the options in the node here: https://github.com/Coyote-A/ultimate-upscale-for-automatic1111/wiki/FAQ#parameters-descriptions\n\n---\n\nSAMPLER RECOMMENDS FROM AROUND THE INTERNET\n\nguaranteed to work is lcm with normal so go back to that if you get issues, while others often crap out I have tried experimenting and it will depend on steps, denoise, and model used.\n\nFor Ultimate SD Upscale in video workflows, DPM++ 2M Karras or DPM++ SDE Karras are recommended for high-quality, sharp details with manageable step counts. For faster, smoother results, Euler a is also effective. A denoising strength of ~0.55 is recommended to maintain consistency\n\n\n\"For realistic people, usually dpmpp_2m_sde_gpu for sampler and karras for scheduler\"\n "
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 31,
+      "type": "ImageResizeKJv2",
+      "pos": [
+        -2404.657318359375,
+        -422.16000980468795
+      ],
+      "size": [
+        364.5999999999999,
+        354.7
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 37
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            138
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJv2",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "9d7af919b91838fb22e31ad0107a6ddcf8bd7f3f",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true,
+            "upscale_method": true,
+            "keep_proportion": true,
+            "pad_color": true,
+            "crop_position": true,
+            "divisible_by": true,
+            "device": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1920,
+        0,
+        "lanczos",
+        "resize",
+        "0, 0, 0",
+        "center",
+        2,
+        "cpu"
+      ],
+      "widgets_values_named": {
+        "width": 1920,
+        "height": 0,
+        "upscale_method": "lanczos",
+        "keep_proportion": "resize",
+        "pad_color": "0, 0, 0",
+        "crop_position": "center",
+        "divisible_by": 2,
+        "device": "cpu"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      10,
+      0,
+      3,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      14,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      13,
+      3,
+      27,
+      0,
+      "*"
+    ],
+    [
+      37,
+      13,
+      0,
+      31,
+      0,
+      "IMAGE"
+    ],
+    [
+      46,
+      54,
+      0,
+      45,
+      0,
+      "MODEL"
+    ],
+    [
+      47,
+      61,
+      0,
+      46,
+      0,
+      "VAE"
+    ],
+    [
+      48,
+      60,
+      0,
+      47,
+      0,
+      "VAE"
+    ],
+    [
+      49,
+      50,
+      0,
+      49,
+      0,
+      "CLIP"
+    ],
+    [
+      51,
+      58,
+      0,
+      54,
+      0,
+      "MODEL"
+    ],
+    [
+      53,
+      55,
+      0,
+      57,
+      0,
+      "STRING"
+    ],
+    [
+      54,
+      45,
+      0,
+      59,
+      0,
+      "MODEL"
+    ],
+    [
+      56,
+      66,
+      0,
+      63,
+      0,
+      "MODEL"
+    ],
+    [
+      57,
+      70,
+      0,
+      64,
+      0,
+      "MODEL"
+    ],
+    [
+      58,
+      64,
+      0,
+      65,
+      0,
+      "MODEL"
+    ],
+    [
+      59,
+      65,
+      0,
+      67,
+      0,
+      "MODEL"
+    ],
+    [
+      60,
+      68,
+      0,
+      67,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      61,
+      69,
+      0,
+      67,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      62,
+      71,
+      0,
+      68,
+      0,
+      "CLIP"
+    ],
+    [
+      63,
+      71,
+      0,
+      69,
+      0,
+      "CLIP"
+    ],
+    [
+      64,
+      63,
+      0,
+      70,
+      0,
+      "MODEL"
+    ],
+    [
+      65,
+      59,
+      0,
+      66,
+      0,
+      "MODEL"
+    ],
+    [
+      68,
+      67,
+      0,
+      73,
+      0,
+      "MODEL"
+    ],
+    [
+      70,
+      75,
+      0,
+      74,
+      0,
+      "CLIP"
+    ],
+    [
+      71,
+      74,
+      0,
+      76,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      2,
+      0,
+      78,
+      0,
+      "VAE"
+    ],
+    [
+      76,
+      10,
+      0,
+      79,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      77,
+      3,
+      0,
+      80,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      79,
+      74,
+      0,
+      83,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      82,
+      76,
+      0,
+      86,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      104,
+      72,
+      0,
+      14,
+      1,
+      "MODEL"
+    ],
+    [
+      105,
+      79,
+      0,
+      14,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      106,
+      80,
+      0,
+      14,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      107,
+      78,
+      0,
+      14,
+      4,
+      "VAE"
+    ],
+    [
+      115,
+      6,
+      0,
+      101,
+      0,
+      "MODEL"
+    ],
+    [
+      116,
+      101,
+      0,
+      72,
+      0,
+      "MODEL"
+    ],
+    [
+      125,
+      9,
+      0,
+      23,
+      0,
+      "MODEL"
+    ],
+    [
+      126,
+      98,
+      0,
+      9,
+      1,
+      "CLIP"
+    ],
+    [
+      127,
+      9,
+      1,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      128,
+      102,
+      0,
+      9,
+      0,
+      "MODEL"
+    ],
+    [
+      129,
+      13,
+      2,
+      5,
+      1,
+      "AUDIO"
+    ],
+    [
+      130,
+      111,
+      0,
+      112,
+      0,
+      "MODEL"
+    ],
+    [
+      133,
+      23,
+      0,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      135,
+      112,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      136,
+      7,
+      0,
+      113,
+      0,
+      "MODEL"
+    ],
+    [
+      137,
+      113,
+      0,
+      111,
+      0,
+      "MODEL"
+    ],
+    [
+      138,
+      31,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Models Group",
+      "bounding": [
+        -2974.14750388916,
+        -2617.793264253539,
+        754.0760310374001,
+        1229.2343006333017
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Choose Your Model (GGUF or other)",
+      "bounding": [
+        -4448.360145817438,
+        -2528.741671989041,
+        1376.0977672687707,
+        1133.1646223486437
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Non GGUF model",
+      "bounding": [
+        -3751.7715117170123,
+        -2070.3619347334507,
+        612.2562255135913,
+        473.51829565352
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Wan Model Group",
+      "bounding": [
+        -4588.630238360013,
+        -1153.552546001081,
+        2400.2397252679198,
+        593.7322343110355
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "LRX Group",
+      "bounding": [
+        -4458.360145817438,
+        -2661.3932642535387,
+        4012.4493662506957,
+        1315.4518744464708
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "LTX MEM & NAG Group",
+      "bounding": [
+        -2073.66439988411,
+        -2146.7818905880204,
+        984.8182017307722,
+        790.8405007809524
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "LTX Prompt Group",
+      "bounding": [
+        -1059.0197896652116,
+        -1797.9704170730981,
+        603.1090100984691,
+        432.7011661706571
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "GGUF model loaders",
+      "bounding": [
+        -4684.880238360013,
+        -384.4170353717729,
+        953.9873503071744,
+        309.51672368172774
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6830134553650709,
+      "offset": [
+        4726.918534099406,
+        1041.6303207274377
+      ]
+    },
+    "frontendVersion": "1.49.6",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}

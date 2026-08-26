@@ -10,6 +10,7 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 *Moved this to the `workflows_by_model` folder from `workflows_by_use` folder to consolidate workflows into one place*
 
+- **workflow updated**: `MBEDIT-USDU_HuMO_14B_vrs10.json`*added in resize method with auto scaling (width: 1920, height: 0)* 
 
 ---
 

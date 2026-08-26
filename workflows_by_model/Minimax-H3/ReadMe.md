@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/9abb2374-cef0-4647-8364-16498a3ac600
 
 
 
-2. `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json` to upscale the previous result to 2mp. It improves quality and is best I can get so far *(16:9 took 25 mins. However 2.50:1 also took 25 mins and had a slight quality hit so might find alternative settings for that aspect ratio. 16:9 is good though.)*
+2. `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json` to upscale the previous result to 2mp. It improves quality and is best I can get so far *(16:9 took 25 mins. However 2.50:1 also took 25 mins and had a slight quality hit so might find alternative settings for that aspect ratio (I ran a 15min USDU-huMO workflow run on it, fixed it). 16:9 is good though.)*
 
 Example of final result here (2mp):
 
