@@ -16,7 +16,22 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 1. `MBEDIT - MH3-r2v_2Pass-LatentUpscaler_v5.json` 20 mins to get 8 second 16:9 video to 1mp. (20 mins)
 
+Example of end result here (1mp):
+
+https://github.com/user-attachments/assets/9abb2374-cef0-4647-8364-16498a3ac600
+
+
+
+
 2. `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json` to upscale the previous result to 2mp. It improves quality and is best I can get so far. (25 mins)
+
+Example of final result here (2mp):
+
+
+
+https://github.com/user-attachments/assets/f4e6968f-1d72-475a-b804-a885ada290ea
+
+
 
 *Total time is about 45 minutes for 8 second video at 16:9 which is slow, but this is where it is at for 2mp quality at this time with Minimax H3. (on a 3060 RTX 12 GB VRAM, 32GB system ram using 5 ref images (x1 environment, x4 character sheets)*.
 
