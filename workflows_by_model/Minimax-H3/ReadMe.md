@@ -14,7 +14,7 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 **My video pipeline process is now the following**:
 
 
-1. `MBEDIT - MH3-r2v_2Pass-LatentUpscaler_v5.json` 20 mins to get 8 second 16:9 video to 1mp. (20 mins)
+1. `MBEDIT - MH3-r2v_2Pass-LatentUpscaler_v5.json` 8 second video to 1mp using 5 ref images *(16:9 took 20 mins, while 2.50:1 took 15 mins).*
 
 Example of end result here (1mp):
 
@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/9abb2374-cef0-4647-8364-16498a3ac600
 
 
 
-2. `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json` to upscale the previous result to 2mp. It improves quality and is best I can get so far. (25 mins)
+2. `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json` to upscale the previous result to 2mp. It improves quality and is best I can get so far *(16:9 took 25 mins. However 2.50:1 also took 25 mins and had a slight quality hit so might find alternative settings for that aspect ratio. 16:9 is good though.)*
 
 Example of final result here (2mp):
 
