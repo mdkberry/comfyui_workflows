@@ -8,6 +8,52 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 ---
 
+### 26th August 2026 (AEST)
+
+
+**My video pipeline process is now the following**:
+
+
+1. `MBEDIT - MH3-r2v_2Pass-LatentUpscaler_v5.json` 20 mins to get 8 second 16:9 video to 1mp. (20 mins)
+
+2. `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json` to upscale the previous result to 2mp. It improves quality and is best I can get so far. (25 mins)
+
+*Total time is about 45 minutes for 8 second video at 16:9 which is slow, but this is where it is at for 2mp quality at this time with Minimax H3. (on a 3060 RTX 12 GB VRAM, 32GB system ram using 5 ref images (x1 environment, x4 character sheets)*.
+
+### 1. workflow update
+
+
+*workflow update*: `MBEDIT - MH3-r2v_2Pass-LatentUpscaler_v5.json`
+
+**Changes made**: *basic improvements to speed and quality. This will now serve as first step creation to 1mp in 2 sampler pass using ref images (x1 environment, x4 characters).*
+
+> Changed light2xv lora to comfyui official one seemed to slightly improve quality, increased strength to 0.8. testing change of sampler and scheduler in 1st pass to euler/simple (was er_sde/beta) to make it faster, kept it at 8 steps. Reduced 2nd pass to 1mp (was 2mp) and 3 manual sigmas (was 5). this finished 8 seconds clip to 1mp (16:9) in 20 mins. Taek result to final run through context windows upscaler to polish eyes at 2mp. *(I'm still fighting speckleding eyes during motion at this time)*. Bypassed the chunk nodes seemed to do nothing. Less is more so leaving it that way. Looking at ways to speed this up while raising quality now. Removed "save video" and replaced it with "VHS Combine" node due to issues with file numbers not the same between png and mp4 output.
+
+### 2. workflow update
+
+*workflow update*: `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v3.json`
+
+
+**Changes made:** *minimal changes to lora and video saving output node*.
+
+
+> Changed light2xv lora to comfyui official one seemed to slightly improve quality on other workflow, increased strength to 0.8. Removed "save video" replaced with VHS Combine as not saving png workflow out properly named. Testing as basic 2mp upscale-polisher after running through 2pass latent upscaler to create 1mp. Adjusting settings to suit. Fighting minor issue with speckleding eyes still in final results. Kept settings as *er_sde, 0.75 start sigma, 2 steps* for now.
+
+---
+
+### 25th August 2026 (AEST)
+
+**Today**: *updated context windows upscaler workflow, changed video output method*
+
+**workflow update:** `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v2.json` 
+
+> **Fixed issue with weak ref image use**.  switched out the "batch image" for "MMH3 Image List" node has resolved it. More tests with sigma settings, for dialogue scene got stronger results with Clownscheduler node set to 0.75 start_value, "simple" scheduler,  2 steps. Still using "er_sde" sampler. Changed video output to use newer method with png workflow save.
+
+
+
+
+---
+
 ### 23rd August 2026 (AEST)
 
 **Today**: *Upscaler workflows in pixels space and Latent Space. If you want the best, see #3.*

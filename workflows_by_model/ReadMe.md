@@ -1,5 +1,11 @@
 ## WORKFLOWS BY MODELS README
 
+Any updates get announced via my YT channel - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)
+
+and Patreon (free) - [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)
+
+Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)
+
 ---
 
 ### WHAT'S IN "WORKFLOWS_BY_MODELS" FOLDER
