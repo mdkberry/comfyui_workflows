@@ -24,7 +24,7 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 - **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Masked-Inpainting\MBEDIT - MH3-drozbay_inpainting_v3.1_vXX.json`
 
-
+*(The below shows some minor issues as well but they can be dealt with in the workflow. This is all wip, test and measure)*
 
 https://github.com/user-attachments/assets/4eebabc3-a586-41eb-ab2c-025efa0b8e28
 
@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/4eebabc3-a586-41eb-ab2c-025efa0b8e28
 
 - **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Bridge-2-Videos\MBEDIT - AV Bridge_vXX.json`
 
-  
+ *(The below shows a 15 second clip, the middle 192 frames, i.e. 5 seconds, have been created by the workflow and the results are pretty good, just need to figure how to upscale it now)*.
 
 https://github.com/user-attachments/assets/d033a0c6-b6e5-4fbd-993b-e737d43d2418
 
@@ -51,6 +51,8 @@ https://github.com/user-attachments/assets/d033a0c6-b6e5-4fbd-993b-e737d43d2418
 - **Cinematic multi-shot from Ethanfel**: [https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage](https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage)
 
 - **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Camera-Angles\MBEDIT - H3_Cinematic_Multishot_Coverage_vXX.json`
+
+*Below is an example of the result of giving it the first shot you see, it was finished very quickly and gave me great new camera angles for the next dialogue shots. This helps me to roll with new ideas and keep in the flow adapting to them, while developing the dialogue scenes.*
 
 <img width="1309" height="839" alt="cinematic multishot- example" src="https://github.com/user-attachments/assets/00c82885-6ff1-46b0-bdc4-17a1674fc8bf" />
 
