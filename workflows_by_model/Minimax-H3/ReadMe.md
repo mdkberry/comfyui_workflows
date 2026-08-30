@@ -8,11 +8,46 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 ---
 
+## 30th August 2026 (AEST)
+
+***Three super useful utilities. Workflows added and custom nodes required to use them below and in notes of workflow.***
+
+*A brief YT video on using them can be seen here* - https://youtu.be/7xaA4tU3hDU
+
+### 1. *Targetted Masked Character Swapping (Inpainting from AbleJones AKA Drozbay)*
+
+*This is really useful for swapping faces at distance or swapping characters in to a video.*
+
+- *His workflow and further info on his workflow method from drozbay PR here*: [https://github.com/Comfy-Org/ComfyUI/pull/15375](https://github.com/Comfy-Org/ComfyUI/pull/15375)
+
+- **Drozbay custom nodes**: [https://github.com/drozbay/MaskVidExperiments](https://github.com/drozbay/MaskVidExperiments)
+
+- **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Masked-Inpainting\MBEDIT - MH3-drozbay_inpainting_v3.1_vXX.json`
+
+### 2. *AV Bridging (Seitanism)*
+
+*This is for bridging two video clips with 192 frames (5 seconds) of content. End result is 15 second video of cohesive. Excellent for bridging two shots, the only issue is how to upscale the resulting 15 second video clip. He also has extending clips and other useful tools in the custom node I haven't tested yet.*
+
+- **"Seitanism" custom node**: [https://github.com/seitanism/ComfyUI-H3-Motion-Context-MultiRef](https://github.com/seitanism/ComfyUI-H3-Motion-Context-MultiRef)
+
+- **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Bridge-2-Videos\MBEDIT - AV Bridge_vXX.json`
+
+### 3. *Cinematic Multi-Shot Coverage (Ethanfel)* 
+
+*This is perfect for getting new camera angles. It's fast and I use it to screen shot the last frame of a video and quickly change angle for referencing positions in the next shot. I use this with ref image character sheets and its making dialogue scenes fun again because I can get in a creative flow, rolling into the next shot.*
+
+- **Cinematic multi-shot from Ethanfel**: [https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage](https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage)
+
+- **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Camera-Angles\MBEDIT - H3_Cinematic_Multishot_Coverage_vXX.json`
+
+---
+
 ### 26th August 2026 (AEST)
 
 
 **My video pipeline process is now the following**:
 
+***For a 21 min YT video discussing use of these workflows click [here ](https://www.youtube.com/watch?v=7oVus2zN518)***  
 
 1. `MBEDIT - MH3-r2v_2Pass-LatentUpscaler_v5.json` 8 second video to 1mp using 5 ref images *(16:9 took 20 mins, while 2.50:1 took 15 mins).*
 

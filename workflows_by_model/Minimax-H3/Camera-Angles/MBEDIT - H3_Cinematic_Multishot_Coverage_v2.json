@@ -1,0 +1,2794 @@
+{
+  "id": "c3fd97ac-6f57-4519-82a6-d46b9caa56c1",
+  "revision": 0,
+  "last_node_id": 122,
+  "last_link_id": 39,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1120,
+        770
+      ],
+      "size": [
+        420,
+        100
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "Fixed prompt · subject definition",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "subject_definitions:\n<Subject 1> is the complete photographed scene in <Picture 1>, including every visible person, object, surface, room boundary, prop, material, light source, shadow, color relationship, and world-space relationship. The persistent cinematic coverage target is"
+      ],
+      "widgets_values_named": {
+        "value": "subject_definitions:\n<Subject 1> is the complete photographed scene in <Picture 1>, including every visible person, object, surface, room boundary, prop, material, light source, shadow, color relationship, and world-space relationship. The persistent cinematic coverage target is"
+      },
+      "color": "#222222",
+      "bgcolor": "#333333"
+    },
+    {
+      "id": 8,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -650,
+        770
+      ],
+      "size": [
+        420,
+        100
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "title": "Fixed prompt · eight hard cuts",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "This target phrase identifies only the camera's compositional center. It does not permit any person, object, pose, expression, gaze, wardrobe, prop, geometry, lighting, or scene state to change.\n\nsummary:\n[reference generation] The target video creates eight static cinematic coverage views of <Subject 1> around the designated target, using the same source-defined scene and exact subject identities. The views are joined only by instantaneous editorial hard cuts.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4], [Shot 5], [Shot 6], [Shot 7], and [Shot 8]): fully_preserved - preserve the source scene's identities, wardrobe, pose, expression, gaze, hair, fabric folds, props, furniture, architecture, materials, colors, lighting direction, shadow placement, relative scale, and world-space layout. Infer only surfaces hidden from <Picture 1>, conservatively and consistently.\n\ndetailed_description:\nA coherent cinematic scene-coverage study matching <Picture 1>'s visual medium, texture, color science, lighting, and production design. Treat <Subject 1> as one rigid frozen world. Every person is perfectly motionless: no breathing, blinking, gaze change, facial change, gesture, hair movement, cloth movement, or pose change. Every object, wall, floor, opening, furnishing, reflection, practical light, cast shadow, and contact shadow remains fixed in world space. The designated target remains the same exact entity and anchors composition in all eight shots.\n\nThese are eight discrete camera placements, not points along a visible camera path. At every stated timestamp, execute a true instantaneous scene cut. The first frame after each cut is already fully resolved, sharp, and stable at the new camera position. Never show the camera travelling between placements. No orbit, pan, tilt, truck, dolly, pedestal, crane, zoom, whip-pan, speed ramp, motion blur, optical flow, morph, dissolve, crossfade, transitional frame, or intermediate angle. Within each shot, the camera is locked off and static.\n\n[Shot 1] Source-oriented establishing view of <Subject 1>, matching the source image's general camera side, camera height, framing logic, and lens character. The designated target is clearly readable and the scene is frozen.\n\n[Shot 2] At 00:00.333, the shot cuts to a camera placed exactly 45 degrees clockwise around the designated target at eye level, using a 40 mm lens and a medium-wide three-quarter composition. The camera is immediately locked off.\n\n[Shot 3] At 00:00.958, the shot cuts to a camera placed exactly 90 degrees clockwise around the designated target at eye level, using a 65 mm lens and a clean profile composition. The camera is immediately locked off.\n\n[Shot 4] At 00:01.583, the shot cuts to a camera placed exactly 135 degrees clockwise around the designated target, slightly below eye level, using a 35 mm lens and a low three-quarter composition. The camera is immediately locked off.\n\n[Shot 5] At 00:02.250, the shot cuts to a camera placed exactly 180 degrees clockwise around the designated target at eye level, using a 32 mm lens and a reverse wide composition that reveals the opposite side of the frozen scene. The camera is immediately locked off.\n\n[Shot 6] At 00:02.917, the shot cuts to a camera placed exactly 225 degrees clockwise around the designated target, slightly above eye level, using a 50 mm lens and a high three-quarter composition. The camera is immediately locked off.\n\n[Shot 7] At 00:03.500, the shot cuts to a camera placed exactly 270 degrees clockwise around the designated target at eye level, using an 85 mm lens and a compressed profile or detail composition. The camera is immediately locked off.\n\n[Shot 8] At 00:04.167, the shot cuts to a camera placed exactly 315 degrees clockwise around the designated target at eye level, using a 50 mm lens and a balanced hero three-quarter composition. Hold this final camera completely static through the end.\n\noverall_soundscape:\nNo dialogue, voices, room tone, Foley, ambience, or sound effects; complete silence.\n\nnon_diegetic_music:\nNone."
+      ],
+      "widgets_values_named": {
+        "value": "This target phrase identifies only the camera's compositional center. It does not permit any person, object, pose, expression, gaze, wardrobe, prop, geometry, lighting, or scene state to change.\n\nsummary:\n[reference generation] The target video creates eight static cinematic coverage views of <Subject 1> around the designated target, using the same source-defined scene and exact subject identities. The views are joined only by instantaneous editorial hard cuts.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4], [Shot 5], [Shot 6], [Shot 7], and [Shot 8]): fully_preserved - preserve the source scene's identities, wardrobe, pose, expression, gaze, hair, fabric folds, props, furniture, architecture, materials, colors, lighting direction, shadow placement, relative scale, and world-space layout. Infer only surfaces hidden from <Picture 1>, conservatively and consistently.\n\ndetailed_description:\nA coherent cinematic scene-coverage study matching <Picture 1>'s visual medium, texture, color science, lighting, and production design. Treat <Subject 1> as one rigid frozen world. Every person is perfectly motionless: no breathing, blinking, gaze change, facial change, gesture, hair movement, cloth movement, or pose change. Every object, wall, floor, opening, furnishing, reflection, practical light, cast shadow, and contact shadow remains fixed in world space. The designated target remains the same exact entity and anchors composition in all eight shots.\n\nThese are eight discrete camera placements, not points along a visible camera path. At every stated timestamp, execute a true instantaneous scene cut. The first frame after each cut is already fully resolved, sharp, and stable at the new camera position. Never show the camera travelling between placements. No orbit, pan, tilt, truck, dolly, pedestal, crane, zoom, whip-pan, speed ramp, motion blur, optical flow, morph, dissolve, crossfade, transitional frame, or intermediate angle. Within each shot, the camera is locked off and static.\n\n[Shot 1] Source-oriented establishing view of <Subject 1>, matching the source image's general camera side, camera height, framing logic, and lens character. The designated target is clearly readable and the scene is frozen.\n\n[Shot 2] At 00:00.333, the shot cuts to a camera placed exactly 45 degrees clockwise around the designated target at eye level, using a 40 mm lens and a medium-wide three-quarter composition. The camera is immediately locked off.\n\n[Shot 3] At 00:00.958, the shot cuts to a camera placed exactly 90 degrees clockwise around the designated target at eye level, using a 65 mm lens and a clean profile composition. The camera is immediately locked off.\n\n[Shot 4] At 00:01.583, the shot cuts to a camera placed exactly 135 degrees clockwise around the designated target, slightly below eye level, using a 35 mm lens and a low three-quarter composition. The camera is immediately locked off.\n\n[Shot 5] At 00:02.250, the shot cuts to a camera placed exactly 180 degrees clockwise around the designated target at eye level, using a 32 mm lens and a reverse wide composition that reveals the opposite side of the frozen scene. The camera is immediately locked off.\n\n[Shot 6] At 00:02.917, the shot cuts to a camera placed exactly 225 degrees clockwise around the designated target, slightly above eye level, using a 50 mm lens and a high three-quarter composition. The camera is immediately locked off.\n\n[Shot 7] At 00:03.500, the shot cuts to a camera placed exactly 270 degrees clockwise around the designated target at eye level, using an 85 mm lens and a compressed profile or detail composition. The camera is immediately locked off.\n\n[Shot 8] At 00:04.167, the shot cuts to a camera placed exactly 315 degrees clockwise around the designated target at eye level, using a 50 mm lens and a balanced hero three-quarter composition. Hold this final camera completely static through the end.\n\noverall_soundscape:\nNo dialogue, voices, room tone, Foley, ambience, or sound effects; complete silence.\n\nnon_diegetic_music:\nNone."
+      },
+      "color": "#222222",
+      "bgcolor": "#333333"
+    },
+    {
+      "id": 9,
+      "type": "StringConcatenate",
+      "pos": [
+        -500,
+        520
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 8
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "title": "Join target",
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        " "
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": " "
+      }
+    },
+    {
+      "id": 10,
+      "type": "StringConcatenate",
+      "pos": [
+        -150,
+        520
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 10
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "title": "Build canonical H3 prompt",
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "\n"
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": "\n"
+      }
+    },
+    {
+      "id": 11,
+      "type": "MiniMaxH3ReferenceToVideo",
+      "pos": [
+        230,
+        390
+      ],
+      "size": [
+        560,
+        430
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 5
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 6
+        },
+        {
+          "label": "ref_image_0",
+          "name": "ref_images.ref_image_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "ref_images.ref_image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_videos.ref_video_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_video_audios.ref_video_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_audios.ref_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "title": "Semantic scene → eight cinematic cuts",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ReferenceToVideo"
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        124,
+        "max"
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 1344,
+        "height": 768,
+        "length": 124,
+        "ref_image_size": "max"
+      }
+    },
+    {
+      "id": 13,
+      "type": "RandomNoise",
+      "pos": [
+        330,
+        0
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "title": "Seed",
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        988818672976843,
+        "randomize"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 988818672976843,
+        "control_after_generate": "randomize"
+      }
+    },
+    {
+      "id": 14,
+      "type": "KSamplerSelect",
+      "pos": [
+        330,
+        120
+      ],
+      "size": [
+        300,
+        70
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "title": "Sampler",
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "euler"
+      }
+    },
+    {
+      "id": 16,
+      "type": "BasicGuider",
+      "pos": [
+        850,
+        230
+      ],
+      "size": [
+        300,
+        80
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 3
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "Guider",
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      }
+    },
+    {
+      "id": 18,
+      "type": "VAEDecode",
+      "pos": [
+        1220,
+        400
+      ],
+      "size": [
+        260,
+        80
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 19
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            21,
+            24
+          ]
+        }
+      ],
+      "title": "Decode 124 frames",
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 19,
+      "type": "12e7c2af-2d0e-4f4c-8d0c-8d31c0d6f3b8",
+      "pos": [
+        1530,
+        390
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "contact_sheet",
+          "type": "IMAGE",
+          "links": [
+            22
+          ]
+        },
+        {
+          "name": "selected_views",
+          "type": "IMAGE",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      }
+    },
+    {
+      "id": 20,
+      "type": "SaveImage",
+      "pos": [
+        1900,
+        210
+      ],
+      "size": [
+        420,
+        360
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "SAVE 4×2 CONTACT SHEET",
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "H3_Cinematic_Multishot/CONTACT_SHEET"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "H3_Cinematic_Multishot/CONTACT_SHEET"
+      },
+      "color": "#233623",
+      "bgcolor": "#355035"
+    },
+    {
+      "id": 22,
+      "type": "SaveImage",
+      "pos": [
+        1220,
+        650
+      ],
+      "size": [
+        300,
+        170
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "Optional · save all 124 frames",
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "H3_Cinematic_Multishot/all_frames/frame"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "H3_Cinematic_Multishot/all_frames/frame"
+      },
+      "color": "#353220",
+      "bgcolor": "#514b30"
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        -1600,
+        120
+      ],
+      "size": [
+        620,
+        120
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "title": "Qwen3-VL semantic encoder",
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "Minimax_H3\\qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        -1600,
+        270
+      ],
+      "size": [
+        620,
+        70
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            5,
+            20
+          ]
+        }
+      ],
+      "title": "Video VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "minimax_h3_video_vae_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\minimax_h3_video_vae_int8_convrot.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "Minimax_H3\\minimax_h3_video_vae_int8_convrot.safetensors"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        -1600,
+        370
+      ],
+      "size": [
+        620,
+        70
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "title": "Audio VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "minimax_h3_audio_vae_fp32.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "Minimax_H3\\minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "pos": [
+        -1600,
+        520
+      ],
+      "size": [
+        420,
+        360
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            7
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "title": "Picture 1 · semantic scene reference",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "vlcsnap-2026-08-26-19h03m27s751.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "vlcsnap-2026-08-26-19h03m27s751.png",
+        "upload": "image"
+      },
+      "color": "#22323b",
+      "bgcolor": "#2f4b58"
+    },
+    {
+      "id": 23,
+      "type": "MarkdownNote",
+      "pos": [
+        -1600,
+        950
+      ],
+      "size": [
+        1190,
+        440
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "README · edit one field",
+      "properties": {},
+      "widgets_values": [
+        "# H3 Cinematic Multishot Coverage — core only\n\n1. Load one source scene in **Picture 1**.\n2. Edit only the red **Coverage target · EDIT THIS** field. ```\"the woman seated at the desk in <Picture 1>. Keep this exact woman as the compositional target in every shot.\"```\n3. Queue at 124 frames. The workflow extracts eight stable frames and saves a 4×2 contact sheet plus the eight views.\n4. The fixed prompt asks for instantaneous hard cuts, not an orbit.\n\nThe source image is a **semantic Ref2VA reference**. It guides identity, scene, style, and layout, but it is not VAE-locked as frame zero; invisible geometry must be inferred.\n\nInspired by **C_Nugget / PoopMan333**:\nhttps://huggingface.co/PoopMan333/H3_Character_Sheet_Generator\n\nNative H3 models:\nhttps://huggingface.co/Comfy-Org/MiniMax-H3"
+      ],
+      "widgets_values_named": {
+        "text": "# H3 Cinematic Multishot Coverage — core only\n\n1. Load one source scene in **Picture 1**.\n2. Edit only the red **Coverage target · EDIT THIS** field. ```\"the woman seated at the desk in <Picture 1>. Keep this exact woman as the compositional target in every shot.\"```\n3. Queue at 124 frames. The workflow extracts eight stable frames and saves a 4×2 contact sheet plus the eight views.\n4. The fixed prompt asks for instantaneous hard cuts, not an orbit.\n\nThe source image is a **semantic Ref2VA reference**. It guides identity, scene, style, and layout, but it is not VAE-locked as frame zero; invisible geometry must be inferred.\n\nInspired by **C_Nugget / PoopMan333**:\nhttps://huggingface.co/PoopMan333/H3_Character_Sheet_Generator\n\nNative H3 models:\nhttps://huggingface.co/Comfy-Org/MiniMax-H3"
+      },
+      "color": "#1f2b35",
+      "bgcolor": "#2b3d4b"
+    },
+    {
+      "id": 6,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1120,
+        520
+      ],
+      "size": [
+        560,
+        220
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "title": "Coverage target · EDIT THIS",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "four people standing inside an elevator <Picture 1>. Keep this exact group of people as the compositional target in every shot."
+      ],
+      "widgets_values_named": {
+        "value": "four people standing inside an elevator <Picture 1>. Keep this exact group of people as the compositional target in every shot."
+      },
+      "color": "#4a2020",
+      "bgcolor": "#6a3030"
+    },
+    {
+      "id": 119,
+      "type": "MiniMaxChunkFeedForward",
+      "pos": [
+        -496.0996437520678,
+        -355.5117420085904
+      ],
+      "size": [
+        316.38046875,
+        82
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxChunkFeedForward",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.5.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        4,
+        4096
+      ],
+      "widgets_values_named": {
+        "chunks": 4,
+        "seq_threshold": 4096
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 120,
+      "type": "MiniMaxLowVRAMAttention",
+      "pos": [
+        -665.5172808066177,
+        -187.42790904457755
+      ],
+      "size": [
+        318.5201171875,
+        58
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxLowVRAMAttention"
+      },
+      "widgets_values": [
+        4
+      ],
+      "widgets_values_named": {
+        "head_chunks": 4
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 121,
+      "type": "ModelAttentionBackend",
+      "pos": [
+        -987.8082521170404,
+        -183.3736541655576
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelAttentionBackend"
+      },
+      "widgets_values": [
+        "comfy kitchen attention"
+      ],
+      "widgets_values_named": {
+        "attention": "comfy kitchen attention"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        -1600,
+        0
+      ],
+      "size": [
+        620,
+        90
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "title": "H3 Ref2VA diffusion model",
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "Minimax_H3\\minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 12,
+      "type": "MiniMaxH3SigmaShift",
+      "pos": [
+        -71.59722222222223,
+        48.73611111111106
+      ],
+      "size": [
+        340,
+        120
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2,
+            3
+          ]
+        }
+      ],
+      "title": "Native H3 sigma shift",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift"
+      },
+      "widgets_values": [
+        12,
+        3
+      ],
+      "widgets_values_named": {
+        "shift_video": 12,
+        "shift_audio": 3
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 15,
+      "type": "BasicScheduler",
+      "pos": [
+        330,
+        220
+      ],
+      "size": [
+        300,
+        130
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "title": "25-step schedule",
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "linear_quadratic",
+        8,
+        1
+      ],
+      "widgets_values_named": {
+        "scheduler": "linear_quadratic",
+        "steps": 8,
+        "denoise": 1
+      }
+    },
+    {
+      "id": 17,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        850,
+        400
+      ],
+      "size": [
+        329.86111111111086,
+        413.08333333333303
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 15
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 18
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 16
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 17
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "title": "Generate one 124-frame packet (Sampler)",
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      }
+    },
+    {
+      "id": 117,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1231.9851875703566,
+        -360.2328315882092
+      ],
+      "size": [
+        576.4555265761826,
+        119.88618952445177
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "title": "LORA PASS 2",
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "cnr_id": "comfy-core",
+        "ver": "0.32.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "Minimax-H3\\comfyui\\minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        0.8
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\comfyui\\minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        "strength_model": 0.8
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 21,
+      "type": "SaveImage",
+      "pos": [
+        1900,
+        610
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "SAVE EIGHT VIEWS",
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "H3_Cinematic_Multishot/views/view"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "H3_Cinematic_Multishot/views/view"
+      },
+      "color": "#233623",
+      "bgcolor": "#355035"
+    },
+    {
+      "id": 122,
+      "type": "MarkdownNote",
+      "pos": [
+        -2163.102355120286,
+        443.7748466208161
+      ],
+      "size": [
+        490.9791064865117,
+        297.9357715432725
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# MarkDKBerry.com\n\n**cinematic multi-shot from Ethanfel** - [https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage](https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage)\n\nAdd a shot image in and it will give you various camera angles back. Its very good and fast for working your way through new camera angles for making the next shots.\n\n\n---\n\n**Updated**: 30th August 2026 (AEST).\n\nFor more of my adaptations check\n\nYT Channel: [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)\n\nPatreon: [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)\n\nGithub: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)\n\n---\n\nI've adapted the workflow here for my uses but the original is in the link to his custom nodes.\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# MarkDKBerry.com\n\n**cinematic multi-shot from Ethanfel** - [https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage](https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage)\n\nAdd a shot image in and it will give you various camera angles back. Its very good and fast for working your way through new camera angles for making the next shots.\n\n\n---\n\n**Updated**: 30th August 2026 (AEST).\n\nFor more of my adaptations check\n\nYT Channel: [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)\n\nPatreon: [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)\n\nGithub: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)\n\n---\n\nI've adapted the workflow here for my uses but the original is in the link to his custom nodes.\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      2,
+      12,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      12,
+      0,
+      16,
+      0,
+      "MODEL"
+    ],
+    [
+      4,
+      2,
+      0,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      5,
+      3,
+      0,
+      11,
+      1,
+      "VAE"
+    ],
+    [
+      6,
+      4,
+      0,
+      11,
+      2,
+      "VAE"
+    ],
+    [
+      7,
+      5,
+      0,
+      11,
+      3,
+      "IMAGE"
+    ],
+    [
+      8,
+      7,
+      0,
+      9,
+      0,
+      "STRING"
+    ],
+    [
+      9,
+      6,
+      0,
+      9,
+      1,
+      "STRING"
+    ],
+    [
+      10,
+      9,
+      0,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      11,
+      8,
+      0,
+      10,
+      1,
+      "STRING"
+    ],
+    [
+      12,
+      10,
+      0,
+      11,
+      8,
+      "STRING"
+    ],
+    [
+      13,
+      11,
+      0,
+      16,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      14,
+      11,
+      1,
+      17,
+      4,
+      "LATENT"
+    ],
+    [
+      15,
+      13,
+      0,
+      17,
+      0,
+      "NOISE"
+    ],
+    [
+      16,
+      14,
+      0,
+      17,
+      2,
+      "SAMPLER"
+    ],
+    [
+      17,
+      15,
+      0,
+      17,
+      3,
+      "SIGMAS"
+    ],
+    [
+      18,
+      16,
+      0,
+      17,
+      1,
+      "GUIDER"
+    ],
+    [
+      19,
+      17,
+      0,
+      18,
+      0,
+      "LATENT"
+    ],
+    [
+      20,
+      3,
+      0,
+      18,
+      1,
+      "VAE"
+    ],
+    [
+      21,
+      18,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      19,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      19,
+      1,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      18,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      120,
+      0,
+      119,
+      0,
+      "MODEL"
+    ],
+    [
+      35,
+      121,
+      0,
+      120,
+      0,
+      "MODEL"
+    ],
+    [
+      36,
+      117,
+      0,
+      121,
+      0,
+      "MODEL"
+    ],
+    [
+      37,
+      1,
+      0,
+      117,
+      0,
+      "MODEL"
+    ],
+    [
+      39,
+      119,
+      0,
+      12,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "1 · Models (official H3)",
+      "bounding": [
+        -1630,
+        -40,
+        680,
+        510
+      ],
+      "color": "#3d5b72",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "2 · Source + one editable target",
+      "bounding": [
+        -1630,
+        470,
+        1510,
+        430
+      ],
+      "color": "#7a4b4b",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "3 · Native H3 generation",
+      "bounding": [
+        -110,
+        -40,
+        1620,
+        880
+      ],
+      "color": "#4e6b55",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "4 · Core-only outputs",
+      "bounding": [
+        1510,
+        150,
+        850,
+        800
+      ],
+      "color": "#6b5f38",
+      "flags": {}
+    }
+  ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "12e7c2af-2d0e-4f4c-8d0c-8d31c0d6f3b8",
+        "version": 1,
+        "state": {
+          "lastGroupId": 4,
+          "lastNodeId": 122,
+          "lastLinkId": 39,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Eight cinematic views",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            0,
+            430,
+            128,
+            68
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            2320,
+            430,
+            128,
+            92
+          ]
+        },
+        "inputs": [
+          {
+            "id": "8823fa5a-5f94-4c4d-94c1-7ea72932f722",
+            "name": "images",
+            "type": "IMAGE",
+            "linkIds": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "localized_name": "images",
+            "pos": [
+              104,
+              454
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "5d01235d-31a1-4b18-92de-cfcb5035399d",
+            "name": "contact_sheet",
+            "type": "IMAGE",
+            "linkIds": [
+              32
+            ],
+            "localized_name": "contact_sheet",
+            "pos": [
+              2344,
+              454
+            ]
+          },
+          {
+            "id": "5f29fada-22fd-4a42-a62f-a27c83c04e33",
+            "name": "selected_views",
+            "type": "IMAGE",
+            "linkIds": [
+              31
+            ],
+            "localized_name": "selected_views",
+            "pos": [
+              2344,
+              482
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 101,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              40
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 1
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  9,
+                  17
+                ]
+              }
+            ],
+            "title": "View 1 · frame 2",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              2,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 2,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 102,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              165
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 2
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  10,
+                  18
+                ]
+              }
+            ],
+            "title": "View 2 · frame 15",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              15,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 15,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 103,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              290
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 3
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  11,
+                  20
+                ]
+              }
+            ],
+            "title": "View 3 · frame 31",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              31,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 31,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 104,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              415
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 4
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  12,
+                  22
+                ]
+              }
+            ],
+            "title": "View 4 · frame 46",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              46,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 46,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 105,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              540
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 5
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  13,
+                  23
+                ]
+              }
+            ],
+            "title": "View 5 · frame 62",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              62,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 62,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 106,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              665
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 6
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  14,
+                  25
+                ]
+              }
+            ],
+            "title": "View 6 · frame 77",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              77,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 77,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 107,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              790
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 7
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  15,
+                  27
+                ]
+              }
+            ],
+            "title": "View 7 · frame 92",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              92,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 92,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 108,
+            "type": "ImageFromBatch",
+            "pos": [
+              260,
+              915
+            ],
+            "size": [
+              260,
+              90
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 8
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  16,
+                  29
+                ]
+              }
+            ],
+            "title": "View 8 · frame 108",
+            "properties": {
+              "Node name for S&R": "ImageFromBatch"
+            },
+            "widgets_values": [
+              108,
+              1
+            ],
+            "widgets_values_named": {
+              "batch_index": 108,
+              "length": 1
+            },
+            "color": "#2e2923",
+            "bgcolor": "#4b4035"
+          },
+          {
+            "id": 109,
+            "type": "BatchImagesNode",
+            "pos": [
+              650,
+              40
+            ],
+            "size": [
+              290,
+              280
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 9
+              },
+              {
+                "localized_name": "image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 10
+              },
+              {
+                "localized_name": "image2",
+                "name": "images.image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 11
+              },
+              {
+                "localized_name": "image3",
+                "name": "images.image3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 12
+              },
+              {
+                "localized_name": "image4",
+                "name": "images.image4",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 13
+              },
+              {
+                "localized_name": "image5",
+                "name": "images.image5",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 14
+              },
+              {
+                "localized_name": "image6",
+                "name": "images.image6",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 15
+              },
+              {
+                "localized_name": "image7",
+                "name": "images.image7",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 16
+              },
+              {
+                "localized_name": "image8",
+                "name": "images.image8",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  31
+                ]
+              }
+            ],
+            "title": "Eight individual views",
+            "properties": {
+              "Node name for S&R": "BatchImagesNode"
+            }
+          },
+          {
+            "id": 110,
+            "type": "ImageStitch",
+            "pos": [
+              1010,
+              40
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 17
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 18
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  19
+                ]
+              }
+            ],
+            "title": "Row 1 · views 1+2",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "right",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "right",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          },
+          {
+            "id": 111,
+            "type": "ImageStitch",
+            "pos": [
+              1320,
+              40
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 19
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 20
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  21
+                ]
+              }
+            ],
+            "title": "Row 1 · +3",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "right",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "right",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          },
+          {
+            "id": 112,
+            "type": "ImageStitch",
+            "pos": [
+              1630,
+              40
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 21
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 22
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  30
+                ]
+              }
+            ],
+            "title": "Row 1 · +4",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "right",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "right",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          },
+          {
+            "id": 113,
+            "type": "ImageStitch",
+            "pos": [
+              1010,
+              420
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 23
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 25
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  24
+                ]
+              }
+            ],
+            "title": "Row 2 · views 5+6",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "right",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "right",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          },
+          {
+            "id": 114,
+            "type": "ImageStitch",
+            "pos": [
+              1320,
+              420
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 13,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 24
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 27
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  26
+                ]
+              }
+            ],
+            "title": "Row 2 · +7",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "right",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "right",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          },
+          {
+            "id": 115,
+            "type": "ImageStitch",
+            "pos": [
+              1630,
+              420
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 26
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 29
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  28
+                ]
+              }
+            ],
+            "title": "Row 2 · +8",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "right",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "right",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          },
+          {
+            "id": 116,
+            "type": "ImageStitch",
+            "pos": [
+              1970,
+              220
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "type": "IMAGE",
+                "link": 30
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 28
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  32
+                ]
+              }
+            ],
+            "title": "Stack rows",
+            "properties": {
+              "Node name for S&R": "ImageStitch"
+            },
+            "widgets_values": [
+              "down",
+              true,
+              6,
+              "black"
+            ],
+            "widgets_values_named": {
+              "direction": "down",
+              "match_image_size": true,
+              "spacing_width": 6,
+              "spacing_color": "black"
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "title": "Extract 8 stable camera views and assemble 4×2 sheet",
+            "bounding": [
+              230,
+              0,
+              2050,
+              1080
+            ],
+            "color": "#6b8e8e",
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 1,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 101,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 2,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 102,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 3,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 103,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 4,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 104,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 5,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 105,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 6,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 106,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 7,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 107,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 8,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 108,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 9,
+            "origin_id": 101,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 10,
+            "origin_id": 102,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 11,
+            "origin_id": 103,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 12,
+            "origin_id": 104,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 3,
+            "type": "IMAGE"
+          },
+          {
+            "id": 13,
+            "origin_id": 105,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 4,
+            "type": "IMAGE"
+          },
+          {
+            "id": 14,
+            "origin_id": 106,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 5,
+            "type": "IMAGE"
+          },
+          {
+            "id": 15,
+            "origin_id": 107,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 6,
+            "type": "IMAGE"
+          },
+          {
+            "id": 16,
+            "origin_id": 108,
+            "origin_slot": 0,
+            "target_id": 109,
+            "target_slot": 7,
+            "type": "IMAGE"
+          },
+          {
+            "id": 17,
+            "origin_id": 101,
+            "origin_slot": 0,
+            "target_id": 110,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 18,
+            "origin_id": 102,
+            "origin_slot": 0,
+            "target_id": 110,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 19,
+            "origin_id": 110,
+            "origin_slot": 0,
+            "target_id": 111,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 20,
+            "origin_id": 103,
+            "origin_slot": 0,
+            "target_id": 111,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 21,
+            "origin_id": 111,
+            "origin_slot": 0,
+            "target_id": 112,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 22,
+            "origin_id": 104,
+            "origin_slot": 0,
+            "target_id": 112,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 23,
+            "origin_id": 105,
+            "origin_slot": 0,
+            "target_id": 113,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 24,
+            "origin_id": 113,
+            "origin_slot": 0,
+            "target_id": 114,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 25,
+            "origin_id": 106,
+            "origin_slot": 0,
+            "target_id": 113,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 26,
+            "origin_id": 114,
+            "origin_slot": 0,
+            "target_id": 115,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 27,
+            "origin_id": 107,
+            "origin_slot": 0,
+            "target_id": 114,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 28,
+            "origin_id": 115,
+            "origin_slot": 0,
+            "target_id": 116,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 29,
+            "origin_id": 108,
+            "origin_slot": 0,
+            "target_id": 115,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 30,
+            "origin_id": 112,
+            "origin_slot": 0,
+            "target_id": 116,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 31,
+            "origin_id": 109,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 32,
+            "origin_id": 116,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7200000000000046,
+      "offset": [
+        2592.2422783300985,
+        -109.78341169031364
+      ]
+    },
+    "frontendVersion": "1.51.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
