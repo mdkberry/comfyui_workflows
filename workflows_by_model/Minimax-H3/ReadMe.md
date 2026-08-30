@@ -24,6 +24,12 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 - **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Masked-Inpainting\MBEDIT - MH3-drozbay_inpainting_v3.1_vXX.json`
 
+
+
+https://github.com/user-attachments/assets/4eebabc3-a586-41eb-ab2c-025efa0b8e28
+
+
+
 ### 2. *AV Bridging (Seitanism)*
 
 *This is for bridging two video clips with 192 frames (5 seconds) of content. End result is 15 second video of cohesive. Excellent for bridging two shots, the only issue is how to upscale the resulting 15 second video clip. He also has extending clips and other useful tools in the custom node I haven't tested yet.*
@@ -32,6 +38,12 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 - **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Bridge-2-Videos\MBEDIT - AV Bridge_vXX.json`
 
+  
+
+https://github.com/user-attachments/assets/d033a0c6-b6e5-4fbd-993b-e737d43d2418
+
+
+
 ### 3. *Cinematic Multi-Shot Coverage (Ethanfel)* 
 
 *This is perfect for getting new camera angles. It's fast and I use it to screen shot the last frame of a video and quickly change angle for referencing positions in the next shot. I use this with ref image character sheets and its making dialogue scenes fun again because I can get in a creative flow, rolling into the next shot.*
@@ -39,6 +51,9 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 - **Cinematic multi-shot from Ethanfel**: [https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage](https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage)
 
 - **My adapted workflow is here, (original examples in the links above)**: `\comfyui_workflows\workflows_by_model\Minimax-H3\Camera-Angles\MBEDIT - H3_Cinematic_Multishot_Coverage_vXX.json`
+
+<img width="1309" height="839" alt="cinematic multishot- example" src="https://github.com/user-attachments/assets/00c82885-6ff1-46b0-bdc4-17a1674fc8bf" />
+
 
 ---
 
