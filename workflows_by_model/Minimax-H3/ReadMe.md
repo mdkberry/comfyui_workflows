@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/4eebabc3-a586-41eb-ab2c-025efa0b8e28
 
 ### 2. *AV Bridging (Seitanism)*
 
-*This is for bridging two video clips with 192 frames (5 seconds) of content. End result is 15 second video of cohesive. Excellent for bridging two shots, the only issue is how to upscale the resulting 15 second video clip. He also has extending clips and other useful tools in the custom node I haven't tested yet.*
+*This is for bridging two video clips with 192 frames (5 seconds) of content. End result is 15 second video of cohesive content with the two clips "bridged". You can prompt to adapt that. Excellent for bridging two shots, the only issue is how to upscale the resulting 15 second video clip after (I have a 3060 RTX). He also has extending clips and other useful tools in the custom node that I haven't tested yet.*
 
 - **"Seitanism" custom node**: [https://github.com/seitanism/ComfyUI-H3-Motion-Context-MultiRef](https://github.com/seitanism/ComfyUI-H3-Motion-Context-MultiRef)
 
@@ -46,7 +46,7 @@ https://github.com/user-attachments/assets/d033a0c6-b6e5-4fbd-993b-e737d43d2418
 
 ### 3. *Cinematic Multi-Shot Coverage (Ethanfel)* 
 
-*This is perfect for getting new camera angles. It's fast and I use it to screen shot the last frame of a video and quickly change angle for referencing positions in the next shot. I use this with ref image character sheets and its making dialogue scenes fun again because I can get in a creative flow, rolling into the next shot.*
+*This is perfect for getting new camera angles. It's fast and I use it to screen shot the last frame of a video and quickly change angle for referencing positions in the next shot. I use this with ref image character sheets and its making dialogue scenes fun again because I can get in a creative flow, rolling into the next shot and changing the blocking or camera angle quickly, if it suits me.*
 
 - **Cinematic multi-shot from Ethanfel**: [https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage](https://huggingface.co/ethanfel/H3_Cinematic_Multishot_Coverage)
 
