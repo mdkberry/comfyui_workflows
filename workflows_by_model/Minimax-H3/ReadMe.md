@@ -1,3 +1,6 @@
+
+
+
 ## Minimax H3 workflow update info
 
 Any updates get announced via my YT channel - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)
@@ -11,6 +14,9 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 ## 31st August 2026 (AEST)
 
 *Workflow updates*: updated to v12 the inpainting minimax drozbay (AbleJones) workflow, to use upscaler in the crop mask, which improves details in faces at distance. `Masked-Inpainting\MBEDIT - MH3-drozbay_inpainting_v3.1_v12.json`
+
+Example using SAM3 with "head" as target, `0,1` to get both women in the crop. Then tested new upscale approach on the cropped section. This was the result.
+https://github.com/user-attachments/assets/51effa9b-86e3-4c70-ae01-47b77b1c2a8e
 
 ---
 
