@@ -8,6 +8,12 @@ Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/md
 
 ---
 
+## 31st August 2026 (AEST)
+
+*Workflow updates*: updated to v12 the inpainting minimax drozbay (AbleJones) workflow, to use upscaler in the crop mask, which improves details in faces at distance. `Masked-Inpainting\MBEDIT - MH3-drozbay_inpainting_v3.1_v12.json`
+
+---
+
 ## 30th August 2026 (AEST)
 
 ***Three super useful utilities. Workflows added and custom nodes required to use them below and in notes of workflow.***
