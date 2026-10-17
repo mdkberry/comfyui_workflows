@@ -27,6 +27,8 @@ My more acceptable stuff ends up on YouTube linked above *(or Vimeo if its too "
 
 If they get pulled from there, I will add them as download links on my website [markdkberry.com](https://markdkberry.com/) and if gets pulled from that they must be good.
 
+---
+
 ## About This Repo
 
 *This repo is for workflows used with ComfyUI to make the videos seen on my YT channel - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)*
@@ -58,7 +60,7 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 
 - **In June 2026, I started testing Bernini (WAN based)** which I really liked for the ref image control.
 
-- **August 2026** **Minimax H3 came out and changed the game**. I was finding the work too frustrating and slow and LTX wouldnt quite sustain character consistency well enough even with various Loras designed for it. *Minimax H3 changed everything and as of October 2026 its all I need and have got back to making content with it, finally.* 
+- **August 2026** **Minimax H3 came out and changed the game**. I was finding the work too frustrating and slow and LTX wouldnt quite sustain character consistency well enough even with various Loras designed for it. Minimax H3 changed everything, and as of October 2026 it's all I need, and have got back to making content with it. 
 
 **All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlist](https://www.youtube.com/playlist?list=PLVCJTJhkunkSEvrhV5Me3JnHLSSZcyTnQ). And all the workflows from 2025 are downloadable from the 2025 workflow section of my website** (I'll transfer them to here when I get time). Much of it is still relevant today, but I had an annoying habit of using loud background music and VibeVoice for the Voice-Over in the videos. I changed to more sensible presentation when I realised people were actually following my YT channel and finding it useful, and so got rid of the voice-over and loud background music from Jan 2026.
 
@@ -83,11 +85,9 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 
 **My AI videos are available to view here - [AI Video playlist on YT](https://www.youtube.com/playlist?list=PLVCJTJhkunkQSY_QZBMFclmB9-LXOi8WY)**
 
-**The NSFW videos can be found on my [Rumble](https://rumble.com/user/mdkb), or [Vimeo](https://vimeo.com/markdkberry/) channels.**
+**The NSFW videos can be found on my [Rumble](https://rumble.com/user/mdkb), or [Vimeo 1](https://vimeo.com/markdkberry/) & in future [Vimeo 2](https://vimeo.com/1233558970) channels.**
 
-*(A new Vimeo channel for NSFW will be coming with the next video release "Black Magic" music video as its... er... a bit arty.)*
-
-*(All links below are to YT versions of videos, some are wip while I wait for AI to get better. If there are uncensored versions they will be found on Vimeo or Rumble)*
+*(All links below are to YT versions of videos, some are wip while I wait for AI to get better. If there are uncensored versions they will be found on [Vimeo 2](https://vimeo.com/1233558970)*
 
 - [Cafe - (music video)](https://youtu.be/x70IGT41QpY?si=lcoTusolMfj7kPaY) - 17th Jan 2025
 
@@ -113,7 +113,10 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 
 - [Devil In The Wind - (music video)](https://youtu.be/H4LKV0qNPpQ?si=yynuRKl562FOhqbt) - 17th April 2026
 
-- [Been Down (Part 1 of Black Magic Musical)](https://youtu.be/WnKSSzWt-N4?si=WLe8WD2keauNYiwc) - 8th May 2026
+- [Been Down (Scene 1 of Black Magic Musical)](https://youtu.be/WnKSSzWt-N4?si=WLe8WD2keauNYiwc) - 8th May 2026
+
+- [Black Magic (Scene 3 of Black Magic Musical)](https://youtu.be/822Zt8-QJ9U?si=sdK8OBh2jU6prLq0) - 8th Oct 2026
+
 
 ## LICENSING
 
