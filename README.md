@@ -83,11 +83,13 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 
 ## AI VIDEOS
 
+*These are my more serious undertakings while the [Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0) (mirror links at top of this page) is more for practise and to develop skills and approach.*
+
 **My AI videos are available to view here - [AI Video playlist on YT](https://www.youtube.com/playlist?list=PLVCJTJhkunkQSY_QZBMFclmB9-LXOi8WY)**
 
 **The NSFW videos can be found on my [Rumble](https://rumble.com/user/mdkb), or [Vimeo 1](https://vimeo.com/markdkberry/) & in future [Vimeo 2](https://vimeo.com/1233558970) channels.**
 
-*(All links below are to YT versions of videos, some are wip while I wait for AI to get better. If there are uncensored versions they will be found on [Vimeo 2](https://vimeo.com/1233558970)*
+*(All links below are to YT versions of videos, some are wip while I wait for AI to get better. Uncensored versions can be found on [Vimeo 2](https://vimeo.com/1233558970) )*
 
 - [Cafe - (music video)](https://youtu.be/x70IGT41QpY?si=lcoTusolMfj7kPaY) - 17th Jan 2025
 
