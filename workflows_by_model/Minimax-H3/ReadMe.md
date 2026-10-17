@@ -32,7 +32,7 @@ If they get pulled from there, I will add them as download links on my website [
 
 ### ***Faster Storyboarding For Faster Content Creation***
 
-**Video explainer:** [see my YT channel linked above]
+**Video explainer (22 mins):** [Fast Storyboarding LowVRAM Minimax H3 on YouTube](https://youtu.be/8r3-z6BrKXg?si=OatfAG_I-V-kH3aK)
 
 This is now the fastest workflow I have, and the only one I need. It was developed to allow me to build out ideas without stopping the creative flow. So, the last video clip created informs the action and dialogue of the next one. This has allowed me to create much faster results and to develop or redirect a story on the fly. Making the work more enjoyable. I can finish an average resolution storyboard of 10 minutes in 3 or 4 days.
 
