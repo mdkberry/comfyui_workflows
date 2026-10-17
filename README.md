@@ -2,7 +2,32 @@
 
 *I make no guarantees for how useful or good these workflows are, but you are welcome to use them.*
 
-## ABOUT
+## Stay Updated
+
+**Any updates get announced via...**
+
+**YT channel** - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)
+
+**Patreon (free)** - [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)
+
+**Workflows**: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)
+
+---
+## My Parody Channels
+
+**Latest episodes will showcase the latest workflow tricks.**
+
+My more acceptable stuff ends up on YouTube linked above *(or Vimeo if its too "arty" for YT)*. However, some of my content is offensive and politically incorrect, and I don't expect it to be to everyone's tastes. But you can see that on my parody channels while they stay up *(content is the same on each, they are mirrored unless take-downs occur)*:
+
+[Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0)
+
+[Rumble Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+
+[Internet Archive Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+
+If they get pulled from there, I will add them as download links on my website [markdkberry.com](https://markdkberry.com/) and if gets pulled from that they must be good.
+
+## About This Repo
 
 *This repo is for workflows used with ComfyUI to make the videos seen on my YT channel - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)*
 
@@ -16,7 +41,7 @@ Like me, you probably have hundreds of workflows and dozens of versions of each 
 
 ## HARDWARE
 
-As of June 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB System Ram.** The same hardware I began with back in 2024.
+As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB System Ram.** The same hardware I began with back in 2024.
 
 
 ## MY TIMELINE OF EXPERIENCES
@@ -31,7 +56,9 @@ As of June 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 G
 
 - **In Jan 2026 I forced myself back to making content to get out of the eternal research loop, switching full-time to LTX 2** when it was released as Open Source (sticking with HuMO and WAN models for occasional polishing and detailing). Thankfully around then the pace of model releases slowed enough for me to stay focused on actually making videos again.
 
-- **It's now June 2026, and I am currently testing Bernini (WAN based)** which I really like.
+- **In June 2026, I started testing Bernini (WAN based)** which I really liked for the ref image control.
+
+- **August 2026** **Minimax H3 came out and changed the game**. I was finding the work too frustrating and slow and LTX wouldnt quite sustain character consistency well enough even with various Loras designed for it. *Minimax H3 changed everything and as of October 2026 its all I need and have got back to making content with it, finally.* 
 
 **All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlist](https://www.youtube.com/playlist?list=PLVCJTJhkunkSEvrhV5Me3JnHLSSZcyTnQ). And all the workflows from 2025 are downloadable from the 2025 workflow section of my website** (I'll transfer them to here when I get time). Much of it is still relevant today, but I had an annoying habit of using loud background music and VibeVoice for the Voice-Over in the videos. I changed to more sensible presentation when I realised people were actually following my YT channel and finding it useful, and so got rid of the voice-over and loud background music from Jan 2026.
 
