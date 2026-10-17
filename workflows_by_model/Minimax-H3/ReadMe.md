@@ -1,13 +1,62 @@
-
-
-
 ## Minimax H3 workflow update info
 
-Any updates get announced via my YT channel - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)
+**Any updates get announced via...**
 
-and Patreon (free) - [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)
+**YT channel** - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)
 
-Workflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)
+**Patreon (free)** - [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)
+
+**Workflows**: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)
+
+---
+## My Parody Channels
+
+**Latest episodes will showcase the latest workflow tricks.**
+
+My more acceptable stuff ends up on YouTube linked above *(or Vimeo if its too "arty" for YT)*. However, some of my content is offensive and politically incorrect, and I don't expect it to be to everyone's tastes. But you can see that on my parody channels while they stay up *(content is the same on each, they are mirrored unless take-downs occur)*:
+
+[Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0)
+
+[Rumble Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+
+[Internet Archive Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+
+If they get pulled from there, I will add them as download links on my website [markdkberry.com](https://markdkberry.com/) and if gets pulled from that they must be good.
+
+
+---
+
+## 17th October 2026 (AEST)
+
+**New Workflow: `MEDIT-Fast-Storyboard_MMH3_vXX.json`**
+
+### ***Faster Storyboarding For Faster Content Creation***
+
+**Video explainer:** [see my YT channel linked above]
+
+This is now the fastest workflow I have, and the only one I need. It was developed to allow me to build out ideas without stopping the creative flow. So, the last video clip created informs the action and dialogue of the next one. This has allowed me to create much faster results and to develop or redirect a story on the fly. Making the work more enjoyable. I can finish an average resolution storyboard of 10 minutes in 3 or 4 days.
+
+- **Speed over Quality**: I lean into speed over quality now on the theory that most people care more about story than about perfect pixels. I'll keep working to improve the quality while keeping the speed down. High VRAM cards wont have this issue.
+- **This workflow can finish a 20 second video clip, 864 x 480, to watchable condition in under 10 minutes on my 3060 RTX.** Under 5 minutes if I am less concerned about quality or for testing ideas.
+- **A (bypassed) 2nd Sampler provides a bump up to 0.8mp finishing in under 20 minutes with higher resolution, refined and polished results**. This will retain everything in the clip the same, as nothing is changing in the workflow of 1st sampler stage.
+- **You could also run the 2nd sampler stage later as a batch process on all your clips**, i.e. when all your storyboard shots are complete and you are ready to prep them before going to final cut edit.
+
+This is the fastest way so far I have found to keep in the "creative flow" while working, and Minimax has excelled itself in making this leap possible.
+
+#### **Weak points**: 
+- **Audio is still a problem**, either low quality, wrong people doing the wrong lines, or just not behaving in some way. Most of my time is spent targetting audio issues in prompts.
+- **Mouth cloning**: due to the low step count, loras can often create mouth cloning in people who should not be speaking. Resolution changes seem to cause it the most, raising the steps sometimes fixes it. The only solution is to target lips via the prompt until you can shut them up.
+- **Slow talking or wrong words**: something about the speed up loras can slow the conversation down that can make it feel like it is dragging. If you get wrong or dropped words, you probably have too much going on, either extend to up to 20 seconds, or cut some out and try it again.
+- **Some speed-up solutions impact action & dialogue**: each lora or speed-up node has a different impact on the results *(notes in the workflow track that in more detail)*.
+
+#### What next?
+
+The need for speed vrs creativity and quality is on going. But this workflow allows me to make much more content, if I don't mind the slightly lower quality (which I don't). The prompt is still the main battle ground for the reasons noted above. *Streamlining it, so I can focus on making content is my current aim.*
+
+
+
+
+
 
 ---
 
