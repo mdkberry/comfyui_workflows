@@ -26,6 +26,34 @@ If they get pulled from there, I will add them as download links on my website [
 
 ---
 
+## 21st October 2026 (AEST)
+
+**Video (15 min) relating to the below** - [https://youtu.be/Rip9uu6AVSA](https://youtu.be/Rip9uu6AVSA)
+
+1. **New Workflow: `Prompt-Creator\MBEDIT-MiniMax-H3-1038lab_Promptor_vX.json`**
+
+	Download from - https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor
+	
+	*This has some small issues, but works really well to connect to an LLM via API, and then use it to build out prompts from your summarised ideas. The qwenvl3 model will look at images and videos and describe them for the prompt. It's pretty fast too.*
+	
+	**I use this for my parody channel or roughing out ideas quickly, so I can work in a creative flow and quickly build and test prompts for each new shot.** I would not use it for my musicals or stageplays as I want more control to define each shot myself with those.
+
+2. **Workflow update**:
+	
+	- **Updated the shift_audio setting from 3 to 2 in ModelSamplingMinimaxHE node** in `Minimax-H3\MEDIT-Fast-Storyboard_MMH3_v7.json` as it improved audio quality when used with LCM/Simple in the 1st sampler *(havent tried with er_sde/beta or euler/simple yet)*.
+	
+3. **Housekeeping**:
+	
+	- *I moved the upscalers that I don't use currently into the `\Upscalers` folder.*
+	
+	
+	
+	
+
+
+
+---
+
 ## 17th October 2026 (AEST)
 
 **New Workflow: `MEDIT-Fast-Storyboard_MMH3_vXX.json`**

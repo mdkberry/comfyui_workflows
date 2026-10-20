@@ -1,0 +1,454 @@
+{
+  "id": "980f8f24-e3a1-46b4-821b-1f3fbf7a51a6",
+  "revision": 0,
+  "last_node_id": 26,
+  "last_link_id": 38,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "H3_PromptEditor",
+      "pos": [
+        2158.4487440826197,
+        460.7686598731111
+      ],
+      "size": [
+        990.703125,
+        1517.3125
+      ],
+      "flags": {
+        "min_width": 400,
+        "min_height": 200
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "shape": 7,
+          "type": "STRING",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PROMPT",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "H3_PromptEditor",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "subject_definitions:\n<Subject 1> is the room environment in <Picture 1>, with bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels.\n<Subject 2> is the man in <Picture 2>, with a robust build, standing against a plain white background.\n<Subject 3> is the young woman in <Picture 3>, with main subjects are two medical professionals standing side-by-side against a black background.\n<Audio 1> is the audio track in <Audio 1>, providing voice timbre and synchronization: [Audio file identified. LLM analysis not supported.].\n\nsummary:\n[reference generation] A 15.0-second live-action sequence executing the requested visual narrative across shots using the defined references.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1] The on-screen speaker (S1) says: <d>[English]Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit. Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.</d> , [Shot 3]): fully_preserved - bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels maintained.\n<Subject 2> (appears in [Shot 1], [Shot 3]): fully_preserved - a robust build, standing against a plain white background maintained.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - main subjects are two medical professionals standing side-by-side against a black background maintained.\n<Audio 1>: reference - voice timbre and audio synchronization maintained.\n\ndetailed_description:\n[Shot 1] (00:00.000 - 00:03.000)\nThe camera opens on a wide, static shot of the bright, minimalist conference room from <Picture 1>, bathed in cool, natural light. Center frame stands the flamboyant host from <Picture 2>, dressed in a navy velvet suit and straw cowboy hat, flanked by two stoic medical professionals from <Picture 3> in white lab coats holding clipboards. The host faces the camera, delivering his opening line with a cockney accent sourced from <Audio 1>: <Subject 1> (S1) says with a deadpan, theatrical delivery: <d>[English] \"Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit.\"</d> The camera executes a slow, imperceptible push-in, heightening the tension of the sterile corporate arena.\n\n[Shot 2] (00:03.000 - 00:06.000)\nThe host continues his monologue, stating, \"...no such qualms...\" before launching into a stylish, full 360-degree spin. The two doctors from <Picture 3> remain completely frozen and neutral, acting as living statues in the background. The camera holds the wide composition, utilizing a subtle arc tracking motion to keep the spinning host perfectly centered in the frame, capturing the absurd contrast of the flamboyant movement against the clinical backdrop of <Picture 1>.\n\n[Shot 3] (00:06.000 - 00:09.000)\nCompleting his spin, the host from <Picture 2> now faces the two lab-coated experts from <Picture 3>, shifting his address directly to them. He lowers his voice, saying: <Subject 1> (S1) says with a conspiratorial tone: <d>[English] \"Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.\"</d> The camera smoothly trucks and arcs around the group, transitioning from a direct host-to-camera angle to a three-quarter group composition that captures all three figures within the bright conference room of <Picture 1>.\n\n[Shot 4] (00:09.000 - 00:12.000)\nThe host leans in closely to the doctors from <Picture 3>, peering at their clipboards and tablet results with intense curiosity. The doctors hold their positions with professional, unreadable expressions, offering silent clinical data. The camera pushes in to a medium-wide three-shot, executing a smooth rack focus that shifts the viewer's attention between the host's inquisitive face and the cold data on the clipboards, emphasizing the bizarre intersection of medical bureaucracy and survival gaming.\n\n[Shot 5] (00:12.000 - 00:15.000)\nThe host studies the clipboard results intently\n\noverall_soundscape:\nAmbient room tone and subtle environmental sound effects matching the scene actions.\n\nnon_diegetic_music:\nN/A",
+        "subject_definitions:\n<Subject 1> is the room environment in <Picture 1>, with bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels.\n<Subject 2> is the man in <Picture 2>, with a robust build, standing against a plain white background.\n<Subject 3> is the young woman in <Picture 3>, with main subjects are two medical professionals standing side-by-side against a black background.\n<Audio 1> is the audio track in <Audio 1>, providing voice timbre and synchronization: [Audio file identified. LLM analysis not supported.].\n\nsummary:\n[reference generation] A 15.0-second live-action sequence executing the requested visual narrative across shots using the defined references.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1] The on-screen speaker (S1) says: <d>[English]Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit. Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.</d> , [Shot 3]): fully_preserved - bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels maintained.\n<Subject 2> (appears in [Shot 1], [Shot 3]): fully_preserved - a robust build, standing against a plain white background maintained.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - main subjects are two medical professionals standing side-by-side against a black background maintained.\n<Audio 1>: reference - voice timbre and audio synchronization maintained.\n\ndetailed_description:\n[Shot 1] (00:00.000 - 00:03.000)\nThe camera opens on a wide, static shot of the bright, minimalist conference room from <Picture 1>, bathed in cool, natural light. Center frame stands the flamboyant host from <Picture 2>, dressed in a navy velvet suit and straw cowboy hat, flanked by two stoic medical professionals from <Picture 3> in white lab coats holding clipboards. The host faces the camera, delivering his opening line with a cockney accent sourced from <Audio 1>: <Subject 1> (S1) says with a deadpan, theatrical delivery: <d>[English] \"Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit.\"</d> The camera executes a slow, imperceptible push-in, heightening the tension of the sterile corporate arena.\n\n[Shot 2] (00:03.000 - 00:06.000)\nThe host continues his monologue, stating, \"...no such qualms...\" before launching into a stylish, full 360-degree spin. The two doctors from <Picture 3> remain completely frozen and neutral, acting as living statues in the background. The camera holds the wide composition, utilizing a subtle arc tracking motion to keep the spinning host perfectly centered in the frame, capturing the absurd contrast of the flamboyant movement against the clinical backdrop of <Picture 1>.\n\n[Shot 3] (00:06.000 - 00:09.000)\nCompleting his spin, the host from <Picture 2> now faces the two lab-coated experts from <Picture 3>, shifting his address directly to them. He lowers his voice, saying: <Subject 1> (S1) says with a conspiratorial tone: <d>[English] \"Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.\"</d> The camera smoothly trucks and arcs around the group, transitioning from a direct host-to-camera angle to a three-quarter group composition that captures all three figures within the bright conference room of <Picture 1>.\n\n[Shot 4] (00:09.000 - 00:12.000)\nThe host leans in closely to the doctors from <Picture 3>, peering at their clipboards and tablet results with intense curiosity. The doctors hold their positions with professional, unreadable expressions, offering silent clinical data. The camera pushes in to a medium-wide three-shot, executing a smooth rack focus that shifts the viewer's attention between the host's inquisitive face and the cold data on the clipboards, emphasizing the bizarre intersection of medical bureaucracy and survival gaming.\n\n[Shot 5] (00:12.000 - 00:15.000)\nThe host studies the clipboard results intently\n\noverall_soundscape:\nAmbient room tone and subtle environmental sound effects matching the scene actions.\n\nnon_diegetic_music:\nN/A"
+      ],
+      "widgets_values_named": {
+        "_stored_prompt": "subject_definitions:\n<Subject 1> is the room environment in <Picture 1>, with bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels.\n<Subject 2> is the man in <Picture 2>, with a robust build, standing against a plain white background.\n<Subject 3> is the young woman in <Picture 3>, with main subjects are two medical professionals standing side-by-side against a black background.\n<Audio 1> is the audio track in <Audio 1>, providing voice timbre and synchronization: [Audio file identified. LLM analysis not supported.].\n\nsummary:\n[reference generation] A 15.0-second live-action sequence executing the requested visual narrative across shots using the defined references.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1] The on-screen speaker (S1) says: <d>[English]Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit. Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.</d> , [Shot 3]): fully_preserved - bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels maintained.\n<Subject 2> (appears in [Shot 1], [Shot 3]): fully_preserved - a robust build, standing against a plain white background maintained.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - main subjects are two medical professionals standing side-by-side against a black background maintained.\n<Audio 1>: reference - voice timbre and audio synchronization maintained.\n\ndetailed_description:\n[Shot 1] (00:00.000 - 00:03.000)\nThe camera opens on a wide, static shot of the bright, minimalist conference room from <Picture 1>, bathed in cool, natural light. Center frame stands the flamboyant host from <Picture 2>, dressed in a navy velvet suit and straw cowboy hat, flanked by two stoic medical professionals from <Picture 3> in white lab coats holding clipboards. The host faces the camera, delivering his opening line with a cockney accent sourced from <Audio 1>: <Subject 1> (S1) says with a deadpan, theatrical delivery: <d>[English] \"Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit.\"</d> The camera executes a slow, imperceptible push-in, heightening the tension of the sterile corporate arena.\n\n[Shot 2] (00:03.000 - 00:06.000)\nThe host continues his monologue, stating, \"...no such qualms...\" before launching into a stylish, full 360-degree spin. The two doctors from <Picture 3> remain completely frozen and neutral, acting as living statues in the background. The camera holds the wide composition, utilizing a subtle arc tracking motion to keep the spinning host perfectly centered in the frame, capturing the absurd contrast of the flamboyant movement against the clinical backdrop of <Picture 1>.\n\n[Shot 3] (00:06.000 - 00:09.000)\nCompleting his spin, the host from <Picture 2> now faces the two lab-coated experts from <Picture 3>, shifting his address directly to them. He lowers his voice, saying: <Subject 1> (S1) says with a conspiratorial tone: <d>[English] \"Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.\"</d> The camera smoothly trucks and arcs around the group, transitioning from a direct host-to-camera angle to a three-quarter group composition that captures all three figures within the bright conference room of <Picture 1>.\n\n[Shot 4] (00:09.000 - 00:12.000)\nThe host leans in closely to the doctors from <Picture 3>, peering at their clipboards and tablet results with intense curiosity. The doctors hold their positions with professional, unreadable expressions, offering silent clinical data. The camera pushes in to a medium-wide three-shot, executing a smooth rack focus that shifts the viewer's attention between the host's inquisitive face and the cold data on the clipboards, emphasizing the bizarre intersection of medical bureaucracy and survival gaming.\n\n[Shot 5] (00:12.000 - 00:15.000)\nThe host studies the clipboard results intently\n\noverall_soundscape:\nAmbient room tone and subtle environmental sound effects matching the scene actions.\n\nnon_diegetic_music:\nN/A",
+        "_preview_panel": "subject_definitions:\n<Subject 1> is the room environment in <Picture 1>, with bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels.\n<Subject 2> is the man in <Picture 2>, with a robust build, standing against a plain white background.\n<Subject 3> is the young woman in <Picture 3>, with main subjects are two medical professionals standing side-by-side against a black background.\n<Audio 1> is the audio track in <Audio 1>, providing voice timbre and synchronization: [Audio file identified. LLM analysis not supported.].\n\nsummary:\n[reference generation] A 15.0-second live-action sequence executing the requested visual narrative across shots using the defined references.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1] The on-screen speaker (S1) says: <d>[English]Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit. Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.</d> , [Shot 3]): fully_preserved - bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels maintained.\n<Subject 2> (appears in [Shot 1], [Shot 3]): fully_preserved - a robust build, standing against a plain white background maintained.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - main subjects are two medical professionals standing side-by-side against a black background maintained.\n<Audio 1>: reference - voice timbre and audio synchronization maintained.\n\ndetailed_description:\n[Shot 1] (00:00.000 - 00:03.000)\nThe camera opens on a wide, static shot of the bright, minimalist conference room from <Picture 1>, bathed in cool, natural light. Center frame stands the flamboyant host from <Picture 2>, dressed in a navy velvet suit and straw cowboy hat, flanked by two stoic medical professionals from <Picture 3> in white lab coats holding clipboards. The host faces the camera, delivering his opening line with a cockney accent sourced from <Audio 1>: <Subject 1> (S1) says with a deadpan, theatrical delivery: <d>[English] \"Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit.\"</d> The camera executes a slow, imperceptible push-in, heightening the tension of the sterile corporate arena.\n\n[Shot 2] (00:03.000 - 00:06.000)\nThe host continues his monologue, stating, \"...no such qualms...\" before launching into a stylish, full 360-degree spin. The two doctors from <Picture 3> remain completely frozen and neutral, acting as living statues in the background. The camera holds the wide composition, utilizing a subtle arc tracking motion to keep the spinning host perfectly centered in the frame, capturing the absurd contrast of the flamboyant movement against the clinical backdrop of <Picture 1>.\n\n[Shot 3] (00:06.000 - 00:09.000)\nCompleting his spin, the host from <Picture 2> now faces the two lab-coated experts from <Picture 3>, shifting his address directly to them. He lowers his voice, saying: <Subject 1> (S1) says with a conspiratorial tone: <d>[English] \"Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.\"</d> The camera smoothly trucks and arcs around the group, transitioning from a direct host-to-camera angle to a three-quarter group composition that captures all three figures within the bright conference room of <Picture 1>.\n\n[Shot 4] (00:09.000 - 00:12.000)\nThe host leans in closely to the doctors from <Picture 3>, peering at their clipboards and tablet results with intense curiosity. The doctors hold their positions with professional, unreadable expressions, offering silent clinical data. The camera pushes in to a medium-wide three-shot, executing a smooth rack focus that shifts the viewer's attention between the host's inquisitive face and the cold data on the clipboards, emphasizing the bizarre intersection of medical bureaucracy and survival gaming.\n\n[Shot 5] (00:12.000 - 00:15.000)\nThe host studies the clipboard results intently\n\noverall_soundscape:\nAmbient room tone and subtle environmental sound effects matching the scene actions.\n\nnon_diegetic_music:\nN/A"
+      }
+    },
+    {
+      "id": 7,
+      "type": "H3_PromptEditor",
+      "pos": [
+        1013.7542758714509,
+        320.7220522417759
+      ],
+      "size": [
+        634.1714200000001,
+        949.6234400000001
+      ],
+      "flags": {
+        "min_width": 400,
+        "min_height": 200
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "shape": 7,
+          "type": "STRING",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PROMPT",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "H3_PromptEditor",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "{\n    \"<Picture 1>\": \"A bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels. On the table, there are a few laptops, a tablet, and some small devices. The room has a minimalist design with a light blue wall on the left and a white wall on the right, each featuring a large, black flat-screen TV mounted on it. Large glass windows on the far left let in ample natural light, reflecting off the clean, light-colored floor.\",\n    \"<Picture 2>\": \"The main subject is a man with a robust build, standing against a plain white background. He has a thick, full grey-and-black beard and mustache, and is wearing dark sunglasses that obscure his eyes. On his head, he wears a light brown straw cowboy hat with a perforated crown. His clothing consists of a dark navy blue velvet suit, including a matching jacket and trousers, worn over a dark grey button-down shirt.\",\n    \"<Picture 3>\": \"The main subjects are two medical professionals standing side-by-side against a black background. On the left is a woman with light skin, short straight brown hair, and a neutral, professional facial expression. She is wearing a white doctor's lab coat over a light grey shirt, with a black stethoscope around her neck, and is holding a grey tablet. On the right is a man with short dark brown hair, a neat beard, and a serious expression. He is wearing a white doctor's lab coat over a white shirt and a black tie, with a stethoscope draped around his neck, holding a black clipboard and a pen.\",\n    \"<Audio 1>\": \"[Audio file identified. LLM analysis not supported.]\",\n    \"_media_keys\": [\n        \"<Picture 1>\",\n        \"<Picture 2>\",\n        \"<Picture 3>\",\n        \"<Audio 1>\"\n    ]\n}",
+        "{\n    \"<Picture 1>\": \"A bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels. On the table, there are a few laptops, a tablet, and some small devices. The room has a minimalist design with a light blue wall on the left and a white wall on the right, each featuring a large, black flat-screen TV mounted on it. Large glass windows on the far left let in ample natural light, reflecting off the clean, light-colored floor.\",\n    \"<Picture 2>\": \"The main subject is a man with a robust build, standing against a plain white background. He has a thick, full grey-and-black beard and mustache, and is wearing dark sunglasses that obscure his eyes. On his head, he wears a light brown straw cowboy hat with a perforated crown. His clothing consists of a dark navy blue velvet suit, including a matching jacket and trousers, worn over a dark grey button-down shirt.\",\n    \"<Picture 3>\": \"The main subjects are two medical professionals standing side-by-side against a black background. On the left is a woman with light skin, short straight brown hair, and a neutral, professional facial expression. She is wearing a white doctor's lab coat over a light grey shirt, with a black stethoscope around her neck, and is holding a grey tablet. On the right is a man with short dark brown hair, a neat beard, and a serious expression. He is wearing a white doctor's lab coat over a white shirt and a black tie, with a stethoscope draped around his neck, holding a black clipboard and a pen.\",\n    \"<Audio 1>\": \"[Audio file identified. LLM analysis not supported.]\",\n    \"_media_keys\": [\n        \"<Picture 1>\",\n        \"<Picture 2>\",\n        \"<Picture 3>\",\n        \"<Audio 1>\"\n    ]\n}"
+      ],
+      "widgets_values_named": {
+        "_stored_prompt": "{\n    \"<Picture 1>\": \"A bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels. On the table, there are a few laptops, a tablet, and some small devices. The room has a minimalist design with a light blue wall on the left and a white wall on the right, each featuring a large, black flat-screen TV mounted on it. Large glass windows on the far left let in ample natural light, reflecting off the clean, light-colored floor.\",\n    \"<Picture 2>\": \"The main subject is a man with a robust build, standing against a plain white background. He has a thick, full grey-and-black beard and mustache, and is wearing dark sunglasses that obscure his eyes. On his head, he wears a light brown straw cowboy hat with a perforated crown. His clothing consists of a dark navy blue velvet suit, including a matching jacket and trousers, worn over a dark grey button-down shirt.\",\n    \"<Picture 3>\": \"The main subjects are two medical professionals standing side-by-side against a black background. On the left is a woman with light skin, short straight brown hair, and a neutral, professional facial expression. She is wearing a white doctor's lab coat over a light grey shirt, with a black stethoscope around her neck, and is holding a grey tablet. On the right is a man with short dark brown hair, a neat beard, and a serious expression. He is wearing a white doctor's lab coat over a white shirt and a black tie, with a stethoscope draped around his neck, holding a black clipboard and a pen.\",\n    \"<Audio 1>\": \"[Audio file identified. LLM analysis not supported.]\",\n    \"_media_keys\": [\n        \"<Picture 1>\",\n        \"<Picture 2>\",\n        \"<Picture 3>\",\n        \"<Audio 1>\"\n    ]\n}",
+        "_preview_panel": "{\n    \"<Picture 1>\": \"A bright, modern conference room featuring a long white table surrounded by several grey mesh office chairs on wheels. On the table, there are a few laptops, a tablet, and some small devices. The room has a minimalist design with a light blue wall on the left and a white wall on the right, each featuring a large, black flat-screen TV mounted on it. Large glass windows on the far left let in ample natural light, reflecting off the clean, light-colored floor.\",\n    \"<Picture 2>\": \"The main subject is a man with a robust build, standing against a plain white background. He has a thick, full grey-and-black beard and mustache, and is wearing dark sunglasses that obscure his eyes. On his head, he wears a light brown straw cowboy hat with a perforated crown. His clothing consists of a dark navy blue velvet suit, including a matching jacket and trousers, worn over a dark grey button-down shirt.\",\n    \"<Picture 3>\": \"The main subjects are two medical professionals standing side-by-side against a black background. On the left is a woman with light skin, short straight brown hair, and a neutral, professional facial expression. She is wearing a white doctor's lab coat over a light grey shirt, with a black stethoscope around her neck, and is holding a grey tablet. On the right is a man with short dark brown hair, a neat beard, and a serious expression. He is wearing a white doctor's lab coat over a white shirt and a black tie, with a stethoscope draped around his neck, holding a black clipboard and a pen.\",\n    \"<Audio 1>\": \"[Audio file identified. LLM analysis not supported.]\",\n    \"_media_keys\": [\n        \"<Picture 1>\",\n        \"<Picture 2>\",\n        \"<Picture 3>\",\n        \"<Audio 1>\"\n    ]\n}"
+      }
+    },
+    {
+      "id": 8,
+      "type": "H3_Promptor",
+      "pos": [
+        1693.1975282302121,
+        450.51278046131335
+      ],
+      "size": [
+        427.3786699999996,
+        832.0587199999995
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vision_context",
+          "shape": 7,
+          "type": "STRING",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PROMPT",
+          "type": "STRING",
+          "links": [
+            9,
+            11
+          ]
+        },
+        {
+          "name": "DURATION",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "LENGTH",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "H3_Promptor",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "Reference-to-Video-Audio (Ref2VA)",
+        "wide shot to show <Picture 1> with a man and woman wearing white lab coats and carrying clipboards from <Picture 3> stood in the room chatting to each other behind the man from <Picture 2>. The man from <Picture 2> facing the camera and using the voice from <Audio 1> in London cockney accent says, \"Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit. Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.\" and he turns in a stylish spin, to then talk quietly to the two people in lab coats behind him and look at their clipboard results so far.",
+        15,
+        "Auto",
+        "Auto",
+        "Auto",
+        "English",
+        "openrouter/free (openrouter/free)",
+        0.7,
+        4096
+      ],
+      "widgets_values_named": {
+        "task_type": "Reference-to-Video-Audio (Ref2VA)",
+        "scene_direction": "wide shot to show <Picture 1> with a man and woman wearing white lab coats and carrying clipboards from <Picture 3> stood in the room chatting to each other behind the man from <Picture 2>. The man from <Picture 2> facing the camera and using the voice from <Audio 1> in London cockney accent says, \"Well, I'd say Elliot is going hungry at this point. Valdimir showing no such qualms when it came to skinning his rabbit. Our experts in white lab coats will be keeping count as we move onto the next contest... Jungle survival.\" and he turns in a stylish spin, to then talk quietly to the two people in lab coats behind him and look at their clipboard results so far.",
+        "duration": 15,
+        "reference_images": "Auto",
+        "reference_videos": "Auto",
+        "reference_audios": "Auto",
+        "output_language": "English",
+        "provider": "openrouter/free (openrouter/free)",
+        "temperature": 0.7,
+        "max_tokens": 4096
+      },
+      "color": "#221f33ff",
+      "bgcolor": "#3b3850ff"
+    },
+    {
+      "id": 9,
+      "type": "PreviewAny",
+      "pos": [
+        992.0217958714508,
+        1379.9650521472595
+      ],
+      "size": [
+        690.2391050000001,
+        600.0038599999998
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core",
+        "ver": "0.33.3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 10,
+      "type": "PreviewAny",
+      "pos": [
+        3168.8730262957542,
+        469.6210222417757
+      ],
+      "size": [
+        1058.5154720000005,
+        1570.0294279999998
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core",
+        "ver": "0.33.3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 24,
+      "type": "H3_Vision",
+      "pos": [
+        347.64892406367926,
+        417.4730881217756
+      ],
+      "size": [
+        449.76709241172057,
+        627
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "image_0",
+          "name": "ref_images.image_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_videos.video_0",
+          "shape": 7,
+          "type": "VIDEO",
+          "link": null
+        },
+        {
+          "name": "ref_audios.audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "label": "video_0",
+          "name": "global_image_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "global_image_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "audio_0",
+          "name": "global_video_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "global_video_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VISION_CONTEXT",
+          "type": "STRING",
+          "links": [
+            20,
+            21
+          ]
+        },
+        {
+          "name": "REF_IMAGES",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "H3_Vision"
+      },
+      "widgets_values": [
+        "Subject / Identity",
+        "Comprehensive",
+        "{\"media\":[[\"slot_29\",{\"name\":\"view_00008_.png\",\"kind\":\"image\"}],[\"slot_30\",{\"name\":\"Klein9b__00002_ (27).png\",\"kind\":\"image\"}],[\"slot_31\",{\"name\":\"Klein9b__00001_ (33).png\",\"kind\":\"image\"}],[\"slot_32\",{\"name\":\"Cockney British 1st 10 seconds MMH3 rip.mp3\",\"kind\":\"audio\"}]],\"order\":[\"upload:slot_29\",\"upload:slot_30\",\"upload:slot_31\",\"upload:slot_32\"],\"user_reordered\":false,\"linked_state\":{}}",
+        "English",
+        "openrouter/free (openrouter/free)",
+        0.2,
+        4096,
+        30,
+        "increment",
+        "<Picture 1>:",
+        ""
+      ],
+      "widgets_values_named": {
+        "global_image_mode": "Subject / Identity",
+        "global_video_mode": "Comprehensive",
+        "_media_state": "{\"media\":[[\"slot_29\",{\"name\":\"view_00008_.png\",\"kind\":\"image\"}],[\"slot_30\",{\"name\":\"Klein9b__00002_ (27).png\",\"kind\":\"image\"}],[\"slot_31\",{\"name\":\"Klein9b__00001_ (33).png\",\"kind\":\"image\"}],[\"slot_32\",{\"name\":\"Cockney British 1st 10 seconds MMH3 rip.mp3\",\"kind\":\"audio\"}]],\"order\":[\"upload:slot_29\",\"upload:slot_30\",\"upload:slot_31\",\"upload:slot_32\"],\"user_reordered\":false,\"linked_state\":{}}",
+        "output_language": "English",
+        "provider": "openrouter/free (openrouter/free)",
+        "temperature": 0.2,
+        "max_tokens": 4096,
+        "seed": 30,
+        "fixed": "increment",
+        "custom_prompt_override": "<Picture 1>:",
+        "gh_vision_panel": ""
+      },
+      "color": "#221f33ff",
+      "bgcolor": "#3b3850ff"
+    },
+    {
+      "id": 25,
+      "type": "MarkdownNote",
+      "pos": [
+        -419.481179880123,
+        389.92734442564654
+      ],
+      "size": [
+        605.8499999999991,
+        587.0759999999992
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# Mark DK Berry\n\nThis came from \n[https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor](https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor)\n\nI have it working with openrouter but not got it working with Local LM Studio yet.\n\nThere's a lot of improvements this thing needs to work better and I logged them here but he's not come back to it yet - [https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor/issues/18](https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor/issues/18)\n\n\n## EXAMPLE PRE-PROMPT TO SET GUIDELINES\n\n### Example 1:\n\nThis was to control floral embellishment and keep the resulting prompt tight.\n\n```\nwhen a dialogue begins, cut to that persons image and stay with it until their dialogue ends. do not embellish extra mood, action, or camera movements. camera should be static on each shot and show only what is seen in the image provided. this is four people having a conversation over the internet using webcams. so each person gets the full screen for the entire duration of their dialogue. shot then cuts to the next person the moment the next person starts talking. keep the context simple and concise. no embellishing, other than exactly what is there in the images. no background music. no environment sounds, only the dialogue for each person.\n\nimage 1 is mdkb is wearing dark sunglasses who speaks with a strong London cockney accent and standing centre image with a blue hue bunker scene in the background.\nimage 2 is roger waters (Roger) who speaks with an english posh accent.\nimage 3 is ed sheeran (Ed) who speaks with a weak english accent.\nimage 4 is Leonardo DiCaprio (Leonardo) speaks with a strong American accent.\n\nthe dialogue should be as follows.\n\nmdkb speaking in a London cockney accent: \"So Roger, talk to me. what's your beef with Ed?\"\n\nroger speaking in posh english accent: \"He's sucking up all the propaganda of the socialist Israelis with their democratic ways. I went there man, I saw the apartheid... It's hell on earth.\"\n\nmdkb speaking in a London cockney accent: \"Anything you want to add, Ed?\"\n```"
+      ],
+      "widgets_values_named": {
+        "text": "# Mark DK Berry\n\nThis came from \n[https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor](https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor)\n\nI have it working with openrouter but not got it working with Local LM Studio yet.\n\nThere's a lot of improvements this thing needs to work better and I logged them here but he's not come back to it yet - [https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor/issues/18](https://github.com/1038lab/ComfyUI-MiniMax-H3-Promptor/issues/18)\n\n\n## EXAMPLE PRE-PROMPT TO SET GUIDELINES\n\n### Example 1:\n\nThis was to control floral embellishment and keep the resulting prompt tight.\n\n```\nwhen a dialogue begins, cut to that persons image and stay with it until their dialogue ends. do not embellish extra mood, action, or camera movements. camera should be static on each shot and show only what is seen in the image provided. this is four people having a conversation over the internet using webcams. so each person gets the full screen for the entire duration of their dialogue. shot then cuts to the next person the moment the next person starts talking. keep the context simple and concise. no embellishing, other than exactly what is there in the images. no background music. no environment sounds, only the dialogue for each person.\n\nimage 1 is mdkb is wearing dark sunglasses who speaks with a strong London cockney accent and standing centre image with a blue hue bunker scene in the background.\nimage 2 is roger waters (Roger) who speaks with an english posh accent.\nimage 3 is ed sheeran (Ed) who speaks with a weak english accent.\nimage 4 is Leonardo DiCaprio (Leonardo) speaks with a strong American accent.\n\nthe dialogue should be as follows.\n\nmdkb speaking in a London cockney accent: \"So Roger, talk to me. what's your beef with Ed?\"\n\nroger speaking in posh english accent: \"He's sucking up all the propaganda of the socialist Israelis with their democratic ways. I went there man, I saw the apartheid... It's hell on earth.\"\n\nmdkb speaking in a London cockney accent: \"Anything you want to add, Ed?\"\n```"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      8,
+      7,
+      0,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      9,
+      8,
+      0,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      11,
+      8,
+      0,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      20,
+      24,
+      0,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      21,
+      24,
+      0,
+      9,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.620921323059155,
+      "offset": [
+        1003.1085249776258,
+        -15.134717785422351
+      ]
+    },
+    "frontendVersion": "1.55.18",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
