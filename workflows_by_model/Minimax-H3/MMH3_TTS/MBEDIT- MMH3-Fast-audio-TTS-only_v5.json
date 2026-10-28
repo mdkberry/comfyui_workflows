@@ -1,0 +1,4889 @@
+{
+  "id": "e3f2b845-8f2c-4b5a-9caf-eac1029d3e7e",
+  "revision": 0,
+  "last_node_id": 293,
+  "last_link_id": 582,
+  "nodes": [
+    {
+      "id": 156,
+      "type": "MarkdownNote",
+      "pos": [
+        -3098.8775604116845,
+        3811.4824593678895
+      ],
+      "size": [
+        655.0953169999993,
+        637.0164698279482
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# Mark DK Berry dot com\n\n**Patreon**: [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)\n\n**YT**: [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)\n\n---\n\n## SPEED UPS\n\nsee notes above for details on changes there\n\n\n## UPDATES\n\n### 20th October 2026\n\n- included RefMod features but not decided if they are better yet.\n- reduced shift_audio to 2 from 3 in ModelSamplingMinimaxH3 node to reduce metallic and issues. (also was recommended LCM and simple but didnt find it to be better yet but testing, may switch back to er_sde/beta or euler simple tbc).\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# Mark DK Berry dot com\n\n**Patreon**: [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)\n\n**YT**: [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)\n\n---\n\n## SPEED UPS\n\nsee notes above for details on changes there\n\n\n## UPDATES\n\n### 20th October 2026\n\n- included RefMod features but not decided if they are better yet.\n- reduced shift_audio to 2 from 3 in ModelSamplingMinimaxH3 node to reduce metallic and issues. (also was recommended LCM and simple but didnt find it to be better yet but testing, may switch back to er_sde/beta or euler simple tbc).\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 160,
+      "type": "Sigmas Resample",
+      "pos": [
+        549.1945266250424,
+        4579.180493780852
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 77,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "sigmas_in",
+          "type": "SIGMAS",
+          "link": 318
+        }
+      ],
+      "outputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "links": [
+            338,
+            339
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Sigmas Resample"
+      },
+      "widgets_values": [
+        21,
+        "linear",
+        8,
+        true
+      ],
+      "widgets_values_named": {
+        "output_length": 21,
+        "mode": "linear",
+        "order": 8,
+        "rescale_after": true
+      }
+    },
+    {
+      "id": 159,
+      "type": "Sigmas Pad",
+      "pos": [
+        220.4375266250427,
+        4664.364493780853
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 76,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 317
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            318
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Sigmas Pad"
+      },
+      "widgets_values": [
+        0
+      ],
+      "widgets_values_named": {
+        "value": 0
+      }
+    },
+    {
+      "id": 158,
+      "type": "Sigmas DeleteBelowFloor",
+      "pos": [
+        216.44452662504284,
+        4529.933493780848
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 74,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 316
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            317
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Sigmas DeleteBelowFloor"
+      },
+      "widgets_values": [
+        0.35
+      ],
+      "widgets_values_named": {
+        "floor": 0.35
+      }
+    },
+    {
+      "id": 128,
+      "type": "CLIPLoader",
+      "pos": [
+        -1495.4954528850965,
+        4972.198853467128
+      ],
+      "size": [
+        640,
+        120
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            272
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "Minimax_H3\\qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "type": "minimax",
+        "device": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 185,
+      "type": "Note",
+      "pos": [
+        -2751.742703029195,
+        4692.4331572561405
+      ],
+      "size": [
+        370.19603209588786,
+        127.32148108464662
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "NOTE: if you are low vram below 8GB try the w4a8 model from Kijai might be even better for you than int8."
+      ],
+      "widgets_values_named": {
+        "text": "NOTE: if you are low vram below 8GB try the w4a8 model from Kijai might be even better for you than int8."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 190,
+      "type": "Note",
+      "pos": [
+        -1794.2261712467216,
+        4860.448425875517
+      ],
+      "size": [
+        216.68523814203058,
+        128.5272340843676
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Recommended int8 model\nbut if you want to squeeze a bit more out of a vram oom then try the w4a8 model both from kijai."
+      ],
+      "widgets_values_named": {
+        "text": "Recommended int8 model\nbut if you want to squeeze a bit more out of a vram oom then try the w4a8 model both from kijai."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 131,
+      "type": "ComfyMathExpression",
+      "pos": [
+        -1354.229458449638,
+        6191.96189254062
+      ],
+      "size": [
+        225,
+        116
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "a",
+          "name": "values.a",
+          "type": "FLOAT,INT,BOOLEAN",
+          "link": 261
+        },
+        {
+          "name": "values.b",
+          "shape": 7,
+          "type": "FLOAT,INT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": []
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            372
+          ]
+        },
+        {
+          "name": "BOOL",
+          "type": "BOOLEAN",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyMathExpression"
+      },
+      "widgets_values": [
+        "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
+      ],
+      "widgets_values_named": {
+        "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
+      }
+    },
+    {
+      "id": 121,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        2121.6824779470207,
+        5154.5135848403315
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 88,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 405
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 250
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            383
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 199,
+      "type": "BasicGuider",
+      "pos": [
+        2693.6012707510795,
+        4295.397970325071
+      ],
+      "size": [
+        360,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 72,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 523
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 401
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            392
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core",
+        "ver": "0.30.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 177,
+      "type": "Note",
+      "pos": [
+        282.06010139997284,
+        3720.389076841792
+      ],
+      "size": [
+        446.4847396390753,
+        241.07858660972124
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# EARLY SIGMA TESTING\n\nkeep last sigma above 0.35 according to AbleJones who said it doesnt benefit this model below it (IIRC).\n\nOption A: Standard Quadratic Arc\n\n1.00, 0.99, 0.95, 0.88, 0.79, 0.67, 0.52, 0.35, 0\n\n**RESULT: this caused weird blue vignette, and structure was also weak but it looked quite cool though unusable.\n\nOption B: Smooth Landing Arc\n\n1.00, 0.83, 0.68, 0.56, 0.47, 0.40, 0.36, 0.35, 0"
+      ],
+      "widgets_values_named": {
+        "text": "# EARLY SIGMA TESTING\n\nkeep last sigma above 0.35 according to AbleJones who said it doesnt benefit this model below it (IIRC).\n\nOption A: Standard Quadratic Arc\n\n1.00, 0.99, 0.95, 0.88, 0.79, 0.67, 0.52, 0.35, 0\n\n**RESULT: this caused weird blue vignette, and structure was also weak but it looked quite cool though unusable.\n\nOption B: Smooth Landing Arc\n\n1.00, 0.83, 0.68, 0.56, 0.47, 0.40, 0.36, 0.35, 0"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 206,
+      "type": "SigmasPreview",
+      "pos": [
+        3751.114118166112,
+        4536.3078375702635
+      ],
+      "size": [
+        270,
+        294
+      ],
+      "flags": {},
+      "order": 75,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 446
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SigmasPreview"
+      },
+      "widgets_values": [
+        false,
+        "blue"
+      ],
+      "widgets_values_named": {
+        "print_as_list": false,
+        "line_color": "blue"
+      }
+    },
+    {
+      "id": 197,
+      "type": "LTXVConcatAVLatent",
+      "pos": [
+        2365.1772383499497,
+        4069.7199584289096
+      ],
+      "size": [
+        181.308203125,
+        46
+      ],
+      "flags": {},
+      "order": 84,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "link": 402
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "link": 388
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            403
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVConcatAVLatent"
+      }
+    },
+    {
+      "id": 122,
+      "type": "VAEDecode",
+      "pos": [
+        2165.87577278807,
+        4971.209676013962
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 87,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 404
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 251
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            382
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 208,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        1178.91729039635,
+        4808.889812824403
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 417
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 519
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            419
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 127,
+      "type": "UNETLoader",
+      "pos": [
+        -1504.272458626106,
+        4736.280882195578
+      ],
+      "size": [
+        640,
+        90
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "Minimax_H3\\minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 170,
+      "type": "easy showAnything",
+      "pos": [
+        -1102.3300176986784,
+        6129.717780483059
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 343
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "672"
+      ],
+      "widgets_values_named": {
+        "text": "672"
+      }
+    },
+    {
+      "id": 169,
+      "type": "easy showAnything",
+      "pos": [
+        -1088.982633859438,
+        5973.829059097704
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 342
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "1568"
+      ],
+      "widgets_values_named": {
+        "text": "1568"
+      }
+    },
+    {
+      "id": 163,
+      "type": "DiffusionModelLoaderKJ",
+      "pos": [
+        -2149.3962170544132,
+        4557.868787316358
+      ],
+      "size": [
+        529.8801164990819,
+        179.19441337408261
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "extra_state_dict",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            340
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DiffusionModelLoaderKJ"
+      },
+      "widgets_values": [
+        "Minimax_H3\\Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
+        "default",
+        "default",
+        false,
+        "disabled",
+        true
+      ],
+      "widgets_values_named": {
+        "model_name": "Minimax_H3\\Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
+        "weight_dtype": "default",
+        "compute_dtype": "default",
+        "patch_cublaslinear": false,
+        "sage_attention": "disabled",
+        "enable_fp16_accumulation": true
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 119,
+      "type": "VAELoader",
+      "pos": [
+        -1499.3169999999993,
+        5291.296000000001
+      ],
+      "size": [
+        640,
+        70
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            251,
+            273,
+            520
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "minimax_h3_video_vae_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\minimax_h3_video_vae_int8_convrot.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "Minimax_H3\\minimax_h3_video_vae_int8_convrot.safetensors"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 117,
+      "type": "MarkdownNote",
+      "pos": [
+        -2946.6919451699296,
+        4862.797601817276
+      ],
+      "size": [
+        440,
+        740
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Model Links",
+      "properties": {},
+      "widgets_values": [
+        "## Model Links\n[🤗 Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3)\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_ref2va_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors)\n\n**Kijai experimental models**\n\n- [https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main](https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_ref2va_pruned_int8_convrot.safetensors\n│   └── 📂 text_encoders/\n│       └── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      ],
+      "widgets_values_named": {
+        "text": "## Model Links\n[🤗 Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3)\n\n**vae**\n\n- [minimax_h3_video_vae_fp16.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors)\n- [minimax_h3_audio_vae_fp32.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors)\n\n**diffusion_models**\n\n- [minimax_h3_ref2va_pruned_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors)\n\n**text_encoders**\n\n- [qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors](https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors)\n\n**Kijai experimental models**\n\n- [https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main](https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main)\n\n\n## Model Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_ref2va_pruned_int8_convrot.safetensors\n│   └── 📂 text_encoders/\n│       └── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n```\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 161,
+      "type": "SigmasPreview",
+      "pos": [
+        914.6633354124815,
+        4071.4117703895135
+      ],
+      "size": [
+        270,
+        294
+      ],
+      "flags": {},
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 338
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SigmasPreview"
+      },
+      "widgets_values": [
+        false,
+        "blue"
+      ],
+      "widgets_values_named": {
+        "print_as_list": false,
+        "line_color": "blue"
+      }
+    },
+    {
+      "id": 140,
+      "type": "MarkdownNote",
+      "pos": [
+        -2283.6297651015134,
+        5958.127980128836
+      ],
+      "size": [
+        283.72151870333846,
+        387.5286985108569
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 171,
+      "type": "Note",
+      "pos": [
+        -1811.503425487355,
+        5107.581608782216
+      ],
+      "size": [
+        273.76045491051923,
+        325.78156941872294
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Make sure you use correct sizes divisible by 32 else it will trim it to that anyway. \n\nMinimax H3 model was trained at 1344 x 768 (1 mp /32) but above that I get better clarity (at 2mp, but it takes ages or ooms on longer video clips).\n\n\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "Make sure you use correct sizes divisible by 32 else it will trim it to that anyway. \n\nMinimax H3 model was trained at 1344 x 768 (1 mp /32) but above that I get better clarity (at 2mp, but it takes ages or ooms on longer video clips).\n\n\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 116,
+      "type": "MarkdownNote",
+      "pos": [
+        -2352.319364649588,
+        4769.531761837252
+      ],
+      "size": [
+        469.5449461213477,
+        1074.278657812728
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: MiniMax H3",
+      "properties": {},
+      "widgets_values": [
+        "# Mark DK Berry \n\nYouTube: [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)\n\nPatreon: [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)\n\nWorkflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)\n\n---\n\n## Latent Space Upscaler workflow\n\n**Useage**: I made this specifically for dialogue clip upscaling as my other one doesnt work for mouth movements. This does.\n\n\nNOTE: I prefer results from my pixel space upscaling workflow which is _\"MBEDIT - MH3_r2v_SingleSampler_Detailer_vXX.json\"_ and you can download it from here [https://github.com/mdkberry/comfyui_workflows/tree/main/workflows_by_model/Minimax-H3](https://github.com/mdkberry/comfyui_workflows/tree/main/workflows_by_model/Minimax-H3)\n\nbut unfortunately that one doesnt do a good job with dialogue clips and fights mouth movements, even with good prompting. \n\nSo, I created this workflow specifically for dialogue clips.\n\n---\n\n## ISSUES/THINGS TO BE AWARE OF\n\n- **OOMS will hit you in the 2nd sampler, and are a PITA after waiting 20 mins to find out it cant handle it**. But if you have dynamic memory in, no switches, and dont dump the models during the wf, you should be able to tweak the Latent Upscaler down a touch and get through the 2nd sampler without a restart, so long as you dont change setting further back. Then tweak it better for next go.</br>\n\n- I would prefer to set `ref_image_size` in the main H3 node of first part of run, to \"Max\" but often have to go with \"Match\" instead to avoid OOMs and get higher resolution faster.\n\n\n\n---\n\n## Upscaler Model For This Workflow \n\nYou could install whatever ones you think are best. I tried some others but didnt find them to be as good as this one. This one still needed tweaking to get right, and might need different settings for your rig.\n\n- [https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler](https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler)\n\n- [https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler](https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler)\n\n---\n\n## USING THIS WORKFLOW\n\nIt's not a v2v workflow like the pixel space upscaler _(see top of this note for that)_. This was created for upscaling dialogue clips.\n\n***The following is for my 3060 RTX 12GB VRAM, 32 GB System ram as a guide for what to expect. Season to your tastes and setup.***\n\n1. Set \"H3 Reference to Video\" node to resolution of 0.4 mp or higher if you can handle it. (for my dialogue clips I need at least 8 seconds, so its my limit vrs time)\n\n2. Make a good prompt using the minimax prompt guide and an LLM, and provide your ref images for characters and scene.\n\n3. Set the chunks to manage VRAM ceiling vrs Time. Set your speed Loras and speedups as required. (They change all the time so see other notes above).\n\n4. set the Latent Upscaling node (LBH-123-AI notes will help you set it up) to whatever wont oom at your video clip length, longer it will take and more likely to OOM. I leave it at 0.8mp now as I stay under the oom for 15 and 20 seconds long clips at that.\n\n\n\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# Mark DK Berry \n\nYouTube: [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)\n\nPatreon: [https://www.patreon.com/c/AIMakingMovies](https://www.patreon.com/c/AIMakingMovies)\n\nWorkflows: [https://github.com/mdkberry/comfyui_workflows](https://github.com/mdkberry/comfyui_workflows)\n\n---\n\n## Latent Space Upscaler workflow\n\n**Useage**: I made this specifically for dialogue clip upscaling as my other one doesnt work for mouth movements. This does.\n\n\nNOTE: I prefer results from my pixel space upscaling workflow which is _\"MBEDIT - MH3_r2v_SingleSampler_Detailer_vXX.json\"_ and you can download it from here [https://github.com/mdkberry/comfyui_workflows/tree/main/workflows_by_model/Minimax-H3](https://github.com/mdkberry/comfyui_workflows/tree/main/workflows_by_model/Minimax-H3)\n\nbut unfortunately that one doesnt do a good job with dialogue clips and fights mouth movements, even with good prompting. \n\nSo, I created this workflow specifically for dialogue clips.\n\n---\n\n## ISSUES/THINGS TO BE AWARE OF\n\n- **OOMS will hit you in the 2nd sampler, and are a PITA after waiting 20 mins to find out it cant handle it**. But if you have dynamic memory in, no switches, and dont dump the models during the wf, you should be able to tweak the Latent Upscaler down a touch and get through the 2nd sampler without a restart, so long as you dont change setting further back. Then tweak it better for next go.</br>\n\n- I would prefer to set `ref_image_size` in the main H3 node of first part of run, to \"Max\" but often have to go with \"Match\" instead to avoid OOMs and get higher resolution faster.\n\n\n\n---\n\n## Upscaler Model For This Workflow \n\nYou could install whatever ones you think are best. I tried some others but didnt find them to be as good as this one. This one still needed tweaking to get right, and might need different settings for your rig.\n\n- [https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler](https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler)\n\n- [https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler](https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler)\n\n---\n\n## USING THIS WORKFLOW\n\nIt's not a v2v workflow like the pixel space upscaler _(see top of this note for that)_. This was created for upscaling dialogue clips.\n\n***The following is for my 3060 RTX 12GB VRAM, 32 GB System ram as a guide for what to expect. Season to your tastes and setup.***\n\n1. Set \"H3 Reference to Video\" node to resolution of 0.4 mp or higher if you can handle it. (for my dialogue clips I need at least 8 seconds, so its my limit vrs time)\n\n2. Make a good prompt using the minimax prompt guide and an LLM, and provide your ref images for characters and scene.\n\n3. Set the chunks to manage VRAM ceiling vrs Time. Set your speed Loras and speedups as required. (They change all the time so see other notes above).\n\n4. set the Latent Upscaling node (LBH-123-AI notes will help you set it up) to whatever wont oom at your video clip length, longer it will take and more likely to OOM. I leave it at 0.8mp now as I stay under the oom for 15 and 20 seconds long clips at that.\n\n\n\n\n\n"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 207,
+      "type": "VAEDecode",
+      "pos": [
+        1232.728658652866,
+        4617.891445265663
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 82,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 416
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 520
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            418
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 196,
+      "type": "LTXVSeparateAVLatent",
+      "pos": [
+        1324.4311881613603,
+        4189.50510687121
+      ],
+      "size": [
+        193.2916015625,
+        46
+      ],
+      "flags": {},
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "link": 384
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "links": [
+            385,
+            416
+          ]
+        },
+        {
+          "name": "audio_latent",
+          "type": "LATENT",
+          "links": [
+            388,
+            417
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LTXVSeparateAVLatent"
+      }
+    },
+    {
+      "id": 191,
+      "type": "Note",
+      "pos": [
+        -1982.016575768615,
+        5920.261862957782
+      ],
+      "size": [
+        377.16886020207244,
+        378.6339875380718
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Ultrawide screen (2.33:1)\n\n1824 x 768 (1.4 mp)\n1760 x 744 (1.31 MP)\n1680 x 720 (1.21 MP) - 23 mins for 8 sec vid.\n1568 x 672 (1 mp, 21:9)\n\n---\n\nor 2.50:1 equivalent (I was using with LTX for widescreen in \"Black Magic\" musical scenes. Its also faster than 16:9.)\n\n1920 × 768 (1.47 MP)\n1824 × 736 (1.34 MP) - 26 to 30 mins for 8 sec video (ooms often).\n1760 × 704 (1.24 MP recommended)\n1600 × 640 (1mp)\n1440 × 576 pixels (0.83mp)\n1344 x 544\n1280 x 512 (0.66 mp)\n1120 x 448 (0.50 mp)\n960 x 384 (0.34mp) - start here for upscaling (3060 RTX) it can be as good as 0.66mp quite often. \n866 x 346 (0.3mp)\n832 x 320\n640 x 256 = (0.16mp) - quick test your prompt\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "Ultrawide screen (2.33:1)\n\n1824 x 768 (1.4 mp)\n1760 x 744 (1.31 MP)\n1680 x 720 (1.21 MP) - 23 mins for 8 sec vid.\n1568 x 672 (1 mp, 21:9)\n\n---\n\nor 2.50:1 equivalent (I was using with LTX for widescreen in \"Black Magic\" musical scenes. Its also faster than 16:9.)\n\n1920 × 768 (1.47 MP)\n1824 × 736 (1.34 MP) - 26 to 30 mins for 8 sec video (ooms often).\n1760 × 704 (1.24 MP recommended)\n1600 × 640 (1mp)\n1440 × 576 pixels (0.83mp)\n1344 x 544\n1280 x 512 (0.66 mp)\n1120 x 448 (0.50 mp)\n960 x 384 (0.34mp) - start here for upscaling (3060 RTX) it can be as good as 0.66mp quite often. \n866 x 346 (0.3mp)\n832 x 320\n640 x 256 = (0.16mp) - quick test your prompt\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 176,
+      "type": "Note",
+      "pos": [
+        -2675.5330380591386,
+        3077.484641480439
+      ],
+      "size": [
+        865.0034772503711,
+        639.9804858445946
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# SPEED UP STUFF\n\n## October 2026\n\nSMD lora 4 step - str 1 - this is getting recommended for keeping audio and visual in tact. use it inplace of other speedup loras. It locks the camera and background down if you wanted that. but speckleds. [https://huggingface.co/zjwfufu/SMD-MiniMax-H3-Ref2VA-4step-ComfyUI](https://huggingface.co/zjwfufu/SMD-MiniMax-H3-Ref2VA-4step-ComfyUI) **MBEDIT CONCLUSION: wasnt seeing improvements for my usecase over taomate in tests yet**.\n\nDMAD - this can be layered with tao and used to try to improve quality maybe sound and visual. worked well for me. try 0.6 str when layering with tao and reduce tao to 0.6 str (from 1.). download from [https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras](https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras)\n\nLightVAE - this from Kijai - \"the lightVAE works natively now too, it definitely has quality hit so wouldn't use it as encoder at all, and for decoding only as faster preview option.\" [https://huggingface.co/Kijai/MiniMax-H3-experimental](https://huggingface.co/Kijai/MiniMax-H3-experimental) **MBEDIT - CONCLUSION: not worth the bother in my case as I just run 3 steps for quicker tests and bump to 6 when going to 2nd sampler so not going to do a lot for my situation**\n\nVEDA - faster than the native sol but does have a quality hit. (21 mins down to 14 mins for 15 seconds x2 samplers). install info from Benji future thinker here - https://www.youtube.com/watch?v=r39Ej4L2dO4 **MBEDIT CONCLUSION: VEDA losing quality on the 1st sampler a bit too much in basic use. going into the 2nd sampler eyes are crapping out too much. for fast storyboarding it makes it less useful as I need better quality on low steps in 1st sampler. If settings tweaks could improve speed/quality ratio maybe. but not solved yet.**\n\nTaomate 3 steps - I am using this as fastest I found, test at 3 steps finalise at 6 steps (plus 2nd sampler) its not high quality its just good enough for my \"speed over quality\" fast storyboarding approach. (Kijai says it fails the stick test whatever that is and said, \"Flashgen still hard to beat for me.\")\n\nSingularity model - not faster but has more cinematic feel allegedly, I am still testing it.\n\n---\n\n## Sept 2026:\n\n- David Snow tested many and ended up on drbaphs step600_ema_pruned (from drbaph) lora saying \"both 4 and 8 steps. Since that lora is quite powerful, I find a setting of about 0.4 is good with 8 steps. that's the sweet spot.\"\n\n- Kijai version of flashgen 4 steps - https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras.\nworked best at strength 1 and steps 6. finished 10 sec video at 960 x 544 x 10 seconds in 540 seconds (about 10 mins). it was as long as drbaphs but slightly better quality (though could have been drbaphs was lower str?). I'll stick with this one for now for my sitcom useages which are lower res.\n\n---\n\n## August 2026\n\n- SLA Attention comes from plagueKind and is very fast making 37 min run finish in 20 mins but it does degrade the result. Its best disaabled for good final result when upscaling, tbh. (no longer using it replaced by native version - Sept 2026)\n\n- Lightx2v its 4 steps but I set it to 8 in sampler for best results. It makes a big difference to speed and I generally leave it in all the time the speed vrs impact is worth it.\n\n- ComfyI Kitchen Attention I also leave this in and have replaced Sage Attn (2.2) completely with it now. Use one or the other.\n\n- LowVRAM attention and Chunk feed forward. This is KJNodes stuff and I use them to get the best out of the VRAM ceiling. in this workflow I dont set it above 4 as the upscampler will max out the VRAM anyway and uses more than the first sample pass. you can raise chunks to 64 apparently but it will take a lot longer I expect. most I have done is 16. but it wont fix spikes. only the long term run ceiling.\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# SPEED UP STUFF\n\n## October 2026\n\nSMD lora 4 step - str 1 - this is getting recommended for keeping audio and visual in tact. use it inplace of other speedup loras. It locks the camera and background down if you wanted that. but speckleds. [https://huggingface.co/zjwfufu/SMD-MiniMax-H3-Ref2VA-4step-ComfyUI](https://huggingface.co/zjwfufu/SMD-MiniMax-H3-Ref2VA-4step-ComfyUI) **MBEDIT CONCLUSION: wasnt seeing improvements for my usecase over taomate in tests yet**.\n\nDMAD - this can be layered with tao and used to try to improve quality maybe sound and visual. worked well for me. try 0.6 str when layering with tao and reduce tao to 0.6 str (from 1.). download from [https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras](https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras)\n\nLightVAE - this from Kijai - \"the lightVAE works natively now too, it definitely has quality hit so wouldn't use it as encoder at all, and for decoding only as faster preview option.\" [https://huggingface.co/Kijai/MiniMax-H3-experimental](https://huggingface.co/Kijai/MiniMax-H3-experimental) **MBEDIT - CONCLUSION: not worth the bother in my case as I just run 3 steps for quicker tests and bump to 6 when going to 2nd sampler so not going to do a lot for my situation**\n\nVEDA - faster than the native sol but does have a quality hit. (21 mins down to 14 mins for 15 seconds x2 samplers). install info from Benji future thinker here - https://www.youtube.com/watch?v=r39Ej4L2dO4 **MBEDIT CONCLUSION: VEDA losing quality on the 1st sampler a bit too much in basic use. going into the 2nd sampler eyes are crapping out too much. for fast storyboarding it makes it less useful as I need better quality on low steps in 1st sampler. If settings tweaks could improve speed/quality ratio maybe. but not solved yet.**\n\nTaomate 3 steps - I am using this as fastest I found, test at 3 steps finalise at 6 steps (plus 2nd sampler) its not high quality its just good enough for my \"speed over quality\" fast storyboarding approach. (Kijai says it fails the stick test whatever that is and said, \"Flashgen still hard to beat for me.\")\n\nSingularity model - not faster but has more cinematic feel allegedly, I am still testing it.\n\n---\n\n## Sept 2026:\n\n- David Snow tested many and ended up on drbaphs step600_ema_pruned (from drbaph) lora saying \"both 4 and 8 steps. Since that lora is quite powerful, I find a setting of about 0.4 is good with 8 steps. that's the sweet spot.\"\n\n- Kijai version of flashgen 4 steps - https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras.\nworked best at strength 1 and steps 6. finished 10 sec video at 960 x 544 x 10 seconds in 540 seconds (about 10 mins). it was as long as drbaphs but slightly better quality (though could have been drbaphs was lower str?). I'll stick with this one for now for my sitcom useages which are lower res.\n\n---\n\n## August 2026\n\n- SLA Attention comes from plagueKind and is very fast making 37 min run finish in 20 mins but it does degrade the result. Its best disaabled for good final result when upscaling, tbh. (no longer using it replaced by native version - Sept 2026)\n\n- Lightx2v its 4 steps but I set it to 8 in sampler for best results. It makes a big difference to speed and I generally leave it in all the time the speed vrs impact is worth it.\n\n- ComfyI Kitchen Attention I also leave this in and have replaced Sage Attn (2.2) completely with it now. Use one or the other.\n\n- LowVRAM attention and Chunk feed forward. This is KJNodes stuff and I use them to get the best out of the VRAM ceiling. in this workflow I dont set it above 4 as the upscampler will max out the VRAM anyway and uses more than the first sample pass. you can raise chunks to 64 apparently but it will take a lot longer I expect. most I have done is 16. but it wont fix spikes. only the long term run ceiling.\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 120,
+      "type": "VAELoader",
+      "pos": [
+        -1499.3169999999989,
+        5419.9649999999965
+      ],
+      "size": [
+        650,
+        70
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            250,
+            274,
+            519
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "minimax_h3_audio_vae_fp32.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "Minimax_H3\\minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "Minimax_H3\\minimax_h3_audio_vae_fp32.safetensors"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 129,
+      "type": "RandomNoise",
+      "pos": [
+        -217.8014071776415,
+        4135.031024615529
+      ],
+      "size": [
+        360,
+        90
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            253,
+            400
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        1357,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 1357,
+        "control_after_generate": "fixed"
+      }
+    },
+    {
+      "id": 126,
+      "type": "BasicGuider",
+      "pos": [
+        -195.46587708230214,
+        4280.28644346149
+      ],
+      "size": [
+        360,
+        60
+      ],
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 314
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 575
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            254
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      }
+    },
+    {
+      "id": 201,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        3279.753029837647,
+        4059.910315646203
+      ],
+      "size": [
+        320.9345122916843,
+        373.2159967668358
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 86,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 400
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 392
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 393
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 445
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 403
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            404,
+            405
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core",
+        "ver": "0.30.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 125,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        472.4525192373219,
+        4136.371635965516
+      ],
+      "size": [
+        361.63641739895013,
+        347.8399906654022
+      ],
+      "flags": {},
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 253
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 254
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 255
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 339
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 553
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            384
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 123,
+      "type": "KSamplerSelect",
+      "pos": [
+        -237.50922785,
+        4388.97258875
+      ],
+      "size": [
+        370,
+        70
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            255
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "lcm"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "lcm"
+      }
+    },
+    {
+      "id": 211,
+      "type": "Note",
+      "pos": [
+        2156.4529325604226,
+        4544.9231700403825
+      ],
+      "size": [
+        319.85797286922616,
+        167.91478372153597
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "my setup 3060 RTX  \n\nI max out at 1.4 mp upscale for 8 seconds of video."
+      ],
+      "widgets_values_named": {
+        "text": "my setup 3060 RTX  \n\nI max out at 1.4 mp upscale for 8 seconds of video."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 198,
+      "type": "KSamplerSelect",
+      "pos": [
+        2706.6069751603477,
+        4170.504515464588
+      ],
+      "size": [
+        362.99558239834084,
+        71.27349231481276
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 18,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            393
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core",
+        "ver": "0.30.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "euler"
+      }
+    },
+    {
+      "id": 115,
+      "type": "ResolutionSelector",
+      "pos": [
+        -1453.1829425354117,
+        5944.407350658702
+      ],
+      "size": [
+        270,
+        170
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "showAdvanced": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            342
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            343
+          ]
+        }
+      ],
+      "title": "Resolution Selector (Size)",
+      "properties": {
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+        "16:9 (Widescreen)",
+        0.4,
+        32
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "16:9 (Widescreen)",
+        "megapixels": 0.4,
+        "multiple": 32
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 136,
+      "type": "MiniMaxH3ReferenceToVideo",
+      "pos": [
+        -748.900382731374,
+        5014.8826662610445
+      ],
+      "size": [
+        410,
+        484
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 272
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 273
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 274
+        },
+        {
+          "label": "ref_image_0",
+          "name": "ref_images.ref_image_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 577
+        },
+        {
+          "name": "ref_images.ref_image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 578
+        },
+        {
+          "name": "ref_images.ref_image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 579
+        },
+        {
+          "label": "ref_video_0",
+          "name": "ref_videos.ref_video_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "ref_video_audio_0",
+          "name": "ref_video_audios.ref_video_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_video_audios.ref_video_audio_1",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_video_audios.ref_video_audio_2",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "label": "ref_audio_0",
+          "name": "ref_audios.ref_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 533
+        },
+        {
+          "name": "ref_audios.ref_audio_1",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 534
+        },
+        {
+          "name": "ref_audios.ref_audio_2",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 279
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 581
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 582
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": 372
+        },
+        {
+          "name": "ref_images.ref_image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 580
+        },
+        {
+          "name": "ref_images.ref_image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            401,
+            544,
+            547
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            552
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ReferenceToVideo"
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        192,
+        "match"
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 1344,
+        "height": 768,
+        "length": 192,
+        "ref_image_size": "match"
+      }
+    },
+    {
+      "id": 184,
+      "type": "MiniMaxLowVRAMAttention",
+      "pos": [
+        -1701.550895473097,
+        3621.2917331699846
+      ],
+      "size": [
+        318.5201171875,
+        58
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 451
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            357
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxLowVRAMAttention"
+      },
+      "widgets_values": [
+        4
+      ],
+      "widgets_values_named": {
+        "head_chunks": 4
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 153,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1099.8931636748757,
+        4957.041205194107
+      ],
+      "size": [
+        532.5866984375,
+        860.5866984375
+      ],
+      "flags": {},
+      "order": 85,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 418
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 419
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "MH3_1stPass_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MH3_1stPass__00004-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MH3_1stPass__00004.png",
+            "fullpath": "S:\\ComfyUI_windows_portable\\ComfyUI\\output\\MH3_1stPass__00004-audio.mp4",
+            "metadata": {
+              "kind": "video",
+              "width": 32,
+              "height": 32,
+              "duration": 19.333333333333332,
+              "fps": 24,
+              "frame_count": 464
+            },
+            "id": "b963e264-90c0-4334-a41c-0dbe6338f458"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "MH3_1stPass_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MH3_1stPass__00004-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MH3_1stPass__00004.png",
+            "fullpath": "S:\\ComfyUI_windows_portable\\ComfyUI\\output\\MH3_1stPass__00004-audio.mp4",
+            "metadata": {
+              "kind": "video",
+              "width": 32,
+              "height": 32,
+              "duration": 19.333333333333332,
+              "fps": 24,
+              "frame_count": 464
+            },
+            "id": "b963e264-90c0-4334-a41c-0dbe6338f458"
+          }
+        }
+      }
+    },
+    {
+      "id": 174,
+      "type": "easy int",
+      "pos": [
+        -1520.1004105575369,
+        5563.6730316522935
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            581
+          ]
+        }
+      ],
+      "title": "Width",
+      "properties": {
+        "Node name for S&R": "easy int"
+      },
+      "widgets_values": [
+        32
+      ],
+      "widgets_values_named": {
+        "value": 32
+      },
+      "color": "#3f82a8",
+      "bgcolor": "#3f82a8"
+    },
+    {
+      "id": 175,
+      "type": "easy int",
+      "pos": [
+        -1520.2780939522934,
+        5682.237066604936
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            582
+          ]
+        }
+      ],
+      "title": "Height",
+      "properties": {
+        "Node name for S&R": "easy int"
+      },
+      "widgets_values": [
+        32
+      ],
+      "widgets_values_named": {
+        "value": 32
+      },
+      "color": "#3f82a8",
+      "bgcolor": "#3f82a8"
+    },
+    {
+      "id": 124,
+      "type": "BasicScheduler",
+      "pos": [
+        -220.15121502626906,
+        4528.669562498617
+      ],
+      "size": [
+        370,
+        130
+      ],
+      "flags": {},
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 315
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            316
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        8,
+        1
+      ],
+      "widgets_values_named": {
+        "scheduler": "simple",
+        "steps": 8,
+        "denoise": 1
+      }
+    },
+    {
+      "id": 213,
+      "type": "ManualSigmas",
+      "pos": [
+        3270.792237332376,
+        4660.337406098085
+      ],
+      "size": [
+        367.746711337373,
+        71.00716164375626
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "sigmas",
+          "name": "sigmas",
+          "type": "STRING",
+          "widget": {
+            "name": "sigmas"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SIGMAS",
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": []
+        }
+      ],
+      "title": "5 step Sigmas",
+      "properties": {
+        "Node name for S&R": "ManualSigmas",
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "0.9231, 0.8780, 0.8000, 0.6316, 0.3158, 0.0000"
+      ],
+      "widgets_values_named": {
+        "sigmas": "0.9231, 0.8780, 0.8000, 0.6316, 0.3158, 0.0000"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 212,
+      "type": "ManualSigmas",
+      "pos": [
+        3291.0255998893044,
+        4801.551477771001
+      ],
+      "size": [
+        266.579898552601,
+        58
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "sigmas",
+          "name": "sigmas",
+          "type": "STRING",
+          "widget": {
+            "name": "sigmas"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SIGMAS",
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": []
+        }
+      ],
+      "title": "4 step Sigmas",
+      "properties": {
+        "Node name for S&R": "ManualSigmas",
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "0.9035, 0.8000, 0.6316, 0.3158, 0.0000"
+      ],
+      "widgets_values_named": {
+        "sigmas": "0.9035, 0.8000, 0.6316, 0.3158, 0.0000"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 214,
+      "type": "ManualSigmas",
+      "pos": [
+        2716.7641826100976,
+        4471.302678640419
+      ],
+      "size": [
+        418.33011772975965,
+        73.89764200903574
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "sigmas",
+          "name": "sigmas",
+          "type": "STRING",
+          "widget": {
+            "name": "sigmas"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SIGMAS",
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": []
+        }
+      ],
+      "title": "3 step Sigmas",
+      "properties": {
+        "Node name for S&R": "ManualSigmas",
+        "cnr_id": "comfy-core",
+        "ver": "0.5.1",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "0.9035, 0.6316, 0.3158, 0.0000"
+      ],
+      "widgets_values_named": {
+        "sigmas": "0.9035, 0.6316, 0.3158, 0.0000"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 168,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2339.140547340774,
+        4378.085542689302
+      ],
+      "size": [
+        788.8531634197459,
+        82
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 340
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            529
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Minimax-H3\\minimax_h3_taomate_3step_lora_avg_rank_19_bf16.safetensors",
+        0.6
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\minimax_h3_taomate_3step_lora_avg_rank_19_bf16.safetensors",
+        "strength_model": 0.6
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 219,
+      "type": "ClownScheduler",
+      "pos": [
+        2914.536961391415,
+        4594.061011856452
+      ],
+      "size": [
+        281.263671875,
+        250
+      ],
+      "flags": {},
+      "order": 73,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 524
+        }
+      ],
+      "outputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "links": [
+            445,
+            446
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ClownScheduler"
+      },
+      "widgets_values": [
+        0,
+        0.9,
+        0,
+        0,
+        "constant",
+        0,
+        3,
+        3,
+        false
+      ],
+      "widgets_values_named": {
+        "pad_start_value": 0,
+        "start_value": 0.9,
+        "end_value": 0,
+        "pad_end_value": 0,
+        "scheduler": "constant",
+        "scheduler_start_step": 0,
+        "scheduler_end_step": 3,
+        "total_steps": 3,
+        "flip_schedule": false
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 194,
+      "type": "MinimaxH3LatentUpscaler3D",
+      "pos": [
+        1879.6922377664393,
+        4219.407827204419
+      ],
+      "size": [
+        540.2228935762552,
+        226
+      ],
+      "flags": {},
+      "order": 81,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "latent",
+          "type": "*",
+          "link": 385
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "*",
+          "links": [
+            402
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MinimaxH3LatentUpscaler3D"
+      },
+      "widgets_values": [
+        "minimax_h3_latent_upscaler_3d_bf16.safetensors",
+        "megapixels",
+        0.8,
+        32,
+        "cuda",
+        "cuda",
+        "cuda",
+        "fp16"
+      ],
+      "widgets_values_named": {
+        "model_name": "minimax_h3_latent_upscaler_3d_bf16.safetensors",
+        "mode": "megapixels",
+        "mode.megapixels": 0.8,
+        "align": 32,
+        "enable_temporal_chunking": "cuda",
+        "force_unload": "cuda",
+        "device": "cuda",
+        "precision": "fp16"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 132,
+      "type": "PrimitiveFloat",
+      "pos": [
+        -1810.9641537382056,
+        5762.7942555504
+      ],
+      "size": [
+        270,
+        70
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            261
+          ]
+        }
+      ],
+      "title": "Float (Duration)",
+      "properties": {
+        "Node name for S&R": "PrimitiveFloat"
+      },
+      "widgets_values": [
+        19
+      ],
+      "widgets_values_named": {
+        "value": 19
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 182,
+      "type": "MiniMaxChunkFeedForward",
+      "pos": [
+        -1464.0741439495805,
+        3769.4744474554154
+      ],
+      "size": [
+        316.38046875,
+        82
+      ],
+      "flags": {},
+      "order": 67,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 357
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            525
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxChunkFeedForward"
+      },
+      "widgets_values": [
+        4,
+        4096
+      ],
+      "widgets_values_named": {
+        "chunks": 4,
+        "seq_threshold": 4096
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 157,
+      "type": "MiniMaxH3SigmaShift",
+      "pos": [
+        -988.5147037978528,
+        3947.43847090158
+      ],
+      "size": [
+        360,
+        110
+      ],
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 508
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            314,
+            315,
+            523,
+            524
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        12,
+        2
+      ],
+      "widgets_values_named": {
+        "shift_video": 12,
+        "shift_audio": 2
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 195,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2943.3683664911428,
+        4966.7856183240465
+      ],
+      "size": [
+        583.4591528664102,
+        334
+      ],
+      "flags": {},
+      "order": 89,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 382
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 383
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "MH3_Latent_Upscl_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MH3_Latent_Upscl__00001-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MH3_Latent_Upscl__00001.png",
+            "fullpath": "S:\\ComfyUI_windows_portable\\ComfyUI\\output\\MH3_Latent_Upscl__00001-audio.mp4",
+            "metadata": {
+              "kind": "video",
+              "width": 1216,
+              "height": 672,
+              "duration": 15.083333333333334,
+              "fps": 24,
+              "frame_count": 362
+            },
+            "id": "b33c6265-3b85-409b-8dae-4683c5cb99aa"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "MH3_Latent_Upscl_",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MH3_Latent_Upscl__00001-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MH3_Latent_Upscl__00001.png",
+            "fullpath": "S:\\ComfyUI_windows_portable\\ComfyUI\\output\\MH3_Latent_Upscl__00001-audio.mp4",
+            "metadata": {
+              "kind": "video",
+              "width": 1216,
+              "height": 672,
+              "duration": 15.083333333333334,
+              "fps": 24,
+              "frame_count": 362
+            },
+            "id": "b33c6265-3b85-409b-8dae-4683c5cb99aa"
+          }
+        }
+      }
+    },
+    {
+      "id": 138,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1454.3690680251266,
+        6376.466989698145
+      ],
+      "size": [
+        951.9522929669611,
+        1087.0168596167268
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            279
+          ]
+        }
+      ],
+      "title": "Input Text (Prompt)",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "subject_definitions:\n<Subject 1> is the young man from <Picture 1>\n<Subject 2> is the man from <Picture 2>\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), containing a spoken English vocal layer.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot while two speakers (S1 and S2) exchange lines, with S1's timbre following <Audio 1> and S2's timbre following <Audio 2>.\n\ndetailed_description:\n\n[shot 1 ] close up on <subject 1> from <picture 1>\n\n<Subject 1> (S1), speaking in the female Canadian voice timbre referenced from <Audio 1> says, <d>[English] Healthy masculinity involves practicing basic self-care like resting, staying hydrated, and allowing yourself to cry.</d>\n\n[shot 2] camera turns to <subject 2> from <picture 2>\n\n<Subject 2> (S2), speaking in a London cockney voice timbre referenced from <Audio 2> says, <d>[English] Indeed. Crying like a woman when two home intruders had you running out the house screaming for help. It's the man's job to deal with that. Where were you?</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n\n"
+      ],
+      "widgets_values_named": {
+        "value": "subject_definitions:\n<Subject 1> is the young man from <Picture 1>\n<Subject 2> is the man from <Picture 2>\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), containing a spoken English vocal layer.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot while two speakers (S1 and S2) exchange lines, with S1's timbre following <Audio 1> and S2's timbre following <Audio 2>.\n\ndetailed_description:\n\n[shot 1 ] close up on <subject 1> from <picture 1>\n\n<Subject 1> (S1), speaking in the female Canadian voice timbre referenced from <Audio 1> says, <d>[English] Healthy masculinity involves practicing basic self-care like resting, staying hydrated, and allowing yourself to cry.</d>\n\n[shot 2] camera turns to <subject 2> from <picture 2>\n\n<Subject 2> (S2), speaking in a London cockney voice timbre referenced from <Audio 2> says, <d>[English] Indeed. Crying like a woman when two home intruders had you running out the house screaming for help. It's the man's job to deal with that. Where were you?</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n\n"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 220,
+      "type": "ModelAttentionBackend",
+      "pos": [
+        -1984.5647671771105,
+        3839.4361821734215
+      ],
+      "size": [
+        332.10949545227413,
+        99.80446809287696
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 536
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            451
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelAttentionBackend"
+      },
+      "widgets_values": [
+        "comfy kitchen attention"
+      ],
+      "widgets_values_named": {
+        "attention": "comfy kitchen attention"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 221,
+      "type": "BlockSparseAttention",
+      "pos": [
+        -1060.3460461839386,
+        3587.955561962367
+      ],
+      "size": [
+        270,
+        250
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BlockSparseAttention"
+      },
+      "widgets_values": [
+        "sol-attn",
+        1.3,
+        0.4,
+        0.9,
+        "",
+        12288,
+        0,
+        "off",
+        false
+      ],
+      "widgets_values_named": {
+        "selection": "sol-attn",
+        "selection.tau": 1.3,
+        "start_percent": 0.4,
+        "end_percent": 0.9,
+        "dense_blocks": "",
+        "min_tokens": 12288,
+        "extra_tokens": 0,
+        "sink_conditioning": "off",
+        "verbose": false
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 232,
+      "type": "MarkdownNote",
+      "pos": [
+        -2269.3509871882056,
+        6450.111392570362
+      ],
+      "size": [
+        674.171366572873,
+        1733.6128669613963
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# PROMPT DEVELOPMENT:\n\n\nThis is for MMH3 TTS audio voice only. its fast and dirty way to get Voice Overs. A 15 second audio clip is completed in under 100 seconds on a 3060 RTX.\n\nNOTE: the most common issue for garbled dialogue is too many words and not enough time. 15 seconds will get two average lines of dialogue (30 words total). reduce words is best first test if you get continual problems. Increase to max of 20 seconds if you really need to try to get it in.\n\n## APPROACH\n\n- all images are disabled and the size is set to 32 x 32 pixels. (add them in if it helps target speakers) \n- one audio file is provided for voice cloning, set to 30 seconds lenght max.\n- output length is 15 seconds, as per usual. \n- disable VEDA as it does cause audio issues and wont add a hit here.\n- to keep consistency of audio results (eq, tone, timbre) I keep the same speed-up loras and settings in that I use in main runs.\n\n## FOR TTS START HERE AND TWEAK UNTIL IT WORKS FOR YOU\n\n```\nsubject_definitions:\n<Audio 1> is the voice-timbre reference for the off-screen narrator (S1), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot of a plain dark wall while an off-screen narrator (S1) delivers a voiceover, with the voice timbre following <Audio 1>.\n\nretention_analysis:\n<Audio 1>: reference - the narrator's voice timbre and measured delivery follow <Audio 1> without copying the original signal.\n\ndetailed_description:\nThe target video is a minimal live-action shot of a dimly lit plain wall with no people on screen.\n[Shot 1] The camera holds a static shot of the plain wall. The off-screen narrator (S1), in the voice timbre referenced from <Audio 1> at a calm, measured pace, says in an off-screen voiceover: <d>[English] YOUR SCRIPT LINE HERE.</d>\n\noverall_soundscape:\nN/A\n\nnon_diegetic_music:\nN/A\n```\n\n## THIS WORKED BETTER FOR ME\n\n```\nsubject_definitions:\n<Audio 1> is the voice-timbre reference for the narrator (S1), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot of a plain dark wall while a narrator (S1) delivers a voiceover, with the voice timbre following <Audio 1>.\n\nretention_analysis:\n<Audio 1>: reference - the narrator's voice timbre and measured delivery follow <Audio 1> without copying the original signal.\n\ndetailed_description:\nThe target video is a minimal live-action shot of a dimly lit plain wall with no people on screen.\n[Shot 1] The camera holds a static shot of the plain wall. The narrator (S1), in the voice timbre referenced from <Audio 1> says, <d>[English] healthy masculinity is resisting the emotional pressure to shut down, close off, or conform to rigid expectations.</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n```\n\n## FOR TWO SPEAKERS (2 AUDIO FILES)\n\n```\nsubject_definitions:\n<Audio 1> is the voice-timbre reference for the narrator (S1), containing a spoken English vocal layer.\n<Audio 2> is the voice-timbre reference for the narrator (S2), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot of a plain dark wall while two off-screen speakers (S1 and S2) exchange lines in voiceover, with S1's timbre following <Audio 1> and S2's timbre following <Audio 2>.\n\nretention_analysis:\n<Audio 1>: reference - the narrator's voice timbre and measured delivery follow <Audio 1> without copying the original signal.\n<Audio 2>: reference - the second speaker's voice timbre and delivery follow <Audio 2> without copying the original signal.\n\ndetailed_description:\nThe target video is a minimal live-action shot of a dimly lit plain wall with no people on screen.\n\n[Shot 1] The camera holds a static shot of the plain wall. The narrator (S1), in the voice timbre referenced from <Audio 1> in a female Canadian voice says, <d>[English] Healthy masculinity is resisting the emotional pressure to shut down, close off, or conform to rigid expectations.</d>\n\nAfter a short pause, the second off-screen speaker (S2), in the voice timbre referenced from <Audio 2> in a London cockney accent says, <d>[English] Fine when you live in entitled modern luxury, but a man must be able to kill dinner when the pressure is on.</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n\n```\n\n## THIS ALSO WORKED WELL TWO SPEAKERS, TWO REF IMAGES, TWO AUDIO FILES\n\n```\nsubject_definitions:\n<Subject 1> is the young man from <Picture 1>\n<Subject 2> is the man from <Picture 2>\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), containing a spoken English vocal layer.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot while two speakers (S1 and S2) exchange lines, with S1's timbre following <Audio 1> and S2's timbre following <Audio 2>.\n\ndetailed_description:\n\n[shot 1 ] close up on <subject 1> from <picture 1>\n\n<Subject 1> (S1), speaking in the female Canadian voice timbre referenced from <Audio 1> says, <d>[English] Healthy masculinity involves allowing yourself to be expressive. Such as smiling or talking with your hands, instead of suppressing those behaviors.</d>\n\n[shot 2] camera turns to <subject 2> from <picture 2>\n\n<Subject 2> (S2), speaking in a London cockney voice timbre referenced from <Audio 2> says, <d>[English] And how did those qualities help when you were held captive by an ape?</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n```"
+      ],
+      "widgets_values_named": {
+        "text": "# PROMPT DEVELOPMENT:\n\n\nThis is for MMH3 TTS audio voice only. its fast and dirty way to get Voice Overs. A 15 second audio clip is completed in under 100 seconds on a 3060 RTX.\n\nNOTE: the most common issue for garbled dialogue is too many words and not enough time. 15 seconds will get two average lines of dialogue (30 words total). reduce words is best first test if you get continual problems. Increase to max of 20 seconds if you really need to try to get it in.\n\n## APPROACH\n\n- all images are disabled and the size is set to 32 x 32 pixels. (add them in if it helps target speakers) \n- one audio file is provided for voice cloning, set to 30 seconds lenght max.\n- output length is 15 seconds, as per usual. \n- disable VEDA as it does cause audio issues and wont add a hit here.\n- to keep consistency of audio results (eq, tone, timbre) I keep the same speed-up loras and settings in that I use in main runs.\n\n## FOR TTS START HERE AND TWEAK UNTIL IT WORKS FOR YOU\n\n```\nsubject_definitions:\n<Audio 1> is the voice-timbre reference for the off-screen narrator (S1), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot of a plain dark wall while an off-screen narrator (S1) delivers a voiceover, with the voice timbre following <Audio 1>.\n\nretention_analysis:\n<Audio 1>: reference - the narrator's voice timbre and measured delivery follow <Audio 1> without copying the original signal.\n\ndetailed_description:\nThe target video is a minimal live-action shot of a dimly lit plain wall with no people on screen.\n[Shot 1] The camera holds a static shot of the plain wall. The off-screen narrator (S1), in the voice timbre referenced from <Audio 1> at a calm, measured pace, says in an off-screen voiceover: <d>[English] YOUR SCRIPT LINE HERE.</d>\n\noverall_soundscape:\nN/A\n\nnon_diegetic_music:\nN/A\n```\n\n## THIS WORKED BETTER FOR ME\n\n```\nsubject_definitions:\n<Audio 1> is the voice-timbre reference for the narrator (S1), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot of a plain dark wall while a narrator (S1) delivers a voiceover, with the voice timbre following <Audio 1>.\n\nretention_analysis:\n<Audio 1>: reference - the narrator's voice timbre and measured delivery follow <Audio 1> without copying the original signal.\n\ndetailed_description:\nThe target video is a minimal live-action shot of a dimly lit plain wall with no people on screen.\n[Shot 1] The camera holds a static shot of the plain wall. The narrator (S1), in the voice timbre referenced from <Audio 1> says, <d>[English] healthy masculinity is resisting the emotional pressure to shut down, close off, or conform to rigid expectations.</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n```\n\n## FOR TWO SPEAKERS (2 AUDIO FILES)\n\n```\nsubject_definitions:\n<Audio 1> is the voice-timbre reference for the narrator (S1), containing a spoken English vocal layer.\n<Audio 2> is the voice-timbre reference for the narrator (S2), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot of a plain dark wall while two off-screen speakers (S1 and S2) exchange lines in voiceover, with S1's timbre following <Audio 1> and S2's timbre following <Audio 2>.\n\nretention_analysis:\n<Audio 1>: reference - the narrator's voice timbre and measured delivery follow <Audio 1> without copying the original signal.\n<Audio 2>: reference - the second speaker's voice timbre and delivery follow <Audio 2> without copying the original signal.\n\ndetailed_description:\nThe target video is a minimal live-action shot of a dimly lit plain wall with no people on screen.\n\n[Shot 1] The camera holds a static shot of the plain wall. The narrator (S1), in the voice timbre referenced from <Audio 1> in a female Canadian voice says, <d>[English] Healthy masculinity is resisting the emotional pressure to shut down, close off, or conform to rigid expectations.</d>\n\nAfter a short pause, the second off-screen speaker (S2), in the voice timbre referenced from <Audio 2> in a London cockney accent says, <d>[English] Fine when you live in entitled modern luxury, but a man must be able to kill dinner when the pressure is on.</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n\n```\n\n## THIS ALSO WORKED WELL TWO SPEAKERS, TWO REF IMAGES, TWO AUDIO FILES\n\n```\nsubject_definitions:\n<Subject 1> is the young man from <Picture 1>\n<Subject 2> is the man from <Picture 2>\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), containing a spoken English vocal layer.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), containing a spoken English vocal layer.\n\nsummary:\n[reference generation + audio reference] The target video is a static shot while two speakers (S1 and S2) exchange lines, with S1's timbre following <Audio 1> and S2's timbre following <Audio 2>.\n\ndetailed_description:\n\n[shot 1 ] close up on <subject 1> from <picture 1>\n\n<Subject 1> (S1), speaking in the female Canadian voice timbre referenced from <Audio 1> says, <d>[English] Healthy masculinity involves allowing yourself to be expressive. Such as smiling or talking with your hands, instead of suppressing those behaviors.</d>\n\n[shot 2] camera turns to <subject 2> from <picture 2>\n\n<Subject 2> (S2), speaking in a London cockney voice timbre referenced from <Audio 2> says, <d>[English] And how did those qualities help when you were held captive by an ape?</d>\n\noverall_soundscape:\nThe sterile room hums with the soft whir of computer fans.\n\nnon_diegetic_music:\nN/A\n```"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 234,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1484.6027039793782,
+        3128.142502580209
+      ],
+      "size": [
+        661.6720273474875,
+        82
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Minimax-H3\\benji\\H3_Combat_V2.safetensors",
+        0.6
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\benji\\H3_Combat_V2.safetensors",
+        "strength_model": 0.6
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 236,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1515.336543356943,
+        3258.449246769456
+      ],
+      "size": [
+        666.0077478954054,
+        92.11668127847497
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Minimax-H3\\benji\\Motion_Repair_V2.safetensors",
+        0.6
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\benji\\Motion_Repair_V2.safetensors",
+        "strength_model": 0.6
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 237,
+      "type": "Note",
+      "pos": [
+        -769.4824271285461,
+        3112.354872546027
+      ],
+      "size": [
+        352.45030684797734,
+        286.90270867436993
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "LORAS FOR FIGHT SCENES & MOTION:\n\nThese come from Benji I havent watched the whole of his video to test them yet but will be using them so saving stack here.\n\nbenji YT on it https://youtu.be/RXZtimmlrng?si=GYd0ED3wxQo4xx6C\n\nsettings: lms 1, combat 0.6, motion repair 0.6\n\nI have not tested these at all yet.\n"
+      ],
+      "widgets_values_named": {
+        "text": "LORAS FOR FIGHT SCENES & MOTION:\n\nThese come from Benji I havent watched the whole of his video to test them yet but will be using them so saving stack here.\n\nbenji YT on it https://youtu.be/RXZtimmlrng?si=GYd0ED3wxQo4xx6C\n\nsettings: lms 1, combat 0.6, motion repair 0.6\n\nI have not tested these at all yet.\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 243,
+      "type": "VedaSparseAttention",
+      "pos": [
+        -1054.0155505406997,
+        4131.688473165226
+      ],
+      "size": [
+        375.99509653496136,
+        462.53935345611035
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 525
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            508
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VedaSparseAttention"
+      },
+      "widgets_values": [
+        "minimax_h3_r2va_veda_preview_fp8.safetensors",
+        "96",
+        "96",
+        "",
+        "",
+        false
+      ],
+      "widgets_values_named": {
+        "predictor": "minimax_h3_r2va_veda_preview_fp8.safetensors",
+        "generated_sparsity": "96",
+        "reference_sparsity": "96",
+        "full_attention_layers": "",
+        "full_attention_steps": "",
+        "verbose": false
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 245,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1514.532326159097,
+        3406.4826090671872
+      ],
+      "size": [
+        657.3363067995695,
+        90.67144109583569
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Minimax-H3\\benji\\minimax_h3_lms_v1.0_r64_r.safetensors",
+        1
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\benji\\minimax_h3_lms_v1.0_r64_r.safetensors",
+        "strength_model": 1
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 246,
+      "type": "Note",
+      "pos": [
+        -649.2152283251363,
+        4187.393307038583
+      ],
+      "size": [
+        242.8934802606883,
+        363.18447069908143
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "VEDA SETTINGS:\n\nFor my 3060 I found the following:\n\n32 default for sparsity both entries was too impacting but brought a 21 min run down to 14 mins. \n\ntry 64 in both sparsity fields. was 16 mins for the same run but had some artefacting on face shadows.\n\ntry 96 for balance between speed and quality. (128 is completely zeroed out and will do nothing).\n\ndisable it if you want best quality.\n\ncheck the command window for information on % it has dropped in a run.\n\n## ISSUES:\n\ndialogue can fail, if it happens disable it and try without VEDA."
+      ],
+      "widgets_values_named": {
+        "text": "VEDA SETTINGS:\n\nFor my 3060 I found the following:\n\n32 default for sparsity both entries was too impacting but brought a 21 min run down to 14 mins. \n\ntry 64 in both sparsity fields. was 16 mins for the same run but had some artefacting on face shadows.\n\ntry 96 for balance between speed and quality. (128 is completely zeroed out and will do nothing).\n\ndisable it if you want best quality.\n\ncheck the command window for information on % it has dropped in a run.\n\n## ISSUES:\n\ndialogue can fail, if it happens disable it and try without VEDA."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 247,
+      "type": "Note",
+      "pos": [
+        -761.233434681193,
+        3609.5099131486777
+      ],
+      "size": [
+        232.29557890633714,
+        165.32554298723198
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Model Sparse Atten (Native)\n\nI leave it in if VEDA isnt to your liking but wasnt using it since it needs more steps to benefit from it. "
+      ],
+      "widgets_values_named": {
+        "text": "Model Sparse Atten (Native)\n\nI leave it in if VEDA isnt to your liking but wasnt using it since it needs more steps to benefit from it. "
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 248,
+      "type": "LoadImage",
+      "pos": [
+        -821.2630205656482,
+        5951.101728033235
+      ],
+      "size": [
+        290,
+        330
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            569,
+            570,
+            571,
+            572,
+            573,
+            577
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Klein9b__00001_ (30).png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Klein9b__00001_ (30).png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 249,
+      "type": "LoadImage",
+      "pos": [
+        -101.47640796280552,
+        5995.727737356404
+      ],
+      "size": [
+        290,
+        330
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            579
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Klein9b__00001_ (33).png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Klein9b__00001_ (33).png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 250,
+      "type": "LoadImage",
+      "pos": [
+        -450.1127906362433,
+        5969.205611729362
+      ],
+      "size": [
+        290,
+        330
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            578
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Klein9b__00002_ (27).png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Klein9b__00002_ (27).png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 251,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2313.059790147476,
+        4170.878008063683
+      ],
+      "size": [
+        661.6720273474875,
+        82
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 529
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            535
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Minimax-H3\\minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors",
+        0.9
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\minimax_h3_DMAD_4step_full_lora_avg_rank_39_bf16.safetensors",
+        "strength_model": 0.9
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 253,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        53.747163558616215,
+        6479.224385613377
+      ],
+      "size": [
+        252.0078125,
+        204
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            534
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadAudioUpload"
+      },
+      "widgets_values": {
+        "audio": "Cockney British 1st 10 seconds MMH3 rip.mp3",
+        "start_time": 0,
+        "duration": 30,
+        "choose audio to upload": "image",
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 30,
+            "filename": "Cockney British 1st 10 seconds MMH3 rip.mp3",
+            "type": "input"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "audio": "Cockney British 1st 10 seconds MMH3 rip.mp3",
+        "start_time": 0,
+        "duration": 30,
+        "choose audio to upload": "image",
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 30,
+            "filename": "Cockney British 1st 10 seconds MMH3 rip.mp3",
+            "type": "input"
+          }
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 256,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        -261.4255267846794,
+        6494.239664474772
+      ],
+      "size": [
+        252.0078125,
+        204
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            533
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadAudioUpload"
+      },
+      "widgets_values": {
+        "audio": "Canadian Accent - Ontario - Shanda [--q-8ltPtJg] - 15 seconds.mp3",
+        "start_time": 0,
+        "duration": 30,
+        "choose audio to upload": "image",
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 30,
+            "filename": "Canadian Accent - Ontario - Shanda [--q-8ltPtJg] - 15 seconds.mp3",
+            "type": "input"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "audio": "Canadian Accent - Ontario - Shanda [--q-8ltPtJg] - 15 seconds.mp3",
+        "start_time": 0,
+        "duration": 30,
+        "choose audio to upload": "image",
+        "audiopreview": {
+          "params": {
+            "start_time": 0,
+            "duration": 30,
+            "filename": "Canadian Accent - Ontario - Shanda [--q-8ltPtJg] - 15 seconds.mp3",
+            "type": "input"
+          }
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 258,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2342.489237362481,
+        4000.0596000414807
+      ],
+      "size": [
+        657.3363067995695,
+        90.67144109583569
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 535
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            536
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Minimax-H3\\davesnow\\Ethereal-cinema-alpha.safetensors",
+        0.4
+      ],
+      "widgets_values_named": {
+        "lora_name": "Minimax-H3\\davesnow\\Ethereal-cinema-alpha.safetensors",
+        "strength_model": 0.4
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 259,
+      "type": "Note",
+      "pos": [
+        -1651.342759935596,
+        4017.8522247147316
+      ],
+      "size": [
+        240.85413793435623,
+        88
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Dave Snows cinema lora has a nice touch if you want it. he recommends 1.5 to 2 str. It also improves voice quality a lot which is weird."
+      ],
+      "widgets_values_named": {
+        "text": "Dave Snows cinema lora has a nice touch if you want it. he recommends 1.5 to 2 str. It also improves voice quality a lot which is weird."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 260,
+      "type": "Note",
+      "pos": [
+        -1519.0925913291376,
+        4180.10415568463
+      ],
+      "size": [
+        253.92475112506327,
+        175.69102633630428
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "I switch DMAD and taomate in and out. Taomate on its own is my preferred, set str 1.\n\nbut if things misbehave try adding in DMAD str 0.9 and set taomate str 0.6, it can sometimes fix issues."
+      ],
+      "widgets_values_named": {
+        "text": "I switch DMAD and taomate in and out. Taomate on its own is my preferred, set str 1.\n\nbut if things misbehave try adding in DMAD str 0.9 and set taomate str 0.6, it can sometimes fix issues."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 270,
+      "type": "Reroute",
+      "pos": [
+        -367.52730615404107,
+        4277.727758691722
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 548
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 271,
+      "type": "Reroute",
+      "pos": [
+        -365.34259053545236,
+        4345.355893956141
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 544
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": [
+            575,
+            576
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 272,
+      "type": "Note",
+      "pos": [
+        668.7296232084066,
+        5010.7758784652015
+      ],
+      "size": [
+        305.88468203431194,
+        758.3197780282071
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# RefMod Info:\n\nInstalls from https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod\n\nSetup Info : https://huggingface.co/datasets/malcolmrey/various/blob/main/h3-center/docs/MINIMAX_H3_REFMODS_INSTALLATION_AND_USAGE_GUIDE.md\n\nMore guides here: https://huggingface.co/datasets/malcolmrey/various/tree/main/h3-center/docs\n\n---\n\n## ESSENTIALS\n\nIf you save refmod with only 1 image it will save it as <Picture 1> and clash with your environment shot if you put that into <Picture 1> then things get weird. Solution, is to put your ref image into <Video 1> instead and target it in the prompt from that, while using <Picture x> to target the refMods. (you will need to provide 5 copies of the image to avoid error in the Video slot).\n\nNote: if you use more than 1 image to make a refmod it saves it as <Video x> so the opposite will be the case. \n\nAlso use the results you see from INspect H3 Refmod to work the prompt.\n\ne.g. I save refmods out using only 1 image and audio file. this means they are targetted using <Picture x> not <Video x>. So I put the environment ref image into ref_video_0 slot and then target everything like this in the prompt:\n\n```\n<Video 1> is mdkb_v5_visual from <Picture 1> and elliot_v5_visual from <Picture 2> sitting in teal chairs on the set of a chatshow with red carpet and red background with screen showing the words \"Psycho The rapist\".\n\n<Picture 1> mdkb_v5_visual using the London cockney accent from <Audio 1> mdkb_v5_audio says, \"So what's it all about, Elliot?\"\n<Picture 2> elliot_v5_visual using the Canadian female accent from <Audio 2> elliot_v5_audio says, \"I have no idea?\"\n```"
+      ],
+      "widgets_values_named": {
+        "text": "# RefMod Info:\n\nInstalls from https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod\n\nSetup Info : https://huggingface.co/datasets/malcolmrey/various/blob/main/h3-center/docs/MINIMAX_H3_REFMODS_INSTALLATION_AND_USAGE_GUIDE.md\n\nMore guides here: https://huggingface.co/datasets/malcolmrey/various/tree/main/h3-center/docs\n\n---\n\n## ESSENTIALS\n\nIf you save refmod with only 1 image it will save it as <Picture 1> and clash with your environment shot if you put that into <Picture 1> then things get weird. Solution, is to put your ref image into <Video 1> instead and target it in the prompt from that, while using <Picture x> to target the refMods. (you will need to provide 5 copies of the image to avoid error in the Video slot).\n\nNote: if you use more than 1 image to make a refmod it saves it as <Video x> so the opposite will be the case. \n\nAlso use the results you see from INspect H3 Refmod to work the prompt.\n\ne.g. I save refmods out using only 1 image and audio file. this means they are targetted using <Picture x> not <Video x>. So I put the environment ref image into ref_video_0 slot and then target everything like this in the prompt:\n\n```\n<Video 1> is mdkb_v5_visual from <Picture 1> and elliot_v5_visual from <Picture 2> sitting in teal chairs on the set of a chatshow with red carpet and red background with screen showing the words \"Psycho The rapist\".\n\n<Picture 1> mdkb_v5_visual using the London cockney accent from <Audio 1> mdkb_v5_audio says, \"So what's it all about, Elliot?\"\n<Picture 2> elliot_v5_visual using the Canadian female accent from <Audio 2> elliot_v5_audio says, \"I have no idea?\"\n```"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 273,
+      "type": "MiniMaxH3RefModApply",
+      "pos": [
+        341.03171644000577,
+        5013.156547690339
+      ],
+      "size": [
+        278.2281930715674,
+        457.1947030019428
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "MINIMAX_H3_COND,CONDITIONING",
+          "link": 547
+        },
+        {
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "link": 546
+        }
+      ],
+      "outputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            548
+          ]
+        },
+        {
+          "name": "curve graph",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModApply"
+      },
+      "widgets_values": [
+        false,
+        1,
+        "constant",
+        -1,
+        "fixed",
+        "linear",
+        1,
+        "(none)",
+        "shuffle",
+        1,
+        0,
+        ""
+      ],
+      "widgets_values_named": {
+        "override": false,
+        "retention": 1,
+        "curve_direction": "constant",
+        "scramble_seed": -1,
+        "fixed": "fixed",
+        "curve_shape": "linear",
+        "curve_value": 1,
+        "graph_preset": "(none)",
+        "scramble_mode": "shuffle",
+        "scramble_keep": 1,
+        "max_total_tokens": 0,
+        "save_preset_as": ""
+      }
+    },
+    {
+      "id": 274,
+      "type": "MiniMaxH3RefModsLoader",
+      "pos": [
+        -180.18950491007257,
+        4993.450730258783
+      ],
+      "size": [
+        476.30500000000006,
+        846
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": [
+            546,
+            563
+          ]
+        },
+        {
+          "name": "prompt_hint",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModsLoader",
+        "refmod_visible_slots": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "widgets_values": [
+        true,
+        "mdkb_v5_visual",
+        1,
+        1,
+        "mdkb_v5_audio",
+        1,
+        1,
+        "elliot_v5_visual",
+        1,
+        1,
+        "elliot_v5_audio",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        0,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "widgets_values_named": {
+        "show_info": true,
+        "mod_1": "mdkb_v5_visual",
+        "strength_1": 1,
+        "copies_1": 1,
+        "mod_2": "mdkb_v5_audio",
+        "strength_2": 1,
+        "copies_2": 1,
+        "mod_3": "elliot_v5_visual",
+        "strength_3": 1,
+        "copies_3": 1,
+        "mod_4": "elliot_v5_audio",
+        "strength_4": 1,
+        "copies_4": 1,
+        "mod_5": "(none)",
+        "strength_5": 1,
+        "copies_5": 1,
+        "mod_6": "(none)",
+        "strength_6": 1,
+        "copies_6": 1,
+        "mod_7": "(none)",
+        "strength_7": 1,
+        "copies_7": 1,
+        "mod_8": "(none)",
+        "strength_8": 1,
+        "copies_8": 1,
+        "max_total_tokens": 0,
+        "components_1": "All",
+        "visual_strength_1": 1,
+        "audio_strength_1": 1,
+        "components_2": "All",
+        "visual_strength_2": 1,
+        "audio_strength_2": 1,
+        "components_3": "All",
+        "visual_strength_3": 1,
+        "audio_strength_3": 1,
+        "components_4": "All",
+        "visual_strength_4": 1,
+        "audio_strength_4": 1,
+        "components_5": "All",
+        "visual_strength_5": 1,
+        "audio_strength_5": 1,
+        "components_6": "All",
+        "visual_strength_6": 1,
+        "audio_strength_6": 1,
+        "components_7": "All",
+        "visual_strength_7": 1,
+        "audio_strength_7": 1,
+        "components_8": "All",
+        "visual_strength_8": 1,
+        "audio_strength_8": 1,
+        "Remove RefMod 1": null,
+        "Remove RefMod 2": null,
+        "Remove RefMod 3": null,
+        "Remove RefMod 4": null,
+        "Remove RefMod 5": null,
+        "Remove RefMod 6": null,
+        "Remove RefMod 7": null,
+        "Remove RefMod 8": null,
+        "+ Add RefMod": null,
+        "Refresh RefMods": null,
+        "RefMod library": null
+      }
+    },
+    {
+      "id": 282,
+      "type": "MiniMaxH3TokenCounter",
+      "pos": [
+        181.35584147866817,
+        4281.949139266813
+      ],
+      "size": [
+        249.52747784276622,
+        190.6515038034786
+      ],
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 552
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 576
+        }
+      ],
+      "outputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "links": [
+            553
+          ]
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": null
+        },
+        {
+          "name": "tokens",
+          "type": "INT",
+          "links": [
+            555
+          ]
+        },
+        {
+          "name": "breakdown",
+          "type": "STRING",
+          "links": [
+            556
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3TokenCounter"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 283,
+      "type": "easy showAnything",
+      "pos": [
+        997.6251934683281,
+        5869.747890526657
+      ],
+      "size": [
+        438.68397852307396,
+        353.2087318042768
+      ],
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 555
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "4465"
+      ],
+      "widgets_values_named": {
+        "text": "4465"
+      }
+    },
+    {
+      "id": 284,
+      "type": "easy showAnything",
+      "pos": [
+        1512.1785905600457,
+        5897.983952067726
+      ],
+      "size": [
+        438.68397852307396,
+        353.2087318042768
+      ],
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 556
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "total: 4465\ntext: 368\nimage/video refs: 2 (2 blocks)\naudio refs: 2412 (2 blocks)\naudio: 1546\nvideo: 137 (137x1x1 patches)"
+      ],
+      "widgets_values_named": {
+        "text": "total: 4465\ntext: 368\nimage/video refs: 2 (2 blocks)\naudio refs: 2412 (2 blocks)\naudio: 1546\nvideo: 137 (137x1x1 patches)"
+      }
+    },
+    {
+      "id": 285,
+      "type": "Note",
+      "pos": [
+        2036.079943124874,
+        5857.880103201089
+      ],
+      "size": [
+        283.19193137532466,
+        168.99684328569492
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "RefMod with 2 visual refmods:\n\ntotal: 22931\ntext: 595\nimage/video refs: 4521 (3 blocks)\naudio refs: 2416 (2 blocks)\naudio: 414\nvideo: 14985 (37x15x27 patches)"
+      ],
+      "widgets_values_named": {
+        "text": "RefMod with 2 visual refmods:\n\ntotal: 22931\ntext: 595\nimage/video refs: 4521 (3 blocks)\naudio refs: 2416 (2 blocks)\naudio: 414\nvideo: 14985 (37x15x27 patches)"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 286,
+      "type": "Note",
+      "pos": [
+        2388.0385519284155,
+        5853.52046699016
+      ],
+      "size": [
+        309.56242027915596,
+        188.9380904206082
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Without refmod using 3 ref images\n\ntotal: 20419\ntext: 1395\nimage/video refs: 1209 (3 blocks)\naudio refs: 2416 (2 blocks)\naudio: 414\nvideo: 14985 (37x15x27 patches)"
+      ],
+      "widgets_values_named": {
+        "text": "Without refmod using 3 ref images\n\ntotal: 20419\ntext: 1395\nimage/video refs: 1209 (3 blocks)\naudio refs: 2416 (2 blocks)\naudio: 414\nvideo: 14985 (37x15x27 patches)"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 287,
+      "type": "MiniMaxH3RefModInspect",
+      "pos": [
+        344.1171730742833,
+        5593.223905262198
+      ],
+      "size": [
+        270,
+        190
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "link": 563
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "details",
+          "type": "STRING",
+          "links": [
+            564
+          ]
+        },
+        {
+          "name": "image_preview",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "audio_preview",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "reference_map",
+          "type": "STRING",
+          "links": [
+            565
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModInspect"
+      },
+      "widgets_values": [
+        0,
+        "off",
+        0.5,
+        "first_frame"
+      ],
+      "widgets_values_named": {
+        "index": 0,
+        "preview": "off",
+        "strength": 0.5,
+        "visual_preview": "first_frame"
+      }
+    },
+    {
+      "id": 288,
+      "type": "easy showAnything",
+      "pos": [
+        1139.775269344368,
+        6341.675809055606
+      ],
+      "size": [
+        536.0750372999967,
+        430.88238286072374
+      ],
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 564
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      }
+    },
+    {
+      "id": 289,
+      "type": "easy showAnything",
+      "pos": [
+        -485.28694804593937,
+        6397.176718041132
+      ],
+      "size": [
+        210,
+        303.17006669181774
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 565
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      }
+    },
+    {
+      "id": 291,
+      "type": "ImageBatchMultiple+",
+      "pos": [
+        -1163.6116705420575,
+        5637.182562698449
+      ],
+      "size": [
+        270,
+        138
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 569
+        },
+        {
+          "name": "image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 570
+        },
+        {
+          "name": "image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 571
+        },
+        {
+          "name": "image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 572
+        },
+        {
+          "name": "image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 573
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatchMultiple+"
+      },
+      "widgets_values": [
+        "lanczos"
+      ],
+      "widgets_values_named": {
+        "method": "lanczos"
+      }
+    },
+    {
+      "id": 292,
+      "type": "Note",
+      "pos": [
+        -858.0981362558617,
+        5648.180436311728
+      ],
+      "size": [
+        226.98375532799355,
+        135.22919379718405
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "See notes on RefMod section this is to bodge using image in video slot when I want to use my 1 image creation refmods."
+      ],
+      "widgets_values_named": {
+        "text": "See notes on RefMod section this is to bodge using image in video slot when I want to use my 1 image creation refmods."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 293,
+      "type": "LoadImage",
+      "pos": [
+        287.5451172487505,
+        6010.683850972999
+      ],
+      "size": [
+        290,
+        330
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            580
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elliots-cell.jpg",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "elliots-cell.jpg",
+        "upload": "image"
+      }
+    }
+  ],
+  "links": [
+    [
+      250,
+      120,
+      0,
+      121,
+      1,
+      "VAE"
+    ],
+    [
+      251,
+      119,
+      0,
+      122,
+      1,
+      "VAE"
+    ],
+    [
+      253,
+      129,
+      0,
+      125,
+      0,
+      "NOISE"
+    ],
+    [
+      254,
+      126,
+      0,
+      125,
+      1,
+      "GUIDER"
+    ],
+    [
+      255,
+      123,
+      0,
+      125,
+      2,
+      "SAMPLER"
+    ],
+    [
+      314,
+      157,
+      0,
+      126,
+      0,
+      "MODEL"
+    ],
+    [
+      315,
+      157,
+      0,
+      124,
+      0,
+      "MODEL"
+    ],
+    [
+      316,
+      124,
+      0,
+      158,
+      0,
+      "SIGMAS"
+    ],
+    [
+      317,
+      158,
+      0,
+      159,
+      0,
+      "SIGMAS"
+    ],
+    [
+      318,
+      159,
+      0,
+      160,
+      0,
+      "SIGMAS"
+    ],
+    [
+      338,
+      160,
+      0,
+      161,
+      0,
+      "SIGMAS"
+    ],
+    [
+      339,
+      160,
+      0,
+      125,
+      3,
+      "SIGMAS"
+    ],
+    [
+      340,
+      163,
+      0,
+      168,
+      0,
+      "MODEL"
+    ],
+    [
+      342,
+      115,
+      0,
+      169,
+      0,
+      "INT"
+    ],
+    [
+      343,
+      115,
+      1,
+      170,
+      0,
+      "INT"
+    ],
+    [
+      357,
+      184,
+      0,
+      182,
+      0,
+      "MODEL"
+    ],
+    [
+      382,
+      122,
+      0,
+      195,
+      0,
+      "IMAGE"
+    ],
+    [
+      383,
+      121,
+      0,
+      195,
+      1,
+      "AUDIO"
+    ],
+    [
+      384,
+      125,
+      0,
+      196,
+      0,
+      "LATENT"
+    ],
+    [
+      388,
+      196,
+      1,
+      197,
+      1,
+      "LATENT"
+    ],
+    [
+      392,
+      199,
+      0,
+      201,
+      1,
+      "GUIDER"
+    ],
+    [
+      393,
+      198,
+      0,
+      201,
+      2,
+      "SAMPLER"
+    ],
+    [
+      400,
+      129,
+      0,
+      201,
+      0,
+      "NOISE"
+    ],
+    [
+      401,
+      136,
+      0,
+      199,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      402,
+      194,
+      0,
+      197,
+      0,
+      "LATENT"
+    ],
+    [
+      403,
+      197,
+      0,
+      201,
+      4,
+      "LATENT"
+    ],
+    [
+      404,
+      201,
+      0,
+      122,
+      0,
+      "LATENT"
+    ],
+    [
+      405,
+      201,
+      0,
+      121,
+      0,
+      "LATENT"
+    ],
+    [
+      416,
+      196,
+      0,
+      207,
+      0,
+      "LATENT"
+    ],
+    [
+      417,
+      196,
+      1,
+      208,
+      0,
+      "LATENT"
+    ],
+    [
+      418,
+      207,
+      0,
+      153,
+      0,
+      "IMAGE"
+    ],
+    [
+      419,
+      208,
+      0,
+      153,
+      1,
+      "AUDIO"
+    ],
+    [
+      445,
+      219,
+      0,
+      201,
+      3,
+      "SIGMAS"
+    ],
+    [
+      446,
+      219,
+      0,
+      206,
+      0,
+      "SIGMAS"
+    ],
+    [
+      451,
+      220,
+      0,
+      184,
+      0,
+      "MODEL"
+    ],
+    [
+      508,
+      243,
+      0,
+      157,
+      0,
+      "MODEL"
+    ],
+    [
+      519,
+      120,
+      0,
+      208,
+      1,
+      "VAE"
+    ],
+    [
+      520,
+      119,
+      0,
+      207,
+      1,
+      "VAE"
+    ],
+    [
+      523,
+      157,
+      0,
+      199,
+      0,
+      "MODEL"
+    ],
+    [
+      524,
+      157,
+      0,
+      219,
+      0,
+      "MODEL"
+    ],
+    [
+      525,
+      182,
+      0,
+      243,
+      0,
+      "MODEL"
+    ],
+    [
+      529,
+      168,
+      0,
+      251,
+      0,
+      "MODEL"
+    ],
+    [
+      535,
+      251,
+      0,
+      258,
+      0,
+      "MODEL"
+    ],
+    [
+      536,
+      258,
+      0,
+      220,
+      0,
+      "MODEL"
+    ],
+    [
+      544,
+      136,
+      0,
+      271,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      546,
+      274,
+      0,
+      273,
+      1,
+      "H3_REF_MODS"
+    ],
+    [
+      547,
+      136,
+      0,
+      273,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      548,
+      273,
+      0,
+      270,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      552,
+      136,
+      1,
+      282,
+      0,
+      "LATENT"
+    ],
+    [
+      553,
+      282,
+      0,
+      125,
+      4,
+      "LATENT"
+    ],
+    [
+      555,
+      282,
+      2,
+      283,
+      0,
+      "INT"
+    ],
+    [
+      556,
+      282,
+      3,
+      284,
+      0,
+      "STRING"
+    ],
+    [
+      563,
+      274,
+      0,
+      287,
+      0,
+      "H3_REF_MODS"
+    ],
+    [
+      564,
+      287,
+      0,
+      288,
+      0,
+      "STRING"
+    ],
+    [
+      565,
+      287,
+      3,
+      289,
+      0,
+      "STRING"
+    ],
+    [
+      569,
+      248,
+      0,
+      291,
+      0,
+      "IMAGE"
+    ],
+    [
+      570,
+      248,
+      0,
+      291,
+      1,
+      "IMAGE"
+    ],
+    [
+      571,
+      248,
+      0,
+      291,
+      2,
+      "IMAGE"
+    ],
+    [
+      572,
+      248,
+      0,
+      291,
+      3,
+      "IMAGE"
+    ],
+    [
+      573,
+      248,
+      0,
+      291,
+      4,
+      "IMAGE"
+    ],
+    [
+      575,
+      271,
+      0,
+      126,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      576,
+      271,
+      0,
+      282,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      261,
+      132,
+      0,
+      131,
+      0,
+      "FLOAT"
+    ],
+    [
+      385,
+      196,
+      0,
+      194,
+      0,
+      "LATENT"
+    ],
+    [
+      272,
+      128,
+      0,
+      136,
+      0,
+      "CLIP"
+    ],
+    [
+      273,
+      119,
+      0,
+      136,
+      1,
+      "VAE"
+    ],
+    [
+      274,
+      120,
+      0,
+      136,
+      2,
+      "VAE"
+    ],
+    [
+      577,
+      248,
+      0,
+      136,
+      3,
+      "IMAGE"
+    ],
+    [
+      578,
+      250,
+      0,
+      136,
+      4,
+      "IMAGE"
+    ],
+    [
+      579,
+      249,
+      0,
+      136,
+      5,
+      "IMAGE"
+    ],
+    [
+      533,
+      256,
+      0,
+      136,
+      10,
+      "AUDIO"
+    ],
+    [
+      534,
+      253,
+      0,
+      136,
+      11,
+      "AUDIO"
+    ],
+    [
+      279,
+      138,
+      0,
+      136,
+      13,
+      "STRING"
+    ],
+    [
+      581,
+      174,
+      0,
+      136,
+      14,
+      "INT"
+    ],
+    [
+      582,
+      175,
+      0,
+      136,
+      15,
+      "INT"
+    ],
+    [
+      372,
+      131,
+      1,
+      136,
+      16,
+      "INT"
+    ],
+    [
+      580,
+      293,
+      0,
+      136,
+      17,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Models",
+      "bounding": [
+        -1520,
+        4840,
+        700,
+        670
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Sampling",
+      "bounding": [
+        -257.5092278500002,
+        4038.9725887500013,
+        1119.7048804909773,
+        759.9727450654086
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Conditioning",
+      "bounding": [
+        -790,
+        4840,
+        480,
+        670
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "Latent Upscaler Group (2nd Sampler Pass)",
+      "bounding": [
+        1772.1035267277252,
+        3949.9103156462047,
+        2252.814590071851,
+        1763.255295217155
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Decoding and create video",
+      "bounding": [
+        1961.7278914908543,
+        4829.507908147351,
+        670,
+        670
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "User Inputs",
+      "bounding": [
+        -1492.1557470337048,
+        5887.34774459484,
+        2847.6346021940326,
+        2032.3669325368473
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "2nd Sampler Group",
+      "bounding": [
+        2683.6012707510795,
+        3989.9103156462047,
+        1014.523302427956,
+        931.5576363130222
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "Video Out 1st Sampler Pass (Disable unless you need to test result)",
+      "bounding": [
+        1018.9627039401831,
+        4483.884136131423,
+        698.8542202464006,
+        1116.2786064776647
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "RefMod Loader",
+      "bounding": [
+        -210.77179664894297,
+        4902.849264232205,
+        1187.5476002471873,
+        943.923518595353
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.2455590080178782,
+      "offset": [
+        2488.0352199210774,
+        -6286.995827966153
+      ]
+    },
+    "frontendVersion": "1.55.18",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "extensions": {
+    "seed_widgets": {
+      "129": 0
+    }
+  },
+  "version": 0.4
+}
