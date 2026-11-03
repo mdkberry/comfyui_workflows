@@ -26,10 +26,11 @@ If they get pulled from there, I will add them as download links on my website [
 
 ---
 
-## 2nd November 2026 (AEST)
+## 4th November 2026 (AEST)
 
 *NOTE: it's getting ridiculous the amount of turbo loras to test and it's making it hard to land on a perfect combo. I've improved the previous workflow for storyboarding here by changing a few out, but also provided several other updates which are listed below.*
 
+**Video discussing the below**: *[see YT channel for 4th November or link will be provided here once it is up]*
 
 1. **New Fast Storyboard workflow** *(will replace old one which is renamed but kept in if people want to use it)*
 
