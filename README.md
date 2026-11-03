@@ -19,11 +19,11 @@
 
 My more acceptable stuff ends up on YouTube linked above *(or Vimeo if its too "arty" for YT)*. However, some of my content is offensive and politically incorrect, and I don't expect it to be to everyone's tastes. But you can see that on my parody channels while they stay up *(content is the same on each, they are mirrored unless take-downs occur)*:
 
-[Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0)
+[Odyssey Parody Channel](https://odysee.com/@WCAID:8)
 
-[Rumble Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+[Rumble Parody Channel](https://rumble.com/c/c-7961680?e9s=src_v1_cbl)
 
-[Internet Archive Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+[Internet Archive Parody Channel](https://archive.org/details/@mdkb)
 
 If they get pulled from there, I will add them as download links on my website [markdkberry.com](https://markdkberry.com/) and if gets pulled from that they must be good.
 

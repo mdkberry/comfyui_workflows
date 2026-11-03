@@ -15,14 +15,91 @@
 
 My more acceptable stuff ends up on YouTube linked above *(or Vimeo if its too "arty" for YT)*. However, some of my content is offensive and politically incorrect, and I don't expect it to be to everyone's tastes. But you can see that on my parody channels while they stay up *(content is the same on each, they are mirrored unless take-downs occur)*:
 
-[Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0)
+[Odyssey Parody Channel](https://odysee.com/@WCAID:8)
 
-[Rumble Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+[Rumble Parody Channel](https://rumble.com/c/c-7961680?e9s=src_v1_cbl)
 
-[Internet Archive Parody Channel](https://rumble.com/v7g4mnc-space-slop-episode-1-welcome-to-the-wild-zone.html)
+[Internet Archive Parody Channel](https://archive.org/details/@mdkb)
 
 If they get pulled from there, I will add them as download links on my website [markdkberry.com](https://markdkberry.com/) and if gets pulled from that they must be good.
 
+
+---
+
+## 2nd November 2026 (AEST)
+
+*NOTE: it's getting ridiculous the amount of turbo loras to test and it's making it hard to land on a perfect combo. I've improved the previous workflow for storyboarding here by changing a few out, but also provided several other updates which are listed below.*
+
+
+1. **New Fast Storyboard workflow** *(will replace old one which is renamed but kept in if people want to use it)*
+
+	**Folder**: `Minimax-H3\`
+	
+	**new workflow: "MEDIT-Fast-Storyboard_MMH3_-DMAD-PDMD-VBVR_vXX.json"**
+	
+	**previous workflow:** *"MEDIT-Fast-Storyboard_MMH3-DMAD-Taomate-VEDA_v8.json" is now renamed (was "MEDIT-Fast-Storyboard_MMH3_v8.json")*
+
+	
+	*I've tested and swapped out a lot in this new version to improve speed and quality of results. Its far from perfect and these "Fast Storyboard" workflows are not meant to be high resolution or perfect results. They are about trying to find a balance between SPEED vrs QUALITY for acceptable quality storyboard ideas. Higher VRAM GPUs will be able to bump up these settings. It's tweaked for the more challenged low and mid VRAM crowd. But check out the updated v2v Upscaler-detailer workflow mentioned later in todays release where I get to 3mp with 8-second video clip in 30 mins.* 
+	
+	*(If you can use the Sol VAE which requires nightly update of Comfyui then it will bring speed down to 13 minutes for a 15 second video to 0.8mp on a 3060 RTX.)*
+	
+	**Changes in this workflow for this new version:**
+	- **"sol vae" I am using only in the 1st sampler.** its good quality but does give a hit, but halves the time of the normal vae which remains for the second sampler. *(needs comfyui update)*.
+	- **2nd sampler changed manual sigmas works better**
+	- **I am back to using the ref base model** *(Singularity was good but had some problems)*,
+	- **VBVR lora str 1,** *(you could try swapping this out with Singularity Loras if you wanted. VBVR provides excellent physics fixes in motion that the base ref model needs else people walk through tables and stuff)*
+	- **DMAD strength 1.0,**
+	- **PDMD 4 step at 0.5 replaces taomate as it works well on 4/5 steps (taomate needed 8 or more)**
+	-  **er_sde/beta back in again for 1st sampler instead of lcm/simple but if I get dialogue sound issues lcm/simple can be better.**
+	- **Pika lora** (I found this best for dialogue audio in 2nd sampler stage and str 1)
+	- **No longer using VEDA or sol attn** as both impact result more than I want so removed for this workflow.
+	- **Added RTX Nvidia x2 upscaler into the 2nd Sampler group** 
+	
+	**File links for the above:**
+	- sol vae (needs comfyui update to nightly) - https://github.com/Comfy-Org/ComfyUI/pull/17411
+	- singularity lora v1.3  https://huggingface.co/davesnow1/Loras/blob/main/minimax_h3_singularity_V1.3_lora_avg_rank_276_bf16.safetensors
+	- singularity lora v2 https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras 
+	- PDMD 4 step lora  https://huggingface.co/Kijai/MiniMax-H3-experimental/blob/main/loras/minimax_h3_pdmd_4step_lora_avg_rank_57_bf16.safetensors
+	- VBVR H3 lora  https://huggingface.co/LiconStudio/Minimax-H3-VBVR
+	- DMAD lora https://huggingface.co/Kijai/MiniMax-H3-experimental/tree/main/loras
+	- Pika lora (I used kijais low rank lora) https://huggingface.co/Kijai/MiniMax-H3_comfy/tree/main/loras/Pika
+
+2. **x2 New MMH3 image edit and creation workflows**
+
+	**Folder**: `Minimax-H3\MMH3_Image-Editing`
+
+		"MBEDIT - MMH3-QuintForms-image-creation-t2i-8k_vXX.json"
+
+		"MBEDIT - MMH3-Ryko_Image-edit_vXX.json"
+		
+	*These are interesting but not sure I used them properly and cant see a use case where I would choose them over image editing models. It is using Minimax H3 for image creation and editing. Needs further testing.*
+
+	- **QuintForms is for 8K single image creation and is rescaled down to 2K for final result.** It's very good at what it does as text-2-image creation, but I tested it with fl2va model using ref images, and couldnt get it to keep character consistency well enough to impress me. Probably something I was doing wrong or maybe it is best just as text-to-image.
+
+	- **Ryko's is for image editing** and is slightly more useful for me if I was swapping hair colour or doing something like that but again I'd probably reach for QWEN or Klein before using this. Maybe it can be used for changing camera angles. I didnt test either further.
+
+
+3. **x1 new MMH3 text to speech (TTS) workflow**
+
+	**Folder**: `Minimax-H3\MMH3_TTS`
+
+		"MBEDIT- MMH3-Fast-audio-TTS-only_vXX.json"
+
+	***This is useful when I can't get the right people saying the right dialogue parts. I then run both characters through this workflow one at a time, it takes less than a minute for 15 second dialogue.** I can then edit the result into the post-production Voice Over as a dub editing into the voice. If there is any speed to lip sync discrepancies, Davinci Resolve is good at changing speed of dialogue audio to match. VO is then accurate sounding to the rest of the shots (that did work) and fixed in post*.
+
+
+4. **Update to v2v Upscaler-Detailer workflow**
+
+	***This is currently now my go-to upscaling-detailer for v2v to fix faces at distance*** *(if not compositing or using drozbay swap-out workflow).*
+
+	**Folder:** `Minimax-H3\Upscalers`
+
+	**Updated Workflow**: `MBEDIT - MH3-rv2v_PixelSpace-Upscaler-CtxtWndws_v4.json`
+	
+	*I swapped out the previous lora for Pika and made some changes to the sampler; now using Euler or LCM and setting manual sigmas to `0.7, 0.49, 0` has enabled me to get to **3mp output with 8-second video (rv2v) in 30 mins.** You could do any length if you had the time, since this uses cknpdx context windows to achieve it. This greatly improved faces at distance.*
+
+	*I will do a short video on results and findings at some point. See the YT channel.*
 
 ---
 
