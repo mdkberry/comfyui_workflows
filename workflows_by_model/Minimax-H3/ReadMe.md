@@ -30,7 +30,7 @@ If they get pulled from there, I will add them as download links on my website [
 
 *NOTE: it's getting ridiculous the amount of turbo loras to test and it's making it hard to land on a perfect combo. I've improved the previous workflow for storyboarding here by changing a few out, but also provided several other updates which are listed below.*
 
-**Video discussing the below**: *[see YT channel for 4th November or link will be provided here once it is up]*
+**Video discussing the below**: [https://youtu.be/-GEu-OWtGMs](https://youtu.be/-GEu-OWtGMs)
 
 1. **New Fast Storyboard workflow** *(will replace old one which is renamed but kept in if people want to use it)*
 
