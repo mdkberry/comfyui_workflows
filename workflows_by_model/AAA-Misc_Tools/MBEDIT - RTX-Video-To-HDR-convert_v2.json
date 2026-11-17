@@ -1,0 +1,440 @@
+{
+  "id": "e6b92a63-6d7e-4d2b-b9e3-2e054825db02",
+  "revision": 0,
+  "last_node_id": 14,
+  "last_link_id": 17,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "GetVideoComponents",
+      "pos": [
+        -1403.932201176278,
+        -695.2610818933134
+      ],
+      "size": [
+        252.5403760291446,
+        142.6265965439518
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "bit_depth",
+          "type": "COMBO",
+          "links": []
+        },
+        {
+          "name": "color_space",
+          "type": "COMBO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      }
+    },
+    {
+      "id": 9,
+      "type": "SaveVideo",
+      "pos": [
+        -430,
+        -680
+      ],
+      "size": [
+        570,
+        520
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "%LoadVideo.file%_HDR_v2v_",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "%LoadVideo.file%_HDR_v2v_",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 8,
+      "type": "CreateVideo",
+      "pos": [
+        -750,
+        -680
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 8
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        30,
+        10,
+        "HDR",
+        "av1"
+      ],
+      "widgets_values_named": {
+        "fps": 30,
+        "bit_depth": 10,
+        "color_space": "HDR",
+        "codec": "av1"
+      }
+    },
+    {
+      "id": 6,
+      "type": "LoadVideo",
+      "pos": [
+        -1850.0269221136994,
+        -687.1218382168795
+      ],
+      "size": [
+        386.798828125,
+        510
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "MH3_RTX-x2Upscl__00001-audio (2).mp4",
+        "image"
+      ],
+      "widgets_values_named": {
+        "file": "MH3_RTX-x2Upscl__00001-audio (2).mp4",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 11,
+      "type": "RTXTrueHDR",
+      "pos": [
+        -1070,
+        -680
+      ],
+      "size": [
+        270,
+        178
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "hdr_images",
+          "type": "IMAGE",
+          "links": [
+            14,
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RTXTrueHDR"
+      },
+      "widgets_values": [
+        100,
+        100,
+        50,
+        650,
+        true,
+        "HDR"
+      ],
+      "widgets_values_named": {
+        "contrast": 100,
+        "saturation": 100,
+        "middle_gray": 50,
+        "luminance": 650,
+        "debanding": true,
+        "output_colorspace": "HDR"
+      }
+    },
+    {
+      "id": 12,
+      "type": "SaveImageAdvanced",
+      "pos": [
+        -1070,
+        -390
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "showAdvanced": true,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImageAdvanced"
+      },
+      "widgets_values": [
+        "ComfyUI",
+        "exr",
+        "16-bit float",
+        "HDR"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "ComfyUI",
+        "format": "exr",
+        "format.bit_depth": "16-bit float",
+        "format.input_color_space": "HDR"
+      }
+    },
+    {
+      "id": 13,
+      "type": "MarkdownNote",
+      "pos": [
+        -2343.380128810128,
+        -762.1921514121818
+      ],
+      "size": [
+        448.29934148595544,
+        769.3293656476682
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "MARKDKBERRY.com\n\n- Requires the NVIDIA VFX node installed. \n\n*I dont really use this but probably should. First tests I think I can see the difference in depth.*\n\nThis converts video clips to HDR .mp4 files\nand doesnt seem to increase the size or take too long.\n\n\n## ISSUES\n\n- This is currently using my CPU and RAM not the VRAM and not sure why. Might be needing a code update to fix it. (Note there is a ticket on github for it from March 2026, its now November). </br>\n\n- I had problems with the NVIDIA node conflicting and throwing errors when installing the NVIDIA VFX node and for whatever reason it removed my previous RTX Superscaler in the process. \n   - fix was to install it, then close comfyui, then install the wheel via command prompt. (Gemini LLM knew about it, so ask an LLM for current solution if you run into it).</br>\n\n- ***(This is a note that might contain incorrect info, I do not know professional approach to using this - MB)*** Davinci Resolve free version wont allow some HDR formats. Recommend was set it to 10 bit depth, HDR Color space, and AV1 for codec. This saves as an mp4 still and loads into DR fine. But you still need to change the color space for HDR clips.\n   - in DR it seems I would still set Rec709 as input for any SDR clips but change the input color space for clips individually that are HDR to Right-click the highlighted clips, navigate to Input Color Space, and explicitly choose Rec.2020 (ST2084) or Rec.2020 (HLG). (NOTE: I need to look into this more to understand it better).\n   - (Review before use) \"Since Rec.2100 HLG (Scene) is your input, configure the rest of your Color Space Transform (CST) node based on your project goals:\n   1. Input Color Space: Set this to Rec.2020 (this goes hand-in-hand with HLG HDR data).\n   2. Input Gamma: Keep this at Rec.2100 HLG (Scene).\n   3. Output Color Space & Output Gamma:\n\t• If your project is standard SDR (Rec.709): Set both of these to Rec.709 (or Gamma 2.4). Scroll down inside the CST settings and turn on Tone Mapping (set it to DaVinci). This safely locks that beautiful HLG highlight detail into a standard video format that looks great on any screen.\n\t• If your project is a true HDR export: Set these to Rec.2020 and Rec.2100 HLG respectively to match your master timeline deliverables.\n </br>\n\n\n- no thumbnail in mp4 so simply name the output file the same as the input just with _HDR_ should solve that issue.\n   - The fix for this is to add the inbound filename to the save video node. Use the inbound node S&R name to achieve it. For example put this in the save video node: `%LoadVideo.file%_HDR_v2v_`\n\n\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "MARKDKBERRY.com\n\n- Requires the NVIDIA VFX node installed. \n\n*I dont really use this but probably should. First tests I think I can see the difference in depth.*\n\nThis converts video clips to HDR .mp4 files\nand doesnt seem to increase the size or take too long.\n\n\n## ISSUES\n\n- This is currently using my CPU and RAM not the VRAM and not sure why. Might be needing a code update to fix it. (Note there is a ticket on github for it from March 2026, its now November). </br>\n\n- I had problems with the NVIDIA node conflicting and throwing errors when installing the NVIDIA VFX node and for whatever reason it removed my previous RTX Superscaler in the process. \n   - fix was to install it, then close comfyui, then install the wheel via command prompt. (Gemini LLM knew about it, so ask an LLM for current solution if you run into it).</br>\n\n- ***(This is a note that might contain incorrect info, I do not know professional approach to using this - MB)*** Davinci Resolve free version wont allow some HDR formats. Recommend was set it to 10 bit depth, HDR Color space, and AV1 for codec. This saves as an mp4 still and loads into DR fine. But you still need to change the color space for HDR clips.\n   - in DR it seems I would still set Rec709 as input for any SDR clips but change the input color space for clips individually that are HDR to Right-click the highlighted clips, navigate to Input Color Space, and explicitly choose Rec.2020 (ST2084) or Rec.2020 (HLG). (NOTE: I need to look into this more to understand it better).\n   - (Review before use) \"Since Rec.2100 HLG (Scene) is your input, configure the rest of your Color Space Transform (CST) node based on your project goals:\n   1. Input Color Space: Set this to Rec.2020 (this goes hand-in-hand with HLG HDR data).\n   2. Input Gamma: Keep this at Rec.2100 HLG (Scene).\n   3. Output Color Space & Output Gamma:\n\t• If your project is standard SDR (Rec.709): Set both of these to Rec.709 (or Gamma 2.4). Scroll down inside the CST settings and turn on Tone Mapping (set it to DaVinci). This safely locks that beautiful HLG highlight detail into a standard video format that looks great on any screen.\n\t• If your project is a true HDR export: Set these to Rec.2020 and Rec.2100 HLG respectively to match your master timeline deliverables.\n </br>\n\n\n- no thumbnail in mp4 so simply name the output file the same as the input just with _HDR_ should solve that issue.\n   - The fix for this is to add the inbound filename to the save video node. Use the inbound node S&R name to achieve it. For example put this in the save video node: `%LoadVideo.file%_HDR_v2v_`\n\n\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      5,
+      6,
+      0,
+      7,
+      0,
+      "VIDEO"
+    ],
+    [
+      8,
+      7,
+      1,
+      8,
+      1,
+      "AUDIO"
+    ],
+    [
+      9,
+      7,
+      2,
+      8,
+      2,
+      "FLOAT"
+    ],
+    [
+      13,
+      7,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      11,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      8,
+      0,
+      9,
+      0,
+      "VIDEO"
+    ],
+    [
+      15,
+      11,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0811815384615404,
+      "offset": [
+        2487.686283941878,
+        925.4180892478255
+      ]
+    },
+    "frontendVersion": "1.57.6",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

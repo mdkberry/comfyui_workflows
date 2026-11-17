@@ -26,6 +26,12 @@ If they get pulled from there, I will add them as download links on my website [
 
 ---
 
+## 18th November 2026 (AEST)
+
+*I've moved the updates to the folder above this one for clarity so look at `workflows_by_model\ReadMe.md` for todays updates*
+
+---
+
 ## 4th November 2026 (AEST)
 
 *NOTE: it's getting ridiculous the amount of turbo loras to test and it's making it hard to land on a perfect combo. I've improved the previous workflow for storyboarding here by changing a few out, but also provided several other updates which are listed below.*

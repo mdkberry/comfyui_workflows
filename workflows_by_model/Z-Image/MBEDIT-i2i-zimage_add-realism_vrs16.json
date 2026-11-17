@@ -1,0 +1,1652 @@
+{
+  "id": "b05d24e9-19da-4825-90e1-cc6c247c3ec9",
+  "revision": 0,
+  "last_node_id": 55,
+  "last_link_id": 99,
+  "nodes": [
+    {
+      "id": 29,
+      "type": "CLIPLoaderGGUF",
+      "pos": [
+        -275.20746882351136,
+        343.4493265882549
+      ],
+      "size": [
+        376.5561989473703,
+        94.53602340557302
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoaderGGUF",
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "d3e14efda6bb891de0406d2debffcb07e88d4231",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "clip_name": true,
+            "type": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "LLM\\qwen_3_4b.safetensors",
+        "stable_diffusion"
+      ],
+      "widgets_values_named": {
+        "clip_name": "LLM\\qwen_3_4b.safetensors",
+        "type": "stable_diffusion"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 32,
+      "type": "VAEEncode",
+      "pos": [
+        811.3547500512238,
+        -238.6877876992025
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 89
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            59
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 17,
+      "type": "VAELoader",
+      "pos": [
+        -297.55308683438403,
+        -30.185028263026453
+      ],
+      "size": [
+        367.6018965148146,
+        63.37258145953115
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            45,
+            56
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "vae_name": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "ae.safetensors"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        2404.2754680038415,
+        468.9743943845298
+      ],
+      "size": [
+        814.5044887904837,
+        562.0917109826701
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 87
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "filename_prefix": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "zimagei2i_"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "zimagei2i_"
+      }
+    },
+    {
+      "id": 46,
+      "type": "Note",
+      "pos": [
+        1883.2219719938632,
+        75.82918255681399
+      ],
+      "size": [
+        298.2861308120964,
+        439.58072533877396
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# 2ND SAMPLER\n\nbetween 0.7 and 0.9 denoise on the 2nd sampler (0.8 felt best most of the time)\n\nif you need prompt following better you need to bump up cfg above 1, but it can blow out and will take longer.\n\neuler/beta was recommended but seen different results with odd choices like  dpmpp_sde /ddim_uniform\n\n---\n\ngoogle search for best settings gave:\n\nSteps: 4–8 steps (8 is considered the maximum for best quality; 4-6 can work for faster iteration).\n\nCFG Scale: 1.0–2.0 (higher CFG, such as 3-4, may cause images to \"burn\" or become over-saturated, though some users prefer 2 for more contrast).\n\nSampler: euler or dpmpp_sde.\nScheduler: simple or beta.\n\nResolution: 1024x1024 is ideal for text rendering, though it handles resolutions up to 2048x2048.\n\nShift: Set the ModelSamplingAuraFlow to 7 (default is 3) for better quality."
+      ],
+      "widgets_values_named": {
+        "text": "# 2ND SAMPLER\n\nbetween 0.7 and 0.9 denoise on the 2nd sampler (0.8 felt best most of the time)\n\nif you need prompt following better you need to bump up cfg above 1, but it can blow out and will take longer.\n\neuler/beta was recommended but seen different results with odd choices like  dpmpp_sde /ddim_uniform\n\n---\n\ngoogle search for best settings gave:\n\nSteps: 4–8 steps (8 is considered the maximum for best quality; 4-6 can work for faster iteration).\n\nCFG Scale: 1.0–2.0 (higher CFG, such as 3-4, may cause images to \"burn\" or become over-saturated, though some users prefer 2 for more contrast).\n\nSampler: euler or dpmpp_sde.\nScheduler: simple or beta.\n\nResolution: 1024x1024 is ideal for text rendering, though it handles resolutions up to 2048x2048.\n\nShift: Set the ModelSamplingAuraFlow to 7 (default is 3) for better quality."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 34,
+      "type": "UNETLoader",
+      "pos": [
+        -291.9088245244623,
+        -229.59073879372684
+      ],
+      "size": [
+        370.7131687983767,
+        102.92314848164631
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "ZiT\\z_image_turbo_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "ZiT\\z_image_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 48,
+      "type": "Note",
+      "pos": [
+        1573.0114294046693,
+        314.43403495102103
+      ],
+      "size": [
+        265.557448089648,
+        199.43963177373223
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "If using the upscaler x6, plug in both samplers. set 1st to 1 denoise (or below 0.5 if you want the original image to drive it), and reduce the inbound image to 288 on the longest edge."
+      ],
+      "widgets_values_named": {
+        "text": "If using the upscaler x6, plug in both samplers. set 1st to 1 denoise (or below 0.5 if you want the original image to drive it), and reduce the inbound image to 288 on the longest edge."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 50,
+      "type": "LatentUpscale",
+      "pos": [
+        1520.851539939559,
+        132.20199736069125
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentUpscale",
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1600,
+        904,
+        "disabled"
+      ],
+      "widgets_values_named": {
+        "upscale_method": "nearest-exact",
+        "width": 1600,
+        "height": 904,
+        "crop": "disabled"
+      }
+    },
+    {
+      "id": 47,
+      "type": "LatentUpscaleBy",
+      "pos": [
+        1521.6681115508934,
+        -14.251053804138252
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 84
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            85
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentUpscaleBy",
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        6
+      ],
+      "widgets_values_named": {
+        "upscale_method": "nearest-exact",
+        "scale_by": 6
+      }
+    },
+    {
+      "id": 39,
+      "type": "LoadImage",
+      "pos": [
+        1718.4310782518462,
+        -740.094682628271
+      ],
+      "size": [
+        282.83333587646484,
+        314
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.12.2",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "3d-illustration-space-station-260nw-314227676.jpg",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "3d-illustration-space-station-260nw-314227676.jpg",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 38,
+      "type": "ColorMatch",
+      "pos": [
+        2594.2286599077765,
+        -540.8199863980599
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_ref",
+          "type": "IMAGE",
+          "link": 63
+        },
+        {
+          "name": "image_target",
+          "type": "IMAGE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ColorMatch",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "50a0837f9aea602b184bbf6dbabf66ed2c7a1d22",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        "mkl",
+        0.8,
+        true
+      ],
+      "widgets_values_named": {
+        "method": "mkl",
+        "strength": 0.8,
+        "multithread": true
+      }
+    },
+    {
+      "id": 42,
+      "type": "KSampler",
+      "pos": [
+        1876.7279322921825,
+        -279.31149516062413
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 81
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 73
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 72
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 85
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "seed": true,
+            "steps": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "denoise": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        417181835794987,
+        "randomize",
+        9,
+        1,
+        "euler",
+        "beta",
+        0.8
+      ],
+      "widgets_values_named": {
+        "seed": 417181835794987,
+        "control_after_generate": "randomize",
+        "steps": 9,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "beta",
+        "denoise": 0.8
+      }
+    },
+    {
+      "id": 37,
+      "type": "Note",
+      "pos": [
+        1135.2789858272836,
+        272.8080758544651
+      ],
+      "size": [
+        402.75037669071094,
+        731.1668631430414
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# ONE SAMPLER RUN TO FIX UP i2i IMAGES:\n\ndisable the resize by long edge\ndisable the second KSampler\ndisable the upscale by latent\nset your remaining KSampler to 0.1 to start\n\nI currently like Heun/beta or er_sde/simple for this on skin but it can damage clothing (at 4mp) but very low denoise else it blows out (try down at 0.03 and step up by 0.01 increments until you hit the sweet spot). They are all okay if you get the right balance and all blow out if you dont, seems to be model related and very common in the turbo model for a lot of people. I need to test further.\n\nincreasing steps can help (from 9 to 12) and aura flow (start at 3 but testm 6 to 7 if you want stronger effect). but dappling is still there at 0.1 denoise with clothing. I then usually reduce the denoise to below 0.1 (down to 0.03) to mitigate it.\n\nDENOISE:\n\n- light fix without losing consistency: 0.1 or less (even try 0.05)\n\n- 0.2 to deplastic a face without losing consistency. (e.g. Klein swap inpaint outputs) \n\n- with er_sde / simple but reduce denoise (to 0.1 or 0.2) for that else it will dapple skin too harshly.\n\n- good improvements but it will change faces 0.3 or more (er_sde / simple will effect it a lot more than dpmpp+sde/karras)\n\nSETTINGS I TRIED GOOD FOR SKIN FIX:\n\n- er_sde / simple, denoise 0.1 (prone to dappling but realism is there)\n\n- heun / beta, denoise 0.1 (better quality than er_sde slight dappling still but more realistic, takes a bit longer. however 0.2 destroyed the skin with freckles like skin disease but I think this is the model or something as it happens with heun too\n\n- (dppmpp+sde / Karras is good for t2i but I dont find it very good for i2i and doesnt do much even at denoise 0.4)\n\n- euler_ancestal / beta, denoise 0.1 (maybe better if went higher denoise but think it will introduce dappling but untested)\n\n- res_2s / bong tangent (needs RES4LYF installed) (did nothing at denoise 0.1, while 0.4 destroyed the skin with freckles like skin disease but I think this is the model or something as it happens with heun too at even lower denoise)\n\n- dpmpp_2m_sde with linear_quadratic (may want to add 2 extra steps) made no difference, even at 0.1 it could cause dappling.\n"
+      ],
+      "widgets_values_named": {
+        "text": "# ONE SAMPLER RUN TO FIX UP i2i IMAGES:\n\ndisable the resize by long edge\ndisable the second KSampler\ndisable the upscale by latent\nset your remaining KSampler to 0.1 to start\n\nI currently like Heun/beta or er_sde/simple for this on skin but it can damage clothing (at 4mp) but very low denoise else it blows out (try down at 0.03 and step up by 0.01 increments until you hit the sweet spot). They are all okay if you get the right balance and all blow out if you dont, seems to be model related and very common in the turbo model for a lot of people. I need to test further.\n\nincreasing steps can help (from 9 to 12) and aura flow (start at 3 but testm 6 to 7 if you want stronger effect). but dappling is still there at 0.1 denoise with clothing. I then usually reduce the denoise to below 0.1 (down to 0.03) to mitigate it.\n\nDENOISE:\n\n- light fix without losing consistency: 0.1 or less (even try 0.05)\n\n- 0.2 to deplastic a face without losing consistency. (e.g. Klein swap inpaint outputs) \n\n- with er_sde / simple but reduce denoise (to 0.1 or 0.2) for that else it will dapple skin too harshly.\n\n- good improvements but it will change faces 0.3 or more (er_sde / simple will effect it a lot more than dpmpp+sde/karras)\n\nSETTINGS I TRIED GOOD FOR SKIN FIX:\n\n- er_sde / simple, denoise 0.1 (prone to dappling but realism is there)\n\n- heun / beta, denoise 0.1 (better quality than er_sde slight dappling still but more realistic, takes a bit longer. however 0.2 destroyed the skin with freckles like skin disease but I think this is the model or something as it happens with heun too\n\n- (dppmpp+sde / Karras is good for t2i but I dont find it very good for i2i and doesnt do much even at denoise 0.4)\n\n- euler_ancestal / beta, denoise 0.1 (maybe better if went higher denoise but think it will introduce dappling but untested)\n\n- res_2s / bong tangent (needs RES4LYF installed) (did nothing at denoise 0.1, while 0.4 destroyed the skin with freckles like skin disease but I think this is the model or something as it happens with heun too at even lower denoise)\n\n- dpmpp_2m_sde with linear_quadratic (may want to add 2 extra steps) made no difference, even at 0.1 it could cause dappling.\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        2194.4584792019227,
+        -441.3394312564064
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 71
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            64,
+            87,
+            92
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        375.54821720691575,
+        447.7981083179407
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 99
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            6,
+            72
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "blurry, ugly, bad, fake render"
+      ],
+      "widgets_values_named": {
+        "text": "blurry, ugly, bad, fake render"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 45,
+      "type": "Seed (rgthree)",
+      "pos": [
+        1286.5449814986578,
+        -578.9197884008805
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "SEED",
+          "shape": 3,
+          "type": "INT",
+          "links": [
+            75,
+            76
+          ]
+        }
+      ],
+      "properties": {
+        "randomMax": 1125899906842624,
+        "randomMin": 0,
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.2512112053",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        967571008593008,
+        "",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "seed": 967571008593008,
+        "🎲 Randomize Each Time": "",
+        "🎲 New Fixed Random": "",
+        "USE_LAST_SEED": ""
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        1159.7360659284127,
+        -290.5089469602417
+      ],
+      "size": [
+        315,
+        474
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 80
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 59
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            84
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "seed": true,
+            "steps": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "denoise": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        444210288347772,
+        "randomize",
+        12,
+        1,
+        "er_sde",
+        "simple",
+        0.1
+      ],
+      "widgets_values_named": {
+        "seed": 444210288347772,
+        "control_after_generate": "randomize",
+        "steps": 12,
+        "cfg": 1,
+        "sampler_name": "er_sde",
+        "scheduler": "simple",
+        "denoise": 0.1
+      }
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        309.08566412371704,
+        -107.57523712468041
+      ],
+      "size": [
+        436.80891133942714,
+        470.96829130271675
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 98
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            4,
+            73
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "a realistic photograph of a man with dark hair with silver streaks and dark beard wearing a khaki shirt"
+      ],
+      "widgets_values_named": {
+        "text": "a realistic photograph of a man with dark hair with silver streaks and dark beard wearing a khaki shirt"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 36,
+      "type": "Note",
+      "pos": [
+        -700.521987149124,
+        -783.2498872769635
+      ],
+      "size": [
+        318.7286824409498,
+        325.42083595798607
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "For fixing skin on faces highly recommend using dpmpp_sde + karras and the turbo bf16 model.\n\nset to denoise 0.1 or above.\n\nzimage max is 4mp but test lower.\n\nuse prompt that describes the picture and add details of aesthetic film stock in.\n\nalso start with \"a realistic photograph of ...\"\n\n---\n\nfor fixing trees or forest type realism scene try \n\nres_2m or res_2s with ddim_uniform or beta\n\nbut reduce the denoise to 0.1 as it will make changes stronger than other samplers and rise incrementally\n\nbut it wont fix bad anti-aliasaing you'll need to try qwen or klein for that AFAIK."
+      ],
+      "widgets_values_named": {
+        "text": "For fixing skin on faces highly recommend using dpmpp_sde + karras and the turbo bf16 model.\n\nset to denoise 0.1 or above.\n\nzimage max is 4mp but test lower.\n\nuse prompt that describes the picture and add details of aesthetic film stock in.\n\nalso start with \"a realistic photograph of ...\"\n\n---\n\nfor fixing trees or forest type realism scene try \n\nres_2m or res_2s with ddim_uniform or beta\n\nbut reduce the denoise to 0.1 as it will make changes stronger than other samplers and rise incrementally\n\nbut it wont fix bad anti-aliasaing you'll need to try qwen or klein for that AFAIK."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 49,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        425.59027143764035,
+        -242.670400919301
+      ],
+      "size": [
+        310,
+        82
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            80,
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.6.2",
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        5,
+        "flow"
+      ],
+      "widgets_values_named": {
+        "shift": 5,
+        "sampling": "flow"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 33,
+      "type": "ImageScale",
+      "pos": [
+        471.55592233495133,
+        -770.3666045130512
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "upscale_method": true,
+            "width": true,
+            "height": true,
+            "crop": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "lanczos",
+        1600,
+        1200,
+        "center"
+      ],
+      "widgets_values_named": {
+        "upscale_method": "lanczos",
+        "width": 1600,
+        "height": 1200,
+        "crop": "center"
+      }
+    },
+    {
+      "id": 40,
+      "type": "ResizeImagesByLongerEdge",
+      "pos": [
+        443.6821985803888,
+        -583.4303859491048
+      ],
+      "size": [
+        348.624609375,
+        58
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResizeImagesByLongerEdge",
+        "cnr_id": "comfy-core",
+        "ver": "0.13.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.6.2"
+        }
+      },
+      "widgets_values": [
+        288
+      ],
+      "widgets_values_named": {
+        "longer_edge": 288
+      }
+    },
+    {
+      "id": 30,
+      "type": "LoadImage",
+      "pos": [
+        41.45052069190724,
+        -605.3418125984872
+      ],
+      "size": [
+        297.97393765405593,
+        340.70391355634206
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            57,
+            67,
+            88
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.75",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "image": true,
+            "upload": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Qwen_i2i_2.1_00006 (4).png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "Qwen_i2i_2.1_00006 (4).png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 51,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        454.32490702293956,
+        -450.44982308692795
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            89,
+            93
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleToTotalPixels",
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "lanczos",
+        4,
+        1
+      ],
+      "widgets_values_named": {
+        "upscale_method": "lanczos",
+        "megapixels": 4,
+        "resolution_steps": 1
+      }
+    },
+    {
+      "id": 52,
+      "type": "Note",
+      "pos": [
+        -694.9810324505344,
+        -364.2857828893592
+      ],
+      "size": [
+        306.49692623203157,
+        387.74985478746373
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "PROMPT EXAMPLES:\n\n\na realistic photograph of interior of decaying manor lit only by many candles, warm flickering light on stone walls, sensual atmosphere. large open fire place log burning. no electric lighting.\n\nman dressed in 1970s causal clothing is leaning back in antique chair, a blonde woman in a revealing flowing blue dress is draped around him seductively, a brunette with long hair is standing behind the chair.\n\ncolors: 60% warm amber-gold candlelight , 30% deep shadow black , 10% ivory and pale flesh\n\nshot on Panasonic VariCam 35, ultra-smooth 180-degree shutter, shallow depth of field, anamorphic lens flare, Hammer Horror film aesthetic, Eastmancolor film stock, warm pushed saturation, slightly overexposed highlights, deep crushed shadows, lush theatrical lighting, gothic British period atmosphere, 1960s-1970s Bray Studios production design, velvet textures and rich decay, soft focus on backgrounds, cinematic 2.39:1 widescreen, smooth filmic motion, no digital sharpness, organic grain structure\n\n---"
+      ],
+      "widgets_values_named": {
+        "text": "PROMPT EXAMPLES:\n\n\na realistic photograph of interior of decaying manor lit only by many candles, warm flickering light on stone walls, sensual atmosphere. large open fire place log burning. no electric lighting.\n\nman dressed in 1970s causal clothing is leaning back in antique chair, a blonde woman in a revealing flowing blue dress is draped around him seductively, a brunette with long hair is standing behind the chair.\n\ncolors: 60% warm amber-gold candlelight , 30% deep shadow black , 10% ivory and pale flesh\n\nshot on Panasonic VariCam 35, ultra-smooth 180-degree shutter, shallow depth of field, anamorphic lens flare, Hammer Horror film aesthetic, Eastmancolor film stock, warm pushed saturation, slightly overexposed highlights, deep crushed shadows, lush theatrical lighting, gothic British period atmosphere, 1960s-1970s Bray Studios production design, velvet textures and rich decay, soft focus on backgrounds, cinematic 2.39:1 widescreen, smooth filmic motion, no digital sharpness, organic grain structure\n\n---"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 53,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        2439.255758599988,
+        -180.1699831340346
+      ],
+      "size": [
+        860.2443746943353,
+        567.7606001235538
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 93
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 92
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "comparer_mode": "Slide",
+        "cnr_id": "rgthree-comfy",
+        "ver": "449c58fcdd612f7733e54c51f6758ead63fa180b"
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_undng_00017_.png&type=temp&subfolder=&rand=0.33111578312772605"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_undng_00018_.png&type=temp&subfolder=&rand=0.18419414833556313"
+          }
+        ]
+      ],
+      "widgets_values_named": {
+        "rgthree_comparer": {
+          "images": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_undng_00017_.png&type=temp&subfolder=&rand=0.33111578312772605",
+              "img": {}
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_undng_00018_.png&type=temp&subfolder=&rand=0.18419414833556313",
+              "img": {}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 54,
+      "type": "MarkdownNote",
+      "pos": [
+        -253.48050792431238,
+        -1143.2412206462595
+      ],
+      "size": [
+        561.0930134309751,
+        445.04052940435054
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# Markdkberry.com\n\nZ image model for i2i workflow. specifically low denoise fixing of plastic skin issues.\n\n## models\n\n- int8 model can download from here [https://huggingface.co/Winnougan/Z-Image-Base-Turbo-INT8-Convrot/tree/main](https://huggingface.co/Winnougan/Z-Image-Base-Turbo-INT8-Convrot/tree/main) including the text encoder version. This is ideal for lowVRAM GPUs and to be honest I could not see any difference compared to the below full size models. </br>\n\n- I originally used fp8 and turbo bf16 models along with a full size text encoder. from here [https://huggingface.co/Comfy-Org/Z-Image-Turbo/tree/main/split_files/diffusion_models](https://huggingface.co/Comfy-Org/Z-Image-Turbo/tree/main/split_files/diffusion_models)\n\n## Issues\n\n- **dappling occurs with turbo models**. I use very low denoise for fixing skin and low enough it works okay for that but can also impact clothing. It looks like paper effect on everything, dappling blotches and is a know issue. I have not solved it, only mitigated it. That was with bf16 and fp8 turbo models. I plan to test int 8 convrot models next. (turbo).\n    - **for fixing skin reduce the denoise down to 0.03 really that low is good enough for subtle skin improvement of plastic faces**. going to 0.1 it will dapple especially noticeably on clothing. I havent solved it, but for skin realism this works okay. </br>\n   - **reducing aura flow to between 3 and 6** actually helped for me.\n\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "# Markdkberry.com\n\nZ image model for i2i workflow. specifically low denoise fixing of plastic skin issues.\n\n## models\n\n- int8 model can download from here [https://huggingface.co/Winnougan/Z-Image-Base-Turbo-INT8-Convrot/tree/main](https://huggingface.co/Winnougan/Z-Image-Base-Turbo-INT8-Convrot/tree/main) including the text encoder version. This is ideal for lowVRAM GPUs and to be honest I could not see any difference compared to the below full size models. </br>\n\n- I originally used fp8 and turbo bf16 models along with a full size text encoder. from here [https://huggingface.co/Comfy-Org/Z-Image-Turbo/tree/main/split_files/diffusion_models](https://huggingface.co/Comfy-Org/Z-Image-Turbo/tree/main/split_files/diffusion_models)\n\n## Issues\n\n- **dappling occurs with turbo models**. I use very low denoise for fixing skin and low enough it works okay for that but can also impact clothing. It looks like paper effect on everything, dappling blotches and is a know issue. I have not solved it, only mitigated it. That was with bf16 and fp8 turbo models. I plan to test int 8 convrot models next. (turbo).\n    - **for fixing skin reduce the denoise down to 0.03 really that low is good enough for subtle skin improvement of plastic faces**. going to 0.1 it will dapple especially noticeably on clothing. I havent solved it, but for skin realism this works okay. </br>\n   - **reducing aura flow to between 3 and 6** actually helped for me.\n\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 55,
+      "type": "CLIPLoader",
+      "pos": [
+        -301.08832555505916,
+        98.09424726313952
+      ],
+      "size": [
+        418.5362341896915,
+        167.2859134991694
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            98,
+            99
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "models": [
+          {
+            "name": "qwen_3_4b.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Zimage\\qwen_3_4b_int8_convrot.safetensors",
+        "lumina2",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "Zimage\\qwen_3_4b_int8_convrot.safetensors",
+        "type": "lumina2",
+        "device": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      4,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      45,
+      17,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      56,
+      17,
+      0,
+      32,
+      1,
+      "VAE"
+    ],
+    [
+      57,
+      30,
+      0,
+      33,
+      0,
+      "IMAGE"
+    ],
+    [
+      59,
+      32,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      63,
+      39,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      8,
+      0,
+      38,
+      1,
+      "IMAGE"
+    ],
+    [
+      67,
+      30,
+      0,
+      40,
+      0,
+      "IMAGE"
+    ],
+    [
+      71,
+      42,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      72,
+      7,
+      0,
+      42,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      73,
+      6,
+      0,
+      42,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      45,
+      0,
+      42,
+      4,
+      "INT"
+    ],
+    [
+      76,
+      45,
+      0,
+      3,
+      4,
+      "INT"
+    ],
+    [
+      79,
+      34,
+      0,
+      49,
+      0,
+      "MODEL"
+    ],
+    [
+      80,
+      49,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      81,
+      49,
+      0,
+      42,
+      0,
+      "MODEL"
+    ],
+    [
+      84,
+      3,
+      0,
+      47,
+      0,
+      "LATENT"
+    ],
+    [
+      85,
+      47,
+      0,
+      42,
+      3,
+      "LATENT"
+    ],
+    [
+      87,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      88,
+      30,
+      0,
+      51,
+      0,
+      "IMAGE"
+    ],
+    [
+      89,
+      51,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      92,
+      8,
+      0,
+      53,
+      1,
+      "IMAGE"
+    ],
+    [
+      93,
+      51,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      98,
+      55,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      99,
+      55,
+      0,
+      7,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8390545288824249,
+      "offset": [
+        716.8790377703597,
+        1257.536164280297
+      ]
+    },
+    "frontendVersion": "1.59.1",
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "extensions": {
+    "seed_widgets": {
+      "3": 0,
+      "42": 0,
+      "45": 0
+    }
+  },
+  "version": 0.4
+}
