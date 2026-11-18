@@ -27,9 +27,10 @@ More info can be found in the `ReadMe.md` of each model folder, which will be ke
 
 1. **New workflow for higher quality Minimax H3 output:**
 
-	**Video example of where I used it**: [Sapphires Part 2 "Second Victim"](https://youtu.be/5aFK6jr-PN4?si=Xwuoz_VJX-aAUREH)
-	
-	***(I'll be doing a YT video on what worked and what didn't in the making of that, and post the link here later today)***
+	- **1 hour video discussion on the workflows and making of "Sapphires Part 2"**: [https://youtu.be/SzfdZ8nfMi4](https://youtu.be/SzfdZ8nfMi4)
+
+	- **6 min video of** [Sapphires Part 2 - "Second Victim"](https://youtu.be/5aFK6jr-PN4?si=Xwuoz_VJX-aAUREH)
+
 
 	**Folder**: `Minimax-H3\`
 	
