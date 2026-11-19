@@ -68,17 +68,17 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 
 **For now I will seperate workflows into the following folders:**
 
-### `\monthly_sets`
+### `archived\monthly_sets`
 
-**regularly updated monthly zip files of my current video and image pipelines**. These are the "best of's" that I'd be using a lot at that moment in time, so if you only pick one download make it these.
+**previous updated monthly zip files of my current video and image pipelines**. These were the "best of's" that I'd be using a lot at that moment in time. I no longer use them as I am solely focused on Minimax H3 models and my image pipeline is fairly static too.
 
 ### `\workflows_by_model` 
 
-**folders by model type**. I'll probably only drop them in here when I get time as I have hundreds that I have tried and discarded or forgotten about.
+**folders by model type**. I'll probably only drop them in here when I get time as I have hundreds that I have tried and discarded or forgotten about. This is now the main container and the only one regularly updated.
 
-### `\workflows_by_video` 
+### `archived\workflows_by_video` 
 
-**Workflows I used to make AI videos that can be found on my video channels (YT, Vimeo, or Rumble see links in AI VIDEOS section)**. These wont be kept up to date, but will act as snapshots of what I used at the time.
+**Workflows I used to make AI videos that can be found on my video channels (YT, Vimeo, or Rumble see links in AI VIDEOS section)**. These wont be kept up to date, but act as snapshots of what I used at the time. Since Minimax H3 arrived it's become the staple workflow for all work.
 
 
 ## AI VIDEOS
