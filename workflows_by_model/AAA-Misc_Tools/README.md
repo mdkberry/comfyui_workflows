@@ -1,0 +1,17 @@
+# Workflow Explanations
+
+## MBEDIT - Color-Match-Images_vrs1.json
+
+This is a simple four-node workflow that performs color matching between two images. It loads two source images — "base_01 (18).png" and "HWM_00A_02G_descend_clearing - base_03.png.png" — and feeds both into a ColorMatch node (from the comfyui-kjnodes custom nodes). The ColorMatch node uses the "mkl" (Monge-Kantorovitch Linear) method at strength 0.8 with undefined checking enabled to transfer the color profile of the first image onto the second image. The color-matched result is then sent to a PreviewImage node for visual inspection. This workflow is useful when you need to harmonize the color grading or lighting of one image to match another reference image.
+
+## MBEDIT - Make_DepthMap_Image_Controlnets_v1.json
+
+This is a complex workflow that generates depth maps and pose images for use with ControlNet and IC-Light LoRA workflows in video generation. It loads an input image ("Camera-Angle-right-side-profile-3-men.png") and processes it through the AIO_Preprocessor node using the DepthAnythingV2 preprocessor at 512 resolution to generate a depth map. A second image ("GSplat_Qwen__00001_.png") is resized and processed through an OpenposePreprocessor to extract pose information. The depth map and pose image are then blended together using an ImageBlend node set to "screen" mode at 0.5 strength. Multiple outputs are saved separately as "Depthmap_", "DepthMp_", "OpenPose_", and "Pose+DpthMp_" images. A VHS_VideoCombine node outputs a video file ("DepthMaps/Chop") encoded as h264-mp4 at 16 fps. As noted in the workflow annotation, the blended depth-pose result is intended for use in an IC-Lora workflow to control structure in LTX video generation.
+
+## MBEDIT - NVIDIA-SDR-HDR_ImageConvert_v1.json
+
+This is a minimal three-node workflow that converts a standard dynamic range (SDR) image to high dynamic range (HDR) EXR format using NVIDIA's RTX True HDR node. It loads a single SDR image ("4mp-Qwen_i2i_2.1_00003.png") and passes it through an RTXTrueHDR node configured with contrast 100, saturation 100, middle gray 50, luminance 650, debanding enabled, and output colorspace set to HDR. The resulting HDR image is saved as an EXR file with 16-bit float bit depth and HDR input color space, using the filename prefix "HDR_i2i_". This workflow provides a quick way to upconvert standard images to HDR EXR format for use in HDR pipelines.
+
+## MBEDIT - RTX-Video-To-HDR-convert_v2.json
+
+This is a video-to-HDR conversion workflow that converts an SDR video clip to an HDR video file while preserving the original audio. It loads a video ("MH3_RTX-x2Upscl__00001-audio (2).mp4") and uses GetVideoComponents to extract the video frames, audio track, and frame rate. The video frames are processed through an RTXTrueHDR node (contrast 100, saturation 100, middle gray 50, luminance 650, debanding true, output HDR) to convert them to HDR. The HDR frames are also saved individually as EXR files via SaveImageAdvanced. The audio from the original video is recombined with the HDR frames using a CreateVideo node set to 30 fps, 10-bit depth, HDR color space, and AV1 codec. The final HDR video is saved with the filename prefix "%LoadVideo.file%_HDR_v2v_" in auto format. A MarkdownNote in the workflow notes that it "converts video clips to HDR .mp4 files" and includes troubleshooting tips about CPU/RAM usage, NVIDIA VFX node installation conflicts, and DaVinci Resolve HDR compatibility recommendations.
