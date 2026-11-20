@@ -25,7 +25,6 @@ My more acceptable stuff ends up on YouTube linked above *(or Vimeo if its too "
 
 [Internet Archive Parody Channel](https://archive.org/details/@mdkb)
 
-If they get pulled from there, I will add them as download links on my website [markdkberry.com](https://markdkberry.com/) and if gets pulled from that they must be good.
 
 ---
 
@@ -33,20 +32,34 @@ If they get pulled from there, I will add them as download links on my website [
 
 *This repo is for workflows used with ComfyUI to make the videos seen on my YT channel - [https://www.youtube.com/@markdkberry](https://www.youtube.com/@markdkberry)*
 
-**Follow me on [Patreon](https://www.patreon.com/c/AIMakingMovies) to be kept up to date** with new videos, tutorials, info, workflow releases, and changes.
+**There's also still a bunch of workflows on my [website](https://markdkberry.com/)** *(in process of transfering over here)* but I don't update it now.
 
-**There's also still a ton of workflows and info about their uses on my [website](https://markdkberry.com/)** *(in process of transfering over here)* but I don't update it now as I post to YT or Patreon (and here).
+**NOTE:** *I  am not very tidy in my workflow development and I don't like subgraphs. If you are a beginner you may want to seek out more user friendly starter workflows (RuneXX is a good example). I will try to organise and tidy my workflows as they become finalised, but they evolve so fast that it isnt my first priority.*
 
-Like me, you probably have hundreds of workflows and dozens of versions of each that constantly evolve. I'm going to start storing mine here to make that more managable, as well as more easily accessible to others who want them. 
+## WORKFLOW STORE
 
-**NOTE:** *I  am not very tidy in my workflow development and I don't like subgraphs. If you are a beginner you may want to seek out more user friendly starter workflows (RuneXX is probably the best for this). I will try to organise and tidy my workflows as they become finalised, but they evolve so fast that it isnt my first priority.*
+**For now I will seperate workflows into the following folders:**
 
-## HARDWARE
+### `\workflows_by_model`:
 
-As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB System Ram.** The same hardware I began with back in 2024.
+**This is now the main container and the only one regularly updated.** Folders by model type. I plan to add README.md files to each subfolder with brief summary of what the workflows do. The `changlog.md` will keep the changes info. It's a wip.
+
+**`archived\monthly_sets`**:
+
+These were the "best of's" at the time. I no longer use them as I am solely focused on Minimax H3 models and my image pipeline is fairly static too.
+
+**`archived\workflows_by_video`**:
+
+These wont be kept up to date, but act as snapshots of what I used before. Since Minimax H3 arrived it's become the staple workflow for all work.
+
+---
+
+## MY HARDWARE
+
+As of Nov 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB System Ram.** The same hardware I began with back in 2024.
 
 
-## MY TIMELINE OF EXPERIENCES
+## MY TIMELINE OF WORKFLOWS
 
 - **At the end of Dec 2024 I started using the first decent text to video model which was Hunyuan**. I was immediately hooked and made [Cafe](https://www.youtube.com/watch?v=x70IGT41QpY&list=PLVCJTJhkunkQSY_QZBMFclmB9-LXOi8WY&index=13). It was a deeply moving experience because I now knew that I was finally going to be able to make a musical. I'd been desperate to do so since 1987 but given up hope of achieving it.
 
@@ -62,28 +75,13 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 
 - **August 2026** **Minimax H3 came out and changed the game**. I was finding the work too frustrating and slow and LTX wouldnt quite sustain character consistency well enough even with various Loras designed for it. Minimax H3 changed everything, and as of October 2026 it's all I need, and have got back to making content with it. 
 
-**All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlist](https://www.youtube.com/playlist?list=PLVCJTJhkunkSEvrhV5Me3JnHLSSZcyTnQ). And all the workflows from 2025 are downloadable from the 2025 workflow section of my website** (I'll transfer them to here when I get time). Much of it is still relevant today, but I had an annoying habit of using loud background music and VibeVoice for the Voice-Over in the videos. I changed to more sensible presentation when I realised people were actually following my YT channel and finding it useful, and so got rid of the voice-over and loud background music from Jan 2026.
+**All my research from 2025 (WAN and VACE mostly) is in [videos in this YT playlist](https://www.youtube.com/playlist?list=PLVCJTJhkunkSEvrhV5Me3JnHLSSZcyTnQ). And all the workflows from 2025 are downloadable from the 2025 workflow section of my [website](https://markdkberry.com) ** (I'll transfer them to here when I get time). Much of it is still relevant today, but I had an annoying habit of using loud background music and VibeVoice for the Voice-Over in the videos. I changed to more sensible presentation when I realised people were actually following my YT channel and finding it useful, and so got rid of the voice-over and loud background music from Jan 2026.
 
-## WORKFLOW STORE
-
-**For now I will seperate workflows into the following folders:**
-
-### `archived\monthly_sets`
-
-**previous updated monthly zip files of my current video and image pipelines**. These were the "best of's" that I'd be using a lot at that moment in time. I no longer use them as I am solely focused on Minimax H3 models and my image pipeline is fairly static too.
-
-### `\workflows_by_model` 
-
-**folders by model type**. I'll probably only drop them in here when I get time as I have hundreds that I have tried and discarded or forgotten about. This is now the main container and the only one regularly updated.
-
-### `archived\workflows_by_video` 
-
-**Workflows I used to make AI videos that can be found on my video channels (YT, Vimeo, or Rumble see links in AI VIDEOS section)**. These wont be kept up to date, but act as snapshots of what I used at the time. Since Minimax H3 arrived it's become the staple workflow for all work.
-
+---
 
 ## AI VIDEOS
 
-*These are my more serious undertakings while the [Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0) (mirror links at top of this page) is more for practise and to develop skills and approach.*
+*These are my main projects, while the [Odyssey Parody Channel](https://odysee.com/@WCAID:8/Spaceslop-Ep1-Welcometothewildzone-V1a:0) (mirror links at top of this page) is for practise and to develop skills and approach in a more throwaway fashion.*
 
 **My AI videos are available to view here - [AI Video playlist on YT](https://www.youtube.com/playlist?list=PLVCJTJhkunkQSY_QZBMFclmB9-LXOi8WY)**
 
@@ -118,6 +116,8 @@ As of Oct 2026 I am still working on **Windows 10, 3060 RTX 12GB VRAM with 32 GB
 - [Been Down (Scene 1 of Black Magic Musical)](https://youtu.be/WnKSSzWt-N4?si=WLe8WD2keauNYiwc) - 8th May 2026
 
 - [Black Magic (Scene 3 of Black Magic Musical)](https://youtu.be/822Zt8-QJ9U?si=sdK8OBh2jU6prLq0) - 8th Oct 2026
+
+- [Sapphires Part 2 "Second Victim"](https://youtu.be/5aFK6jr-PN4?si=PjrH875tMKggKVtD) - 18th November 2026
 
 
 ## LICENSING
